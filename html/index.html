@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KOHI 요양보호사보수교육 기관 찾기</title>
+    <link rel="shortcut icon" href="../../images/common/favicon.ico">
+
+    
+    <!-- 기존 css -->
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" href="../css/reset.css">
+    <link type="text/css" rel="stylesheet" href="../css/common.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <!-- // 기존 css -->
+
+    <link type="text/css" rel="stylesheet" href="../css/jquery-ui.theme.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/common.css">
+    <link type="text/css" rel="stylesheet" href="../css/layout.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <!-- main -->
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js"></script>
+</head>
+<body>
+    <div class="skip-to-content">
+        <a href="#container">본문내용 바로가기</a>
+        <a href="#mainMenu">메인메뉴 바로가기</a>
+    </div>
+    <div class="kohi-wrap main">
+        <!--............. header .............-->
+        <div class="header-banner">
+            <div class="header-banner__inner">
+                <span class="header-banner__text">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+            </div>
+        </div>
+        <header class="header">
+            <div class="header__info">
+                <div class="header__inner">
+                    <h1 class="header__logo-box"><a href="#none" class="header__logo">한국보건복지인재원 보건복지배움인 KOREA HUMAN RESOURCE DEVELOPMENT INSTITUTE FOR HEALTH & WELFARE</a></h1>
+                    <ul class="header__blank-list">
+                        <li class="header__blank-item"><a href="https://www.kohi.or.kr" class="header__blank" target="_blank" title="새 창 열기">대표홈페이지</a></li>
+                        <li class="header__blank-item"><a href="https://edu.kohi.or.kr/index.do" class="header__blank header__blank--point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
+                        <li class="header__blank-item"><a href="https://in.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">법정의무교육</a></li>
+                        <li class="header__blank-item"><a href="https://csp.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">보e다</a></li>
+                    </ul>
+                    <!-- <div class="header__blank-wrap">
+                        <ul class="header__link-wrap">
+                            <li><a href="#none" class="header__link header__link--search">통합검색</a></li>
+                            <li><a href="#none" class="header__link header__link--mypage">마이페이지</a></li>
+                            <li><a href="#none" class="header__link header__link--logout">로그아웃</a></li>
+                            <li><a href="#none" class="header__link header__link--login">로그인</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+            <nav class="header__gnb">
+            <div class="inner">
+                <ul class="gnb__1depth">
+                    <li class="gnb__1depth--item">
+                        <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관찾기</a>
+                    </li>
+                
+                    <li class="gnb__1depth--item">
+                        <a href="/pt/pl/plc/BD_plc0010c.do">공지사항</a>
+                    </li>
+                
+                    <li class="gnb__1depth--item">
+                        <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
+                    </li>
+                
+                    <li class="gnb__1depth--item green">
+                        <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원  바로가기</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+            <button type="button" class="header__mobile-button mobile-menu" title="전체메뉴 열기">
+                <span class="ico">
+                    <i></i>
+                    <i></i>
+                </span>
+            </button>
+            <!-- mobile -->
+            <div class="mobile-gnb-wrap">
+                <div class="mobile-gnb">
+                    <!-- <div class="mobile-gnb__info"> -->
+                        <!-- 비회원일 시 -->
+                        <!-- <a href="#none" class="login">로그인을 해주세요</a> -->
+                        <!-- 비회원일 시 -->
+                        <!-- 회원일 시 -->
+                        <!-- <a href="#none" class="logout">로그아웃</a> -->
+                        <!-- 회원일 시 -->
+                    <!-- </div> -->
+                    <nav class="gnb">
+                        <ul class="gnb__1depth">
+                            <li class="gnb__1depth--item">
+                                <a href="#none">교육과정신청</a>
+                                <ul class="gnb__2depth">
+                                    <li class="gnb__2depth--item">
+                                        <a href="www.naver.com">3depth 없을 경우</a>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">3depth 없을 경우</a>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="www.naver.com">2depth-3</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none" class="active">2depth-4</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-5</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-6</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="gnb__1depth--item">
+                                <a href="#none">공동활용사업</a>
+                                <ul class="gnb__2depth">
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-1</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-2</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-3</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-4</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-5</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-6</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="gnb__1depth--item">
+                                <a href="#none">학습지원</a>
+                                <ul class="gnb__2depth">
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-1</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-2</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-3</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-4</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-5</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-6</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="gnb__1depth--item">
+                                <a href="#none">교육소식</a>
+                                <ul class="gnb__2depth">
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-1</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-2</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-3</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-4</a>
+                                        <div class="gnb__3depth-wrap">
+                                            <ul class="gnb__3depth">
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                                <li class="gnb__3depth--item"><a href="#none">3depth title</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-5</a>
+                                    </li>
+                                    <li class="gnb__2depth--item">
+                                        <a href="#none">2depth-6</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <ul class="header__blank-list">
+                        <li class="header__blank-item"><a href="https://www.kohi.or.kr" class="header__blank header__blank--point" target="_blank" title="새 창 열기">대표홈페이지</a></li>
+                        <li class="header__blank-item"><a href="https://edu.kohi.or.kr/index.do" class="header__blank header__blank--red" target="_blank" title="새 창 열기">보건복지배움인</a></li>
+                        <li class="header__blank-item"><a href="https://in.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">법정의무교육</a></li>
+                        <li class="header__blank-item"><a href="https://csp.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">보e다</a></li>
+                    </ul>
+                    <button type="button" class="mobile-gnb__close">메뉴 닫기</button>
+                </div>
+            </div>
+            <!-- //mobile -->
+        </header>
+        <!--.............// header .............-->
+        <!--............. main container .............-->
+        <div id="container">
+            <!-- <div class="inner"> -->
+                <div class="visual-wrap">
+                    <div class="left">
+                        <div class="title-box">
+                            <h2>요양보호사보수교육 기관 찾기</h2>
+                            <a href="" class="btn-shortcut" style="">바로가기</a>
+                        </div>
+                        <div class="map-wrap">
+                            <div class="map">
+                                <img src="../images/contents/map.png" alt="지도 목업 이미지">
+                            </div>
+                            <div class="control-box">
+                                <button type="button" class="my-location">
+                                    <i class="icon"></i>
+                                    <span>내 위치 보기</span>
+                                </button>
+                                <button type="button" class="btn-zoom in" title="확대">
+                                    <i class="icon"></i>
+                                    <span>확대</span>
+                                </button>
+                                <button type="button" class="btn-zoom out" title="축소">
+                                    <i class="icon"></i>
+                                    <span>축소</span>
+                                </button>
+                            </div>
+                            <div class="area"></div>
+                            <div class="pin"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p>banner</p>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+        <!-- // main container -->
+    </div>
+</body>
+</html>
