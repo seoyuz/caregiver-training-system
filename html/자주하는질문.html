@@ -1,0 +1,558 @@
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <link rel="shortcut icon" href="/images/common/favicon.ico">
+        <link rel="stylesheet" href="/resources/asp/user/css/reset.css">
+        <link rel="stylesheet" href="/resources/asp/user/css/common.css">
+        <link rel="stylesheet" href="/resources/asp/user/css/style.css">
+        <link rel="stylesheet" href="/resources/asp/user/css/jquery-ui.css">
+        <script src="/resources/asp/user/js/jquery-1.12.4.min.js"></script>
+        <script src="/resources/asp/user/js/jquery-ui.min.js"></script>
+        <script src="/resources/asp/user/js/slick.js"></script>
+        <script src="/resources/asp/user/js/ui.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="/resources/libs/fancybox-2.1.5/css/jquery.fancybox.css">
+        <script src="/resources/libs/fancybox-2.1.5/js/jquery.fancybox.js"></script>
+        <script src="/resources/openworks4/js/openworks.modal.js"></script>
+
+        
+        
+        <script src="https://edu.kohi.or.kr/resources/libs/form-3.51.0/jquery.form.js"></script>
+        <script src="/resources/netfunnelApi/js/netfunnel.js"></script>
+        <script src="/resources/openworks4/js/openworks.form.js"></script>
+        <script src="/resources/openworks4/js/openworks.message.js"></script>
+
+        <script src="/component/js/ND_globalConfig.do" ></script>
+        <script src="/component/js/ND_massageConfig.do" ></script>
+
+        
+    <script src="/resources/libs/js-cookie-1.5.1/js.cookie.js"></script>
+<script src="/component/popup/ND_popupConfig.do"></script>
+    <script src="/resources/openworks4/js/openworks.form.js"></script>
+    <script src="/resources/openworks4/js/validate/openworks.validate.js"></script>
+    
+        <script src="/resources/libs/form-3.51.0/jquery.form.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="/resources/openworks/spi/jquery/validate/jquery.validate.css"> -->
+    <script src="/resources/libs/validation-1.13.1/jquery.validate.js"></script>
+<script src="/resources/libs/validation-1.13.1/additional-methods.js"></script>
+
+<!--                     <script src="/resources/openworks/spi/jquery/validate/jquery.validate.settings.js"></script> -->
+<!--                     <script src="/resources/openworks/spi/jquery/validate/jquery.validate.messages.js"></script> -->
+    
+        
+
+
+
+<script  >
+    //<![CDATA[
+    var btnIndex = 0;
+
+    $(document).ready(function() {
+        /* 도로명주소팝업 호출 */
+        $(".adresPopBtn").click(function() {
+            var thisObj = $(this).get(0);
+            $(".adresPopBtn").each(function(idx){
+                var eachObj = $(this).get(0);
+                if(eachObj === thisObj){
+                    btnIndex = idx;
+                }
+            });
+            opAdresPopup();
+        });
+    });
+    
+    function opAdresPopup(){
+        // 주소검색을 수행할 팝업 페이지를 호출합니다.
+        // 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+        window.open("/component/adres/PD_selectAdres.do","selectAdresPop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+    }
+    function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn){
+        $(".zip:eq("+btnIndex+")").val(zipNo);
+        $(".adres:eq("+btnIndex+")").val(roadAddrPart1);
+        $(".adres2:eq("+btnIndex+")").val(addrDetail+" "+roadAddrPart2);
+        $(".adresPopBtn:eq("+btnIndex+")").focus();
+    }
+    //]]>
+</script>
+
+        <script src="/resources/templateSample/js/bootstrap.min.js"></script>
+        <script src="/resources/asp/user/js/aspCommon.js"></script>
+        <title>자주하는질문 | KOHI 요양보호사보수교육 기관 찾기</title>
+        <link rel="stylesheet" type="text/css" href="/sos/asp/common/ND_logoNmainImg.do?q_type=01">
+        
+
+<script  >
+    var CTX_PATH="";
+</script>
+
+<script  >
+    $(document).ready(function() {
+
+        var domnCode = '55';
+        var menuCode = 'ADB';
+
+        var allData = {'domnCode':domnCode,'userMenuCode':menuCode};
+
+        if(domnCode != '' && domnCode != 'null' && domnCode != null && !(domnCode === undefined)){
+            if(menuCode != '' && menuCode != 'null' && menuCode != null && !(menuCode === undefined)){
+                try{
+                    $.ajax({
+                        url : "/component/evl/menu/ND_insertEvlMenu.do",
+                        type : "POST",
+                        dataType : "json",
+                        data: allData,
+                        success: function(response, statusTxt, xhr){
+                            console.log(response.message);
+                            return;
+                        },
+                        error: function(response,status,error) {
+                            console.log(response.responseText);
+                            return;
+                        }
+                    });
+                }catch(e){
+                    return;
+                }
+            }
+        }
+    });
+</script>
+
+
+
+
+
+
+        <script  >
+            //<![CDATA[
+
+                $(document).ready(function (){
+                    $("#loginAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pm/pma/ND_pma0010f.do");// 로그인
+                    $("#mberAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pm/pmc/ND_pmc0010l.do");// 회원가입
+                    /* $("#mypageAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pg/pga/BD_pga0010f.do");// 회원정보관리 */
+                });
+
+                function subPageMove(obj){
+                     var f = document.frm;
+                     f.action = obj;
+                     f.submit();
+                }
+
+                var gfn_moveLoginPage = function() {
+                    location.href = "https://"+$("#portalUrl").val()+"/pt/pm/pma/ND_pma0010f.do";
+                }
+                var opMyPagePopUp = function() {
+
+                    $().opmodal({
+                        width  : 1400,
+                        height : 800,
+                        href   : "/sos/asp/ac/ace/PD_ace0010f.do?q_AspMyPagePopUp=Y"
+                    });
+                }
+
+            //]]>
+        </script>
+
+        <!--............. test용 css 적용 .............-->
+        <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
+        <link type="text/css" rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+        <link type="text/css" rel="stylesheet" href="/css/common.css">
+        <link type="text/css" rel="stylesheet" href="/css/layout.css">
+        <link type="text/css" rel="stylesheet" href="/css/map.css">
+        <link type="text/css" rel="stylesheet" href="/css/borad.css">
+
+        <script src="/js/jquery-1.12.4.min.js"></script>
+        <script src="/js/swiper.min.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        <script src="/js/common.js"></script>
+        <script src="/js/contents.js"></script>
+        <!--............. test용 css 적용 .............-->
+
+    </head>
+    <body>
+        
+        <div id="wrap" class="wrap">
+            <!--............. header .............-->
+            <div class="header-banner">
+                <div class="header-banner__inner">
+                    <span class="header-banner__text">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+                </div>
+            </div>
+            <header class="header">
+                <div class="header__info">
+                    <div class="header__inner">
+                        <h1 class="header__logo-box"><a href="#none" class="header__logo">한국보건복지인재원 보건복지배움인 KOREA HUMAN RESOURCE DEVELOPMENT INSTITUTE FOR HEALTH & WELFARE</a></h1>
+                        <ul class="header__blank-list">
+                            <li class="header__blank-item"><a href="https://www.kohi.or.kr" class="header__blank" target="_blank" title="새 창 열기">대표홈페이지</a></li>
+                            <li class="header__blank-item"><a href="https://edu.kohi.or.kr/index.do" class="header__blank header__blank--point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
+                            <li class="header__blank-item"><a href="https://in.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">법정의무교육</a></li>
+                            <li class="header__blank-item"><a href="https://csp.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">보e다</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 251030 gnb 수정 (yz) -->
+                <nav class="header__gnb">
+                    <div class="inner">
+                        <ul class="gnb__1depth">
+                            <li class="gnb__1depth--item">
+                                <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관 찾기</a>
+                            </li>
+                        
+                            <li class="gnb__1depth--item">
+                                <a href="/pt/pl/plc/BD_plc0010c.do">공지<br>사항</a>
+                            </li>
+                        
+                            <li class="gnb__1depth--item">
+                                <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
+                            </li>
+                        
+                            <li class="gnb__1depth--item green">
+                                <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원 바로가기</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- // 251030 gnb 수정 (yz) -->
+            </header>
+            <!--............. // header .............-->
+            <div class="container">
+                <!--............. content .............-->
+                <div id="content" class="content">
+                    <div class="inner">
+                        <!-- customize -->
+                        <link rel="stylesheet" type="text/css" href="/resources/openworks4/css/openworks4-custom.css">
+                            <!--Google  tag(gtag.js)-->
+                        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5JE4XGZ766"></script>
+                        <script>
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+
+                            gtag('config' , 'G-5JE4XGZ766');
+                        </script>
+
+
+                        <script  >var CTX_PATH="";</script>
+                        <!-- jquery core -->
+                        <script src="/resources/libs/jquery/jquery-1.11.2.min.js"></script>
+                        <script src="/resources/libs/jquery-ui-1.11.3.custom/jquery-ui.min.js"></script>
+                        <script src="/resources/study/js/study-init.js?ver=1.4"></script>
+
+                        <!-- 설정 동기화 -->
+                        <script src="/component/js/ND_globalConfig.do"></script>
+                        <script src="/component/js/ND_massageConfig.do"></script>
+
+                        <!-- Openworks 공통 메소드 -->
+                        <script src="/resources/openworks4/js/openworks.global.js"></script>
+                        <script src="/resources/openworks4/js/openworks.message.js"></script>
+                        <script src="/resources/openworks4/js/openworks.initialize.js"></script>
+                            <script src="/resources/openworks4/js/openworks.ui.js"></script>
+                            <script src="/resources/openworks4/js/openworks.form.js"></script>
+                            
+
+
+                        <script src="/resources/asp/user/js/slick.js"></script>
+                        <script src="/resources/user/bbs/js/bbs.js"></script>
+                        <script src="/resources/asp/user/js/aspCommon.js"></script>
+
+                            <script  >
+                                $('document').ready(function(){
+                                    var domnCode = $("#q_estnColumn1").val();
+                                    if(domnCode == '39'){
+                                        document.title = document.title + ' > 자주하는질문';
+                                        $("html").stop().animate({scrollTop: 730}, 500);
+                                    }
+                                });
+                            </script>
+
+                        <form name="dataForm" id="dataForm" method="get" action="BD_selectBbsList.do" class="form-inline">
+                            
+                            <input type="hidden" id="q_tmplType" name="q_tmplType" value="f">
+                            <input type="hidden" id="q_bbsCode" name="q_bbsCode" value="1045">
+                            <input type="hidden" id="q_tmplatTy" name="q_tmplatTy" value="L">
+                            <input type="hidden" id="q_estnColumn1" name="q_estnColumn1" value="55">
+                            <input type="hidden" name="q_bbscttSn" id="q_bbscttSn" value="">
+                                            
+                            <h2 class="tit">자주하는질문</h2>
+
+                            <!-- 필수의무교육 게시판 탭 -->
+                            <div class="table_top">
+                                <div class="page_num">	
+                                    <input type="hidden" name="q_currPage" id="q_currPage">
+                                    <p class="total">총 <span class="color_red">20</span>건</p> 
+                                    <p class="now"> (<span class="color_red">1</span>/2 Page)</p>
+                                </div>
+                                <div class="search_wrap v4">
+                                    <p>상담내용</p>
+                                    <span class="select_wrap">
+                                        <select name="q_clCode" id="q_clCode" title="분류선택">
+                                            <option value="">분류전체</option>
+                                            
+                                                <option value="1">운영</option>
+                                            
+                                                <option value="2">교육</option>
+                                            
+                                                <option value="3">시스템</option>
+                                            
+                                                <option value="4">콘텐츠</option>
+                                            
+                                                <option value="5">플랫폼</option>
+                                            
+                                                <option value="6">모바일</option>
+                                            
+                                                <option value="7">기타</option>
+                                            
+                                        </select>
+                                    </span>
+                                    <span class="select_wrap">
+                                        <select name="q_searchKeyTy" id="q_searchKeyTy" title="검색 조건 선택">
+                                                
+                                            <option value="sj___1002">제목</option>
+                                        
+                                            
+                                            <option value="lngtCn___1002">내용</option>
+                                            
+                                        </select>
+                                    </span>
+                                    <span class="input_wrap">
+                                        <input type="text" name="q_searchVal" id="q_searchVal" value="" class="form-control" placeholder="검색어를 입력하세요." title="검색어 입력">
+                                    </span>
+                                    <button type="submit" class="btn_search">검색<i class="icon"></i></button>
+                                </div>
+                            </div>
+                            
+                            <ul class="faq">
+                                <li>
+                                    <div class="question" id="faq_20250502091234256">
+                                        <span class="cate">교육</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>마이페이지 나의학습현황에서 수강 신청한 교육과정이 보이지 않아요</a>
+                                    </div>
+                                    <div class="answer">
+                        
+                                        본 "사회복무 교육지원플랫폼"에서 이러닝 교육을 수강신청했는지 확인 부탁드립니다.
+                                        <br>
+                                        <br>"KOHI 보건복지배움인(edu.kohi.or.kr)"에서 수강신청한 교육과정 수강내역은 본 홈페이지에서 확인이 제한됩니다.
+                                        <br>보건복지배움인 홈페이지에서 교육과정을 수강하신 경우라면, 보건복지배움인 홈페이지에서 로그인 후 확인바랍니다. 
+                                        <br>
+                                        <br>본 홈페이지(사회복무 교육지원플랫폼)에서 교육과정 수강하였음에도 수강이력 확인이 불가할 경우, [1:1 문의]로 아래 내용 포함하여 문의부탁드립니다.
+                                        <br>
+                                        <br>1. 회원명
+                                        <br>2. 아이디
+                                        <br>3. 전화번호(휴대폰)
+                                        <br>4. 신청한 과정명
+                                        <br>5. 에러 사항에 대한 자세한 설명 또는 캡처화면
+                                        <br>
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314174851537">
+                                        <span class="cate">교육</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>수료 내역을 찾을 수 없어요</a>
+                                    </div>
+                                    <div class="answer">
+                                        학습상태(수료 여부)는 [사회복무 교육지원플랫폼] - [마이페이지] - [나의 학습현황]에서 확인 가능합니다.
+                                        <br>
+                                        <br>한국보건복지인재원에서 운영하는 보건복지배움인(edu.kohi.or.kr)에서 교육을 수료하신 경우 본 홈페이지에서 수료내역 확인은 불가하오니
+                                        <br>보건복지배움인 홈페이지에서 이러닝 교육을 수강 및 수료하셨을 경우, 해당 홈페이지에서 수료내역 확인바랍니다.
+                                        <br>
+                                        <br>
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314174418088">
+                                        <span class="cate">기타</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>집합으로 하는 기본·심화 직무교육에 대해 궁금해요</a>
+                                    </div>
+                                    <div class="answer">
+                                        본 사회복무 교육지원플랫폼은 이러닝 교육을 위한  홈페이지입니다.
+                                        <br>각 지역교육센터에서 진행하는 집합 기본·심화 직무교육에 대한 문의사항은 통지 받은 통지서의 지역교육센터 연락처로 문의바랍니다.
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314174145374">
+                                        <span class="cate">교육</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>이러닝 교육이 사회복무요원 법정의무교육인가요?</a>
+                                    </div>
+                                    <div class="answer">
+                                        본 "직무소양교육"과정은 사회복무요원 법정의무교육과는 다른 교육과정으로 사회복무요원 뿐 아니라 사회복무에 관심있는 누구나 수강 가능합니다.
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314173914232">
+                                        <span class="cate">교육</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>수료증은 어디에서 발급받을 수 있나요</a>
+                                    </div>
+                                    <div class="answer">
+                                        이러닝 교육과정 수료 이후 [사회복무 교육지원플랫폼] - [마이페이지] - [수료증 출력] 에서 가능합니다.
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314173716592">
+                                        <span class="cate">시스템</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>동영상 재생 등의 시스템 문제가 있어요</a>
+                                    </div>
+                                    <div class="answer">
+                                        본 이러닝 사이트(사회복무 교육지원플랫폼)은 ①크롬(Chrome) ②네이버 웨일(whale)브라우저에 최적화되어 있습니다.
+                                        <br>
+                                        <br>동영상 재생이 되지 않거나 진도율이 제대로 반영되지 않는 경우, 아래 링크를 통해 크롬 또는 네이버 웨일 브라우저를 다운로드하여 설치 후 이용해주시기를 권장드립니다.
+                                        <br>
+                                        <br>ㅇ 링크
+                                        <br>- 크롬: https://www.google.com/chrome/
+                                        <br>- 네이버 웨일: https://whale.naver.com/ko/
+                                        <br>
+                                        <br>상기 방법에도 영상 재생이 불가할 경우, &lt;1:1 문의하기&gt; 또는 &lt;연락처(1600-8810)&gt;로 연락바랍니다.
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314173431973">
+                                        <span class="cate">시스템</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>영상이 재생되지 않습니다</a>
+                                    </div>
+                                    <div class="answer">
+                                        본 이러닝 사이트(사회복무 교육지원플랫폼)은 ①크롬(Chrome) ②네이버 웨일(whale)브라우저에 최적화되어 있습니다.
+                                        <br>
+                                        <br>동영상 재생이 되지 않거나 진도율이 제대로 반영되지 않는 경우, 아래 링크를 통해 크롬 또는 네이버 웨일 브라우저를 다운로드하여 설치 후 이용해주시기를 권장드립니다. 
+                                        <br>
+                                        <br>ㅇ 링크
+                                        <br>  - 크롬: https://www.google.com/chrome/
+                                        <br>  - 네이버 웨일: https://whale.naver.com/ko/
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314173159847">
+                                        <span class="cate">운영</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>이러닝 교육일정 및 과정이 궁금해요</a>
+                                    </div>
+                                    <div class="answer">
+                                        2025년 사회복무요원 직무소양교육 세부 내용은 &lt;공지사항 16번&gt; 게시물을 참고하시기 바랍니다.
+                                        <br>
+                                        <br>교육일정: 2025. 1. 13.(월) ~ 12. 12.(금)
+                                        <br>교육과정: 총 27개 과정
+                                        <br>
+                                        <br>※ 교육일정 내 교육 수강 및 수료해주시기 바랍니다.
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314172718684">
+                                        <span class="cate">운영</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>문의사항은 어디로 연락하나요?</a>
+                                    </div>
+                                    <div class="answer">
+                                        문의사항은 홈페이지 &lt;1:1 문의&gt; 또는 아래의 &lt;담당 연락처&gt;로 문의주시기 바랍니다.
+                                        <br>
+                                        <br>ㅇ 1:1 문의
+                                        <br>  - 방법: 홈페이지 오른쪽 하단 [질의응답] - [학습지원(1:1문의)] - [등록]
+                                        <br>
+                                        <br>ㅇ 담당자 연락처
+                                        <br>  - 한국보건복지인재원 지역교육기획부 043-904-3616
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            
+                                <li>
+                                    <div class="question" id="faq_20250314172124218">
+                                        <span class="cate">보건산업 교육</span>
+                                        <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>수강 기한이 있나요?</a>
+                                    </div>
+                                    <div class="answer">
+                                        수강 신청 후 교육기간 '21일 이내' 수강 완료하셔야 합니다.
+                                        <br>그렇지 않을 경우, 교육이 자동 취소될 수 있으니 참고 부탁드립니다.
+                                        <br>
+                                        <br>교육 취소 이후 재수강 신청은 가능하나, 진도는 초기화 될 수 있으니 참고부탁드립니다.
+                                        <br>
+                                        첨부파일이 없습니다.
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <script>
+                                $(".question .title").attr("title","답변열기");
+                                $(document).on("click", ".question .title", function(){
+                                    if($(this).parents(".question").hasClass("active")){
+                                        $(this).parents(".question").removeClass("active");
+                                        $(this).parents(".question").next(".answer").hide();
+                                        $(this).attr("title","답변열기");
+                                    } else {
+                                        $(this).parents(".question").addClass("active")
+                                        $(this).parents(".question").next(".answer").show();
+                                        // $(this).attr("title","답변닫기");
+                                        $(this).removeAttr("title");
+                                    }
+                                })
+                            
+                            </script>
+                            
+                            <div class="paging">
+                                <div class="paging">
+                                    <a href="#n" class="active" title="현재페이지">1</a>
+                                    <a href="#n">2</a>
+                                    <a href="#n">3</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--............. //content .............-->
+            </div>
+            <!--............. footer .............-->
+            <footer class="footer">
+                <p class="copyright">COPYRIGHT © 2025 KOHI ALL RIGHTS RESERVED</p>
+            </footer>
+            <!--............. //footer .............-->
+        </div>
+    </body>
+</html>
+

@@ -48,9 +48,9 @@
 
 *:focus-visible {
 	box-sizing: border-box;
-	outline-width: 3px;
+	outline-width: 5px;
 	outline-style: dashed;
-	outline-color: #2e56d8;
+	outline-color: #FFA038;
 	outline-offset: -2px;
 } /* 웹접근성 */
 ::-moz-selection {
@@ -122,7 +122,8 @@ input:not([type=checkbox], [type=radio], [type=file]) {
 input.inp {
 	height: 38px;
 	padding: 17px 15px;
-	font-size: 16px; /* 250324 font size (ej) */
+	color: #333;
+	font-size: 20px; /* 250324 font size (ej) */
 }
 
 input.inp.type2 {
@@ -138,17 +139,19 @@ select, .select {
 	-moz-appearance: none;
 	appearance: none;
 	min-width: 180px;
-	border: 1px solid #ccc;
+	border: 1px solid #000;
 	padding: 3px 35px 3px 15px;
 	height: 38px;
 	box-sizing: border-box;
-	color: #666;
-	border-radius: 10px;
-	background: #fff url("../images/sub/ico_select.png") no-repeat right
-		10px top 50%;
+	border-radius: 8px;
+	background: #fff url("../images/common/ico_select.png") no-repeat right 10px top 50%;
 	background-size: 20px;
-	font-size: 16px; /* 250321 font size (ej) */
+	font-size: 20px;
 	color: #333;
+}
+select:invalid, .select:invalid{
+	color: #767676;
+	font-weight: 400;
 }
 
 select.type3, .select.type3 {
@@ -163,12 +166,13 @@ select.type3, .select.type3 {
 }
 
 
-::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {
+/* 251021 웹 접근성 품질개선 - 웹 호환성 (yz) */
+/* ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {
 	display: block;
 	width: 20px;
 	height: 1px;
 	background: #ddd;
-}
+} */
 
 ::-webkit-scrollbar-track {
 	background: #ddd;
@@ -190,12 +194,13 @@ select.type3, .select.type3 {
 	height: 10px;
 }
 
-.f_scroller::-webkit-scrollbar-button:start:decrement, .f_scroller::-webkit-scrollbar-button:end:increment {
+/* 251021 웹 접근성 품질개선 - 웹 호환성 (yz) */
+/* .f_scroller::-webkit-scrollbar-button:start:decrement, .f_scroller::-webkit-scrollbar-button:end:increment {
 	display: block;
 	width: 20px;
 	height: 1px;
 	background: #eee;
-}
+} */
 
 .f_scroller::-webkit-scrollbar-track {
 	background: #eee;
@@ -267,7 +272,8 @@ input[type=text], input[type=password], input[type=tel], input[type=email],
 	box-sizing: border-box;
 	height: 38px;
 	padding: 10px 15px;
-	border: 1px solid #ddd;
+	border: 1px solid #000;
+	border-radius: 8px;
 	font-weight: 400; /* 250328 (ej) */
 	width: auto;
 }
@@ -332,6 +338,15 @@ p, li, span, input, a, pre { /*transform: skew(-0.03deg);*/
 img {
 	vertical-align: top;
 	max-width: 100%;
+}
+
+img.pc {
+  max-width: 100%;
+}
+
+img.mobile {
+  display: none;
+  max-width: 100%;
 }
 
 table {
@@ -1755,7 +1770,7 @@ img {
 }
 
 .siz31 {
-	font-size: 31px;
+	font-size: 31px; 
 }
 
 .siz32 {
@@ -1990,14 +2005,11 @@ table td.td_80 {
 .inner {
 	position: relative;
 	max-width: 1180px;
-	margin: 0 auto;
 	width: 94%;
+	/* width: calc(100% - 80px); */
+	margin: 0 auto;
 	box-sizing: border-box;
 	padding: 0 0;
-}
-
-.inner.type2 {
-	max-width: 780px;
 }
 
 .pc-block {

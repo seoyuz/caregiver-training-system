@@ -1,0 +1,556 @@
+/* map */
+.map-wrap{
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    border: 4px solid #18534A;
+    max-width: none;
+    max-height: 630px;
+    height: 100%;
+}
+.map-wrap .map{
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    transition: .3s ease;
+}
+
+.map-wrap .map img{
+    width: 100%;
+    min-height: 630px;
+    object-fit: cover;
+}
+
+/* side panel */
+.map-wrap .side-panel{
+    position: absolute;
+    padding: 20px;
+    padding-bottom: 125px;
+    width: 520px;
+    height: 100%;
+    background-color: #FFFFFF;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    transition: .3s ease;
+}
+.map-wrap .side-panel.wide{
+    padding: 10px;
+    width: 785px;
+}
+.map-wrap .side-panel.wide > div{
+    padding-right: 10px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.map-wrap .side-panel .contents + .contents{
+    margin-top: 15px;
+}
+.map-wrap .side-panel.wide .contents{
+    position: relative;
+}
+.map-wrap .side-panel.wide .contents + .contents{
+    margin-top: 20px;
+}
+.map-wrap .side-panel .item{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.map-wrap .side-panel .dropdown-box{
+    position: relative;
+    display: block;    
+}
+.map-wrap .side-panel .inp{
+    width: 100%;
+}
+.map-wrap .side-panel .dropdown{
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 100%;
+    height: 530px;
+    background-color: #FFFFFF;
+    border: 1px solid #000;
+    border-radius: 6px;
+    overflow: auto;
+    box-shadow: none;
+}
+.map-wrap .side-panel .dropdown-box.active .dropdown{
+    display: block;
+}
+.map-wrap .side-panel .dropdown .select-item{
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 0px #0000001A;
+    font-size: 18px;
+}
+.map-wrap .side-panel .dropdown .select-item .tit{
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+.map-wrap .side-panel .dropdown .select-item .addr{
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.map-wrap .side-panel .dropdown .select-item .addr.new{font-size: 22px;}
+.map-wrap .side-panel .dropdown .select-item .addr.old{font-size: 18px; color: #666;}
+.map-wrap .side-panel .dropdown .select-item .tel{
+    display: block;
+    color: #007461;
+    text-align: left;
+}
+
+.map-wrap .side-panel .btn{
+    display: block;
+    padding: 4px 10px;
+    min-width: 90px;
+    height: 38px;
+    box-sizing: border-box;
+}
+.map-wrap .side-panel .btn.solid{
+    background-color: #007461;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+.map-wrap .side-panel .btn.reg{
+    margin: 20px auto 0;
+    padding: 9px 24px;
+    height: auto;
+    font-size: 36px;
+    font-weight: 600;
+}
+.map-wrap .side-panel .btn.shortcut{
+    display: inline-block;
+    padding-left: 38px;
+    background-color: #E4F7ED;
+    background-image: url(/images/common/ico_shortcut.png);
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 23px;
+    border: 2px solid #007461;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.map-wrap .side-panel .btn-toggle{
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 36px 5px;
+    background-color: #FFFFFF;
+    border-radius: 6px 0 0 6px;
+    z-index: 5;
+}
+.map-wrap .side-panel .btn-toggle .icon{
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('/images/common/ico_drop.png');
+    background-size: cover;
+}
+.map-wrap .side-panel.close{
+    right: auto;
+    left: 100%;
+}
+.map-wrap .side-panel.close .contents{
+    display: none;
+}
+.map-wrap .side-panel.close .btn-toggle .icon{
+    transform: rotate(180deg);
+}
+.map-wrap .side-panel ul{
+    padding: 10px;
+    height: 100%;
+    box-shadow: 0px 4px 4px 0px #00000026 inset;
+    overflow: auto;
+}
+.map-wrap .side-panel ul li{
+    padding: 5px 13px;
+    background: #F5F5F5;
+    box-shadow: 0px 4px 4px 0px #0000001A;
+    text-align: center;
+}
+.map-wrap .side-panel ul li + li{
+    margin-top: 10px;
+}
+.map-wrap .side-panel ul li p{
+    text-align: left;
+}
+.map-wrap .side-panel select{
+    width: 100%;
+}
+.map-wrap .side-panel a.btn-more{
+    display: inline-block;
+    padding: 6px 20px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 2px solid #007461;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+.map-wrap .side-panel label,
+.map-wrap .side-panel .tit{
+    font-size: 36px;
+    font-weight: 700;
+    word-break: keep-all;
+}
+.map-wrap .side-panel .addr{
+    margin: 6px 0;
+    font-size: 22px;
+    font-weight: 400;
+}
+.map-wrap .side-panel table{
+    width: 100%;
+    border: 1px solid #007461;
+    border-left: 0;
+    border-right: 0;
+}
+.map-wrap .side-panel table thead{
+    height: 60px;
+    background-color: #ddd;
+}
+.map-wrap .side-panel table tr{
+    height: 57px;
+}
+.map-wrap .side-panel table tr + tr{
+    border-top: 1px solid #EEEEEE;
+}
+.map-wrap .side-panel table th,
+.map-wrap .side-panel table td{
+    padding: 10px;
+    border-left: 1px solid #CCCCCC;
+    text-align: center;
+    vertical-align: middle;
+}
+.map-wrap .side-panel table th:first-child,
+.map-wrap .side-panel table td:first-child{
+    border-left: 0;
+}
+.map-wrap .side-panel table th{
+    font-size: 20px;
+}
+.map-wrap .side-panel table td{
+    font-size: 17px;
+    font-weight: 400;
+}
+.map-wrap .side-panel table td .btn.reg{
+    margin-top: 0;
+    padding: 3px 5px;
+    height: auto;
+    background-color: #FFFFFF;
+    border: 2px solid #007461;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.map-wrap .side-panel .tit + p.time,
+.map-wrap .side-panel p.time + p.distance{
+    margin-top: 10px;
+}
+.map-wrap .side-panel p.time,
+.map-wrap .side-panel p.distance{
+    padding-left: 30px;
+    font-size: 22px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+}
+.map-wrap .side-panel p.time{
+    background-image: url(/images/common/ico_clock.png);
+}
+.map-wrap .side-panel p.distance{
+    background-image: url(/images/common/ico_road.png);
+}
+.map-wrap .side-panel span.bold{
+    font-weight: 600;
+}
+.map-wrap .side-panel .btn-box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+}
+.map-wrap .side-panel .btn-box .btn{
+    padding-left: 39px;
+    background-color: #E8F3F1;
+    border: 2px solid #007461;
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.map-wrap .side-panel .btn-box .btn span{
+    vertical-align: middle;
+}
+.map-wrap .side-panel .btn-box .kkomap{
+    margin-right: 10px;
+background-image: url(/images/common/ico_kkomap.png);
+}
+.map-wrap .side-panel .btn-box .reset{
+    padding-left: 35px;
+    background-size: 20px;
+    background-image: url(/images/common/ico_reset.png);
+}
+
+
+.map-wrap .control-box{
+  z-index: 1;
+}
+.map-wrap .control-box button{
+  position: absolute;
+  left: 20px;
+  background: #E8F3F1;
+  border: 1px solid #18534A;
+}
+.map-wrap .control-box button .icon{
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.map-wrap .control-box button span{
+  font-size: 22px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.map-wrap .control-box .my-location{
+  top: 20px;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+.map-wrap .control-box .my-location .icon{
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  background-image: url(/images/common/ico_compass.png);
+}
+.map-wrap .control-box .btn-zoom{
+  padding: 5px;
+  width: 72px;
+  height: 72px;
+  border-radius: 100px;
+}
+.map-wrap .control-box .btn-zoom .icon{
+  display: block;
+  margin: 0 auto;
+}
+
+.map-wrap .control-box .btn-zoom.in{
+  bottom: 99px;
+}
+.map-wrap .control-box .btn-zoom.out{
+  bottom: 15px;
+}
+.map-wrap .control-box .btn-zoom.in .icon{
+  background-image: url(/images/common/ico_zoom-in.png);
+}
+.map-wrap .control-box .btn-zoom.out .icon{
+  background-image: url(/images/common/ico_zoom-out.png);
+}
+.map-wrap .pin-wrapper{}
+.map-wrap .area{
+  position: absolute;
+  width: 397px;
+  height: 397px;
+  opacity: 0.4;
+  background: #CAE7FF;
+  border: 2px solid #33A3FF;
+  border-radius: 100%;
+  top: 102px;
+  left: 458px;
+  z-index: 1;
+}
+.map-wrap .pin{
+  position: absolute;
+  left: 0;
+  width:  36px;
+  height: 36px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 1;
+  /* border: 1px solid red; */
+}
+.map-wrap .pin.purple{
+  background-image: url(/images/contents/ico_pin-p.svg);
+  top: 301px;
+  left: 515px;
+}
+.map-wrap .pin.red{
+  background-image: url(/images/contents/ico_pin-r.svg);
+  top: 306px;
+  left: 700px;
+}
+.map-wrap .pin.orange{
+  background-image: url(/images/contents/ico_pin-o.svg);
+  top: 214px;
+  left: 734px;
+}
+.map-wrap .pin.dep{
+  width: 42px;
+  height: 55px;
+  background-image: url(/images/contents/ico_pin-dep.svg);
+  background-size: contain;
+  top: 267px;
+  left: 787px;
+}
+.map-wrap .pin.arr{
+  width: 42px;
+  height: 55px;
+  background-image: url(/images/contents/ico_pin-arr.svg);
+  background-size: contain;
+  top: 362px;
+  left: 569px;
+}
+
+@media screen and (max-width: 980px) {
+    .map-wrap{
+        max-height: none;
+    }
+    .map-wrap .map{
+        width: 100%;
+    }
+    .map-wrap .area{
+        width: 307px;
+        height: 307px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .map-wrap .pin.purple {
+        top: 48%;
+        left: 35%;
+    }
+    .map-wrap .pin.orange {
+        top: 40%;
+        left: 58%;
+    }
+    .map-wrap .pin.red {
+        top: 30%;
+        left: 42%;
+    }
+    .map-wrap .pin.dep{
+        top: 20%;
+        left: 70%;
+    }
+    .map-wrap .pin.arr{
+        top: 37%;
+        left: 20%;
+    }
+    .map-wrap .side-panel{
+        top: 295px;
+        bottom: 0;
+        padding-bottom: 20px;
+        width: 100%;
+        height: auto;
+    }
+    .map-wrap .side-panel.wide{
+        width: 100%;
+    }
+    .map-wrap .side-panel ul{
+        height: calc(100% - 106px);
+    }
+    .map-wrap .side-panel .dropdown-box{
+        width: 100%;
+    }
+    .map-wrap .side-panel .dropdown{
+        height: 230px;
+    }
+    .map-wrap .side-panel .btn.srch{
+        display: none;
+    }
+    .map-wrap .side-panel .btn-box{
+        position: static;
+        margin-top: 20px;
+    }
+    .map-wrap .side-panel .btn-box .kkomap{
+        display: none;
+    }
+    .map-wrap .side-panel .btn-toggle{
+        right: 50%;
+        top: 0;
+        transform: translate(50%, -100%);
+        padding: 5px 36px;
+        border-radius: 6px 6px 0 0;
+    }
+    .map-wrap .side-panel .btn-toggle .icon{
+        transform: rotate(90deg);
+    }
+    .map-wrap .side-panel .btn.reg{
+        padding: 5px 26px;
+        font-size: 26px;
+    }
+    .map-wrap .side-panel.close{
+        left: 0;
+        right: 0;
+        top: calc(100% - 130px)
+    }
+    .map-wrap .side-panel.wide.close{
+        top: 100%;
+        left: auto;
+        right: auto;
+    }
+    .map-wrap .side-panel.close .contents.inp-box{
+        display: block;
+    }
+    .map-wrap .side-panel.close .btn-toggle .icon{
+        transform: rotate(-90deg);
+    }
+    .map-wrap .side-panel label, .map-wrap .side-panel .tit{
+        font-size: 30px;
+    }
+    .map-wrap .control-box{
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 20px;
+        display: flex;
+        gap: 10px;
+        width: calc(100% - 40px);
+    }
+
+    .map-wrap .control-box button{
+        position: static;
+        width: auto;
+    }
+    .map-wrap .control-box .my-location{
+        padding: 5px;
+    }
+    .map-wrap .control-box .my-location .icon{
+        margin-right: 0;
+    }
+    .map-wrap .control-box .btn-zoom{
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+    }
+    .map-wrap .control-box .btn-zoom .icon {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .map-wrap .control-box{
+    top: 10px;
+    left:  10px;
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+}
