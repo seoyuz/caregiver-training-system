@@ -1,43 +1,43 @@
 @charset "UTF-8";
 
 @font-face {
-	font-family: "Pretendard";
+	font-family: "PretendardGOV";
 	font-weight: 700;
 	font-display: swap;
-	src: local("PretendardStd ExtraBold"),
-		url("../font/Pretendard-ExtraBold.subset.woff2") format("woff2"),
-		url("../font/Pretendard-ExtraBold.subset.woff") format("woff"),
-		url("../font/Pretendard-ExtraBold.ttf") format("truetype");
+	src: local("PretendardGOV Bold"),
+		url("../font/PretendardGOV-Bold.woff2") format("woff2"),
+		url("../font/PretendardGOV-Bold.woff") format("woff"),
+		url("../font/PretendardGOV-Bold.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: "Pretendard";
+	font-family: "PretendardGOV";
 	font-weight: 600;
 	font-display: swap;
-	src: local("Pretendard Bold"),
-		url("../font/Pretendard-Bold.subset.woff2") format("woff2"),
-		url("../font/Pretendard-Bold.subset.woff") format("woff"),
-		url("../font/Pretendard-Bold.ttf") format("truetype");
+	src: local("PretendardGOV SemiBold"),
+		url("../font/PretendardGOV-SemiBold.woff2") format("woff2"),
+		url("../font/PretendardGOV-SemiBold.woff") format("woff"),
+		url("../font/PretendardGOV-SemiBold.ttf") format("truetype");
 }
-
+/* 
 @font-face {
-	font-family: "Pretendard";
+	font-family: "PretendardGOV";
 	font-weight: 500;
 	font-display: swap;
-	src: local("Pretendard SemiBold"),
-		url("../font/Pretendard-SemiBold.subset.woff2") format("woff2"),
-		url("../font/Pretendard-SemiBold.subset.woff") format("woff"),
-		url("../font/Pretendard-SemiBold.ttf") format("truetype");
-}
+	src: local("PretendardGOV SemiBold"),
+		url("../font/PretendardGOV-SemiBold.subset.woff2") format("woff2"),
+		url("../font/PretendardGOV-SemiBold.subset.woff") format("woff"),
+		url("../font/PretendardGOV-SemiBold.ttf") format("truetype");
+} */
 
 @font-face {
-	font-family: "Pretendard";
+	font-family: "PretendardGOV";
 	font-weight: 400;
 	font-display: swap;
-	src: local("Pretendard Medium"),
-		url("../font/Pretendard-Medium.subset.woff2") format("woff2"),
-		url("../font/Pretendard-Medium.subset.woff") format("woff"),
-		url("../font/Pretendard-Medium.ttf") format("truetype");
+	src: local("PretendardGOV Regular"),
+		url("../font/PretendardGOV-Regular.woff2") format("woff2"),
+		url("../font/PretendardGOV-Regular.woff") format("woff"),
+		url("../font/PretendardGOV-Regular.ttf") format("truetype");
 }
 
 
@@ -77,7 +77,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 }
 
 body {
-	font-family: "Pretendard", "Noto Sans KR", "Nanum Gothic";
+	font-family: "PretendardGOV", "Noto Sans KR", "Nanum Gothic";
 	box-sizing: border-box;
 	color: #333;
 	font-size: 18px;
@@ -94,7 +94,7 @@ body.overflow {
 }
 
 select, input, textarea, button {
-	font-family: "Pretendard", "Noto Sans KR", "Nanum Gothic";
+	font-family: "PretendardGOV", "Noto Sans KR", "Nanum Gothic";
 	font-size: inherit;
 	vertical-align: middle;
 	border: 0;

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const bannerSwiper = new Swiper('.banner-swiper', {
         slidesPerView: 1,
+        loop: true,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -11,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         pagination: {
             el: ".pagination",
-            type: "fraction",
+            clickable: true,
+            // type: "fraction",
         },
         observer: true,	// 추가
         observeParents: true,	// 추가
@@ -21,6 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             slideChangeTransitionEnd: function() {
                 resetTabindex();
+            },
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            1366: {
+                slidesPerView: 1,
             },
         },
     });
