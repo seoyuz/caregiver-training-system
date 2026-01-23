@@ -80,120 +80,274 @@
         <!--............. // header .............-->
         <!--............. main container .............-->
         <div id="container">
-            <div class="inner">
-                <h2>요양보호사 보수교육 기관 찾기</h2>
-                <div class="map-wrap">
-                    <div class="map">
-                        <img src="/images/contents/img_map.png" alt="지도 목업 이미지">
-                    </div>
-                    <div class="side-panel">
-                        <div class="contents inp-box">
-                            <div class="item">
-                                <label for="departure">출발</label>
-                                <div class="dropdown-box">
-                                    <input type="text" id="departure" placeholder="출발지를 입력해주세요." class="inp">
-                                    <ul class="dropdown">
-                                        <li class="select-item">
-                                            <p class="tit">1번 교육원</p>
-                                            <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <a href="tel:1544-8855" class="tel">1544-8855</a>
-                                        </li>
-                                        <li class="select-item">
-                                            <p class="tit">2번 교육원</p>
-                                            <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <a href="tel:1544-8855" class="tel">1544-8855</a>
-                                        </li>
-                                        <li class="select-item">
-                                            <p class="tit">3번 교육원</p>
-                                            <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <a href="tel:1544-8855" class="tel">1544-8855</a>
-                                        </li>
-                                        <li class="select-item">
-                                            <p class="tit">4번 교육원</p>
-                                            <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                            <a href="tel:1544-8855" class="tel">1544-8855</a>
-                                        </li>
-                                    </ul>
+            <div class="map-wrap">
+                <div class="map">
+                    <img src="/images/contents/img_map.png" alt="지도 목업 이미지">
+                </div>
+                <div class="control-box">
+                    <div class="top">
+                        <div class="switch-box">
+                            <button type="button" class="square btn-popup">
+                                <span>지역변경</span>
+                            </button>
+                            <div class="popup active">
+                                <!-- 표출 : active 클래스 O -->
+                                <div class="tit selected-region">
+                                    <span>충청북도</span>
+                                    <span>청주시 흥덕구</span>
+                                    <span>오송읍</span>
                                 </div>
-                                <button type="button" class="btn srch solid">주소찾기</button>
-                            </div>
+                                <ul class="rdo-list">
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo01">
+                                        <label for="rdo01">서울특별시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo02">
+                                        <label for="rdo02">부산광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo03">
+                                        <label for="rdo03">대구광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo04">
+                                        <label for="rdo04">인천광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo05">
+                                        <label for="rdo05">광주광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo06">
+                                        <label for="rdo06">대전광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo07">
+                                        <label for="rdo07">울산광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo08">
+                                        <label for="rdo08">세종특별자치시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo09">
+                                        <label for="rdo09">경기도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo10">
+                                        <label for="rdo10">충청북도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo11">
+                                        <label for="rdo11">충청남도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo12">
+                                        <label for="rdo12">전라남도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo13">
+                                        <label for="rdo13">경상북도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo14">
+                                        <label for="rdo14">경상남도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo15">
+                                        <label for="rdo15">제주특별자치도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo16">
+                                        <label for="rdo16">강원특별자치도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo17">
+                                        <label for="rdo17">전북특별자치도</label>
+                                    </li>
+                                </ul>
+                                <div class="btn-box">
+                                    <button type="button" class="square btn-close">닫기</button>
+                                    <button type="button" class="square btn-apply">적용하기</button>
+                                </div>
+                            </div> 
                         </div>
-                        <div class="contents inp-box">
-                            <div class="item">
-                                <label for="arrival">도착</label>
-                                    <select id="arrival" required>
-                                        <option value="" selected disabled hidden class="placeholder">도 선택</option>
-                                        <option value="">경기도</option>
-                                        <option value="">강원도</option>
-                                        <option value="">충청도</option>
-                                    </select>
-                                    <select id="city" required>
-                                        <option value="" selected disabled hidden class="placeholder">시/군 선택</option>
-                                        <option value="">부천시</option>
-                                        <option value="">광명시</option>
-                                    </select>
-                            </div>
+                        <div class="toggle-box">
+                            <input type="checkbox" id="switchToggle">
+                            <label for="switchToggle" class="toggle">
+                                <i class="switch"></i>
+                                <span>전체기관</span>
+                            </label>
                         </div>
-                        <ul class="contents">
-                            <li>
-                                <p class="tit">1번 교육원</p>
-                                <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                <a href="#none" class="btn-more">자세히 보기</a>
-                            </li>
-                            <li>
-                                <p class="tit">2번 교육원</p>
-                                <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                <a href="#none" class="btn-more">자세히 보기</a>
-                            </li>
-                            <li>
-                                <p class="tit">3번 교육원</p>
-                                <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                <a href="#none" class="btn-more">자세히 보기</a>
-                            </li>
-                            <li>
-                                <p class="tit">4번 교육원</p>
-                                <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                <a href="#none" class="btn-more">자세히 보기</a>
-                            </li>
-                            <li>
-                                <p class="tit">5번 교육원</p>
-                                <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
-                                <a href="#none" class="btn-more">자세히 보기</a>
-                            </li>
-                        </ul>
-                        <button type="button" title="접기" class="btn-toggle">
-                            <i class="icon"></i>
-                        </button>
                     </div>
-                    <div class="control-box">
-                        <button type="button" class="my-location">
-                            <i class="icon"></i>
+                    <div class="bottom">
+                        <button type="button" class="square my-location">
                             <span>내 위치 보기</span>
                         </button>
-                        <button type="button" class="btn-zoom in" title="확대">
-                            <i class="icon"></i>
-                            <span>확대</span>
-                        </button>
-                        <button type="button" class="btn-zoom out" title="축소">
-                            <i class="icon"></i>
-                            <span>축소</span>
-                        </button>
+                        <button type="button" class="btn-zoom in" title="확대"></button>
+                        <button type="button" class="btn-zoom out" title="축소"></button>
                     </div>
-                    <div class="pin-wrapper">
-                        <div class="area"></div>
-                        <button class="pin purple"></button>
-                        <button class="pin orange"></button>
-                        <button class="pin red"></button>
-                        <button class="pin dep" title="출발"></button>
-                        <button class="pin arr" title="도착"></button>
-                    </div>
-
                 </div>
+                <div class="side-panel">
+                    <!-- <div class="contents inp-box">
+                        <div class="item">
+                            <label for="departure">출발</label>
+                            <div class="dropdown-box">
+                                <input type="text" id="departure" placeholder="출발지를 입력해주세요." class="inp">
+                                <ul class="dropdown">
+                                    <li class="select-item">
+                                        <p class="tit">1번 교육원</p>
+                                        <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <a href="tel:1544-8855" class="tel">1544-8855</a>
+                                    </li>
+                                    <li class="select-item">
+                                        <p class="tit">2번 교육원</p>
+                                        <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <a href="tel:1544-8855" class="tel">1544-8855</a>
+                                    </li>
+                                    <li class="select-item">
+                                        <p class="tit">3번 교육원</p>
+                                        <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <a href="tel:1544-8855" class="tel">1544-8855</a>
+                                    </li>
+                                    <li class="select-item">
+                                        <p class="tit">4번 교육원</p>
+                                        <p class="addr new">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <p class="addr old">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                        <a href="tel:1544-8855" class="tel">1544-8855</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="btn srch solid">주소찾기</button>
+                        </div>
+                    </div>
+                    <div class="contents inp-box">
+                        <div class="item">
+                            <label for="arrival">도착</label>
+                                <select id="arrival" required>
+                                    <option value="" selected disabled hidden class="placeholder">도 선택</option>
+                                    <option value="">경기도</option>
+                                    <option value="">강원도</option>
+                                    <option value="">충청도</option>
+                                </select>
+                                <select id="city" required>
+                                    <option value="" selected disabled hidden class="placeholder">시/군 선택</option>
+                                    <option value="">부천시</option>
+                                    <option value="">광명시</option>
+                                </select>
+                        </div>
+                    </div> -->
+                    
+                    <div class="panel-wrap">
+                        <div class="panel-header">
+                            <p class="tit">요양보호사 보수교육 기관</p>
+                            <p class="selected-region">
+                                <span>충청북도</span>
+                                <span>청주시 흥덕구</span>
+                                <span>오송읍</span>
+                            </p>
+                        </div>
+                        <ul class="contents organ-list">
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">피움 요양보호사 교육원<span class="tag">협약</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">미즈요양보호사교육원톡톡<span class="tag">인재원</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">청주요양보호사교육원<span class="tag gray">일반</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">참사랑요양보호사교육원<span class="tag">인재원</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">민들레요양보호사교육원<span class="tag">일반</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">충주요양보호사교육원<span class="tag">협약</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">신세종요양보호사교육원<span class="tag">인재원</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">충주요양보호사교육원<span class="tag">협약</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <div class="addr-box">
+                                    <p class="tit">신세종요양보호사교육원<span class="tag">인재원</span></p>
+                                    <p class="addr">충청북도 청주시 흥덕구 가경로189번길 19-14</p>
+                                </div>
+                                <a href="#none" class="btn-more">
+                                    <span>자세히 보기</span><i class="icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button type="button" title="접기" class="btn-toggle">
+                        <i class="icon"></i>
+                    </button>
+                </div>
+                
+                <div class="pin-wrapper">
+                    <!-- 선택 : active -->
+                    <button class="pin purple active"></button>
+                    <button class="pin gray active"></button>
+                </div>
+
             </div>
+            <!-- </div> -->
         </div>
         <!--............. // main container .............-->
         <!--............. footer .............-->

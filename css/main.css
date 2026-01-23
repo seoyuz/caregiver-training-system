@@ -301,16 +301,16 @@
 }
 .right .control-box .autoplay .play{
     display: none;
-    background-image: url(/images/common/ico_play.png);
+    background-image: url(/images/contents/ico_play.png);
 }
 .right .control-box .autoplay .pause{
-    background-image: url(/images/common/ico_pause.png);
+    background-image: url(/images/contents/ico_pause.png);
 }
 .right .control-box button.btn-prev{
     transform: rotate(180deg);
 }
 .right .control-box .btn-more{
-    background-image: url(/images/common/ico_plus.png);
+    background-image: url(/images/contents/ico_plus.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px 24px;

@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const screenWidth = window.innerWidth;
-        const spanText = document.querySelector(".map-wrap .control-box button span");
 
+        const spanText = document.querySelector(".map-wrap .control-box .my-location span");
         if (screenWidth <= 980) {
             spanText.innerText = "내 위치";
         } else {
@@ -66,6 +66,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // resize 이벤트에 등록
     window.addEventListener('resize', windowResizing);
     windowResizing();
+
+
+
+    // 토글버튼
+    const toggleBox = document.querySelector('.control-box .toggle-box');
+    const btnToggle = toggleBox.querySelector('input[type="checkbox"]');
+    const textEl = toggleBox.querySelector('span'); 
+
+    btnToggle.addEventListener('change', () => {
+        textEl.innerText = btnToggle.checked ? '협약기관' : '전체기관';
+    });
+    
+    // 지역변경 팝업
+    const switchPopup = document.querySelector('.control-box .switch-box');
+    const btnPopup = switchPopup.querySelector('.btn-popup');
+    const PopupBox = switchPopup.querySelector('.popup');
+    const btnClose = PopupBox.querySelector('.btn-close');
+
+    if(switchPopup){
+        btnPopup.addEventListener('click', () => {
+            if(PopupBox.classList.contains('active')){
+                PopupBox.classList.remove('active');
+            } else {
+                PopupBox.classList.add('active');
+            }
+        });
+        btnClose.addEventListener('click', () => {
+            PopupBox.classList.remove('active');
+        });
+    }
 
 
     // 사이드패널
@@ -98,34 +128,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //dropdown
-    const dropdownBox = document.querySelector('.dropdown-box');
-    const dropdown = dropdownBox.querySelector('.dropdown');
-    const dropdownInp = dropdownBox.querySelector('input');
+    // const dropdownBox = document.querySelector('.dropdown-box');
+    // const dropdown = dropdownBox.querySelector('.dropdown');
+    // const dropdownInp = dropdownBox.querySelector('input');
 
-    dropdownInp.addEventListener('click', function(e){
-        e.stopPropagation();
+    // if(dropdownBox){
+    //     dropdownInp.addEventListener('click', function(e){
+    //         e.stopPropagation();
 
-        let isActive = dropdownBox.classList.contains('active');
-        if(!isActive) {
-            dropdownBox.classList.add('active');
-        }
+    //         let isActive = dropdownBox.classList.contains('active');
+    //         if(!isActive) {
+    //             dropdownBox.classList.add('active');
+    //         }
 
-        document.body.addEventListener('click', function (e) {
-            if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
-                dropdownBox.classList.remove('active');
-            }
-        }, { once: true });
-    });
+    //         document.body.addEventListener('click', function (e) {
+    //             if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
+    //                 dropdownBox.classList.remove('active');
+    //             }
+    //         }, { once: true });
+    //     });
 
-    dropdownInp.addEventListener('focus', function(e){
-        e.stopPropagation();
-        dropdownBox.classList.add('active');
-    });
+    //     dropdownInp.addEventListener('focus', function(e){
+    //         e.stopPropagation();
+    //         dropdownBox.classList.add('active');
+    //     });
 
-    dropdownBox.addEventListener('focusout', function(e){
-        if (!dropdownBox.contains(e.relatedTarget)) {
-            dropdownBox.classList.remove('active');
-        }
-    });
+    //     dropdownBox.addEventListener('focusout', function(e){
+    //         if (!dropdownBox.contains(e.relatedTarget)) {
+    //             dropdownBox.classList.remove('active');
+    //         }
+    //     });
+    // }
 
 });
