@@ -100,6 +100,7 @@ select, input, textarea, button {
 	border: 0;
 	border-radius: 0;
 	font-weight: 500;
+	color: #1E2124;
 }
 
 button {

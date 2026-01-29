@@ -128,36 +128,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //dropdown
-    // const dropdownBox = document.querySelector('.dropdown-box');
-    // const dropdown = dropdownBox.querySelector('.dropdown');
-    // const dropdownInp = dropdownBox.querySelector('input');
+    const dropdownBox = document.querySelector('.dropdown-box');
+    const dropdown = dropdownBox.querySelector('.dropdown');
+    const dropdownInp = dropdownBox.querySelector('input');
 
-    // if(dropdownBox){
-    //     dropdownInp.addEventListener('click', function(e){
-    //         e.stopPropagation();
+    if(dropdownBox){
+        dropdownInp.addEventListener('click', function(e){
+            e.stopPropagation();
 
-    //         let isActive = dropdownBox.classList.contains('active');
-    //         if(!isActive) {
-    //             dropdownBox.classList.add('active');
-    //         }
+            let isActive = dropdownBox.classList.contains('active');
+            if(!isActive) {
+                dropdownBox.classList.add('active');
+            }
 
-    //         document.body.addEventListener('click', function (e) {
-    //             if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
-    //                 dropdownBox.classList.remove('active');
-    //             }
-    //         }, { once: true });
-    //     });
+            document.body.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
+                    dropdownBox.classList.remove('active');
+                }
+            }, { once: true });
+        });
 
-    //     dropdownInp.addEventListener('focus', function(e){
-    //         e.stopPropagation();
-    //         dropdownBox.classList.add('active');
-    //     });
+        dropdownInp.addEventListener('focus', function(e){
+            e.stopPropagation();
+            dropdownBox.classList.add('active');
+        });
 
-    //     dropdownBox.addEventListener('focusout', function(e){
-    //         if (!dropdownBox.contains(e.relatedTarget)) {
-    //             dropdownBox.classList.remove('active');
-    //         }
-    //     });
-    // }
+        dropdownBox.addEventListener('focusout', function(e){
+            if (!dropdownBox.contains(e.relatedTarget)) {
+                dropdownBox.classList.remove('active');
+            }
+        });
+    }
 
 });

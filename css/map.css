@@ -15,12 +15,8 @@
 /* map */
 .map-wrap{
     position: relative;
-    /* margin-top: 10px; */
     width: 100%;
     overflow: hidden;
-    /* border: 4px solid #18534A; */
-    /* max-width: none; */
-    /* max-height: 630px; */
     height: 100%;
     max-height: calc(100vh - 126px - 100px);
 }
@@ -48,68 +44,30 @@
     border-left: 1px solid #FFB86B;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     transition: .3s ease;
     box-shadow: -4px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .map-wrap .side-panel .panel-wrap{
     display: flex;
     flex-direction: column;
+    gap: 16px;
     height: 100%;
 }
-
-.map-wrap .side-panel .item{
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
+.tit .tag{
+    display: inline-block;
+    padding: 2px 7px;
+    margin-left: 6px;
+    height: 24px;
+    font-size: 15px;
+    vertical-align: middle;
+    color: #5100BA;
+    border: 1px solid #5100BA;
+    border-radius: 4px;
 }
-.map-wrap .side-panel .dropdown-box{
-    position: relative;
-    display: block;    
-}
-.map-wrap .side-panel .inp{
-    width: 100%;
-}
-.map-wrap .side-panel .dropdown{
-    display: none;
-    position: absolute;
-    top: calc(100% + 5px);
-    width: 100%;
-    height: 530px;
-    background-color: #FFFFFF;
-    border: 1px solid #000;
-    border-radius: 6px;
-    overflow: auto;
-    box-shadow: none;
-}
-.map-wrap .side-panel .dropdown-box.active .dropdown{
-    display: block;
-}
-.map-wrap .side-panel .dropdown .select-item{
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px 0px #0000001A;
-    font-size: 18px;
-}
-.map-wrap .side-panel .dropdown .select-item .tit{
-    font-size: 22px;
-    margin-bottom: 6px;
-}
-.map-wrap .side-panel .dropdown .select-item .addr{
-    font-weight: 400;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.map-wrap .side-panel .dropdown .select-item .addr.new{font-size: 22px;}
-.map-wrap .side-panel .dropdown .select-item .addr.old{font-size: 18px; color: #666;}
-.map-wrap .side-panel .dropdown .select-item .tel{
-    display: block;
-    color: #007461;
-    text-align: left;
+.tit .tag.gray{
+    border-color: #58616A;
+    color: #464C53;
 }
 
 .map-wrap .side-panel .btn{
@@ -118,11 +76,6 @@
     min-width: 90px;
     height: 38px;
     box-sizing: border-box;
-}
-.map-wrap .side-panel .btn.solid{
-    background-color: #007461;
-    border-radius: 10px;
-    color: #FFFFFF;
 }
 .map-wrap .side-panel .btn.reg{
     margin: 20px auto 0;
@@ -162,7 +115,12 @@
     width: 24px;
     height: 24px;
     background-image: url('/images/common/ico_drop.png');
-    background-size: cover;
+    background-size: 24px;
+    background-position: center;
+    transition: .3s ease;
+}
+.map-wrap .side-panel .btn-toggle:hover .icon{
+    background-size: 27px;
 }
 .map-wrap .side-panel.close{
     right: auto;
@@ -175,29 +133,308 @@
 .map-wrap .side-panel.close .btn-toggle .icon{
     transform: rotate(180deg);
 }
-.map-wrap .side-panel ul{
+
+/* 보수교육기관 목록 */
+.map-wrap .side-panel .organ-list{
     padding-right: 8px;
-    margin-top: 16px;
+    /* margin-top: 16px; */
     height: 502px;
     overflow: auto;
     height: calc(100%);
 }
-
-.map-wrap .side-panel ul li{
+.map-wrap .side-panel .organ-list .item{
     display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
     padding: 10px;
+    width: 100%;
     background: #FFF9E8;
     border: 1px solid #FFA038;
     border-radius: 10px;
-    text-align: center;
 }
-.map-wrap .side-panel ul li + li{
+.map-wrap .side-panel .organ-list .item + .item{
     margin-top: 10px;
 }
-.map-wrap .side-panel ul li p{
+.map-wrap .side-panel .organ-list .item p{
     text-align: left;
 }
+/* 보수교육기관 목록 */
+
+/* 보수교육기관 상세 */
+.map-wrap .side-panel .organ-detail{
+    /* padding-right: 8px; */
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.map-wrap .side-panel .organ-detail .contents + .contents{
+    margin-top: 24px;
+}
+.map-wrap .side-panel .organ-detail .tit{
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 600;
+
+    position: relative;
+}
+.map-wrap .side-panel .organ-detail .tit .wrn-txt{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 400;
+    color: #BD2C0F;
+}
+
+/* 테이블 */
+.map-wrap .side-panel .organ-detail .table{
+
+}
+.map-wrap .side-panel .organ-detail .tb-header{
+    /* display: flex; */
+    width: 100%;
+    background-color: #FFA038;
+    border-radius: 10px;
+}
+.map-wrap .side-panel .organ-detail .th{
+    padding: 7px;
+    /* width: 100%; */
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+}
+.map-wrap .side-panel .organ-detail .th + .th{
+    border-left: 1px solid #FFF;
+}
+.map-wrap .side-panel .organ-detail .tb-body{
+    margin-top: 6px;
+    background-color: #FFF9E8;
+}
+.map-wrap .side-panel .organ-detail .tr + .tr{
+    border-top: 1px solid #FFF;
+}
+.map-wrap .side-panel .organ-detail .td{
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+}
+.map-wrap .side-panel .organ-detail .td + .td{
+    border-left: 1px solid #FFF;
+}
+.map-wrap .side-panel .organ-detail .td br{
+    display: none;
+}
+.map-wrap .side-panel .organ-detail .dot{
+    position: relative;
+    padding-left: 20px;
+    word-break: keep-all;
+}
+.map-wrap .side-panel .organ-detail .dot::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    background-color: #DDDDDD;
+}
+.map-wrap .side-panel .organ-detail .dot.green::before{
+    background-color: #4BD663;
+}
+.map-wrap .side-panel .organ-detail table .btn-srch{
+    display: inline-block;
+    padding: 4px;
+    min-width: max-content;
+    border: 1px solid #58616A;
+    border-radius: 6px;
+    background-color: #FFF;
+    text-align: center;
+    transition: .3s ease;
+}
+.map-wrap .side-panel .organ-detail .btn-srch:hover{
+    background-color: #F4F5F6;
+}
+.map-wrap .side-panel .organ-detail .btn-srch:active{
+    background-color: #E6E8EA;
+}
+.map-wrap .side-panel .organ-detail .btn-srch .icon{
+    display: none;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background: url('/images/common/ico_arrow-b.png')no-repeat center;
+    background-size: cover;
+}
+
+.map-wrap .side-panel .organ-detail .last{ }
+.map-wrap .organ-detail .inp-box .item{
+    display: flex;
+    gap: 10px;
+}
+.map-wrap .organ-detail .dropdown-box{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.map-wrap .organ-detail .inp{
+    width: 100%;
+    font-size: 15px;
+}
+.map-wrap .organ-detail .dropdown{
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    padding: 10px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #58616A;
+    border-radius: 6px;
+    box-shadow: none;
+    z-index: 1;
+}
+.map-wrap .organ-detail .dropdown-box.active .dropdown{
+    display: block;
+}
+.map-wrap .organ-detail .dropdown ul{
+    padding-right: 8px;
+    height: 250px;
+    overflow: auto;
+}
+.map-wrap .organ-detail .dropdown-box + .btn-srch{
+    padding: 0 10px;
+    padding-right: 32px;
+    min-width: 96px;
+    font-size: 15px;
+    color: #131416;
+    background: url('/images/common/ico_arrow-b.png') no-repeat right 10px center;
+    background-size: 16px;
+    border: 1px solid #58616A;
+    border-radius: 6px;
+}
+.map-wrap .organ-detail .dropdown .select-item{}
+
+.map-wrap .organ-detail .dropdown .select-item + .select-item{
+    margin-top: 10px;
+}
+.map-wrap .organ-detail .dropdown .select-item button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFF9E8;
+    border: 1px solid #FFA038;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+}
+.map-wrap .organ-detail .dropdown .select-item .tit{
+    margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.map-wrap .organ-detail .dropdown .select-item .addr{
+    font-size: 18px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.map-wrap .organ-detail .btn-direction{
+    padding: 12px 0;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 19px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #D71921;
+    border-radius: 6px;
+    transition: .3s ease;
+}
+.map-wrap .organ-detail .btn-direction:hover{
+    background-color: #C20F16;
+}
+.map-wrap .organ-detail .btn-direction span{
+    vertical-align: middle;
+}
+.map-wrap .organ-detail .btn-direction .icon{
+    display: inline-block;
+    margin-left: 4px;
+    width: 24px;
+    height: 24px;
+    background: url('/images/contents/ico_roadmap.png')no-repeat center;
+    vertical-align: middle;
+}
+.map-wrap .organ-detail + .btn-back{
+    padding: 6px 0;
+    width: 100%;
+    background-color: #767676;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s ease;
+}
+.map-wrap .organ-detail + .btn-back:hover{
+    background-color: #696969;
+}
+.map-wrap .organ-detail + .btn-back .icon{
+    display: inline-block;
+    margin-right: 4px;
+    width: 24px;
+    height: 24px;
+    background: url('/images/common/ico_shortcut-w.png')no-repeat center;
+    vertical-align: middle;
+}
+.map-wrap .organ-detail + .btn-back span{
+    font-size: 19px;
+    font-weight: 700;
+    color: #FFFFFF;
+    vertical-align: middle;
+}
+
+.map-wrap .organ-detail .direction-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.map-wrap .organ-detail .direction p{
+    display: inline-block;
+}
+.map-wrap .organ-detail .direction p.time{
+    padding-left: 30px;
+    background: url(/images/common/ico_clock.png) no-repeat left center;
+    font-size: 24px;
+    font-weight: 600;
+}
+.map-wrap .organ-detail .direction p.distance{
+    font-size: 18px;
+    font-weight: 400;
+}
+.map-wrap .organ-detail .direction-box .btn{
+    padding-right: 26px;
+    height: auto;
+    font-size: 14px;
+    background: url('/images/common/ico_newin-w.png')no-repeat right 8px center;
+    background-size: 14px;
+    background-color: #767676;
+    border-radius: 6px;
+    color: #FFF;
+    border: 0;
+}
+.map-wrap .organ-detail .direction-box a:hover{
+    background-color: #696969;
+}
+
+/* 보수교육기관 상세 */
+
 .map-wrap .side-panel select{
     width: 100%;
 }
@@ -219,7 +456,7 @@
     font-size: 17px;
     font-weight: 600;
     vertical-align: middle;
-}
+}                                                                          
 .map-wrap .side-panel a.btn-more .icon{
     display: inline-block;
     margin-left: 4px;
@@ -232,7 +469,7 @@
 .map-wrap .side-panel .tit{
     font-size: 28px;
     font-weight: 700;
-    word-break: keep-all;
+    /* word-break: keep-all; */
 }
 .map-wrap .side-panel .panel-header .tit + p{
     padding-bottom: 10px;
@@ -255,21 +492,6 @@
     text-align: left;
     vertical-align: middle;
 }
-.map-wrap .side-panel .addr-box .tit .tag{
-    display: inline-block;
-    padding: 2px 7px;
-    margin-left: 6px;
-    height: 24px;
-    font-size: 15px;
-    vertical-align: middle;
-    color: #5100BA;
-    border: 1px solid #5100BA;
-    border-radius: 4px;
-}
-.map-wrap .side-panel .addr-box .tit .tag.gray{
-    border-color: #58616A;
-    color: #464C53;
-}
 .map-wrap .side-panel .addr-box .addr{
     /* width: 330px; */
     color: #464C53;
@@ -284,16 +506,14 @@
 /* 테이블 */
 .map-wrap .side-panel table{
     width: 100%;
-    border: 1px solid #007461;
-    border-left: 0;
-    border-right: 0;
 }
 .map-wrap .side-panel table thead{
-    height: 60px;
+    width: 100%;
     background-color: #ddd;
+    border-radius: 10px;
 }
 .map-wrap .side-panel table tr{
-    height: 57px;
+    width: 100%;
 }
 .map-wrap .side-panel table tr + tr{
     border-top: 1px solid #EEEEEE;
@@ -326,24 +546,8 @@
     font-size: 20px;
     font-weight: 700;
 }
-.map-wrap .side-panel .tit + p.time,
-.map-wrap .side-panel p.time + p.distance{
-    margin-top: 10px;
-}
-.map-wrap .side-panel p.time,
-.map-wrap .side-panel p.distance{
-    padding-left: 30px;
-    font-size: 22px;
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-}
-.map-wrap .side-panel p.time{
-    background-image: url(/images/common/ico_clock.png);
-}
-.map-wrap .side-panel p.distance{
-    background-image: url(/images/common/ico_road.png);
-}
+/* 테이블 */
+
 .map-wrap .side-panel span.bold{
     font-weight: 600;
 }
@@ -402,7 +606,6 @@
 }
 .map-wrap .switch-box .popup{
     display: none;
-
     position: absolute;
     left: 0;
     top: calc(100% + 10px);
@@ -413,16 +616,20 @@
     background-color: #FFFFFF;
     border: 1px solid #999999;
     border-radius: 5px;
-    z-index: 2;
+    z-index: 3;
 }
 .map-wrap .switch-box .popup .tit{
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
     font-size: 0;
+    border-bottom: 1px solid #CCCCCC;
 }
 .map-wrap .switch-box .popup .tit span{
+    display: inline-block;
     font-size: 20px;
     font-weight: 600;
     color: #333333;
+    word-break: keep-all;
 }
 
 .map-wrap .selected-region span + span::before{
@@ -435,9 +642,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px 26px;
-    padding-top: 16px;
-    /* margin: 0 -13px; */
-    border-top: 1px solid #CCCCCC;
 }
 .map-wrap .switch-box .rdo{
     width: 100%;
@@ -553,7 +757,6 @@
     border: 1px solid #FFFFFF;
     border-radius: 100%;
     transition: .3s ease;
-    /* box-shadow: 4px 4px 4px 0px #0000004D; */
     box-shadow: 6px 6px 14px 0px #00000033 inset;
 }
 .map-wrap .control-box #switchToggle:checked + .toggle{
@@ -562,10 +765,7 @@
     background-color: #5100BA;
 }
 .map-wrap .control-box #switchToggle:checked + .toggle .switch{
-    /* left: auto; */
     transform: translate(134px, -50%);
-    /* right: 6px; */
-    /* background-color: red; */
 }
 .map-wrap .control-box #switchToggle:checked +  .toggle span{
     padding-left: 34px;
@@ -585,7 +785,6 @@
 .map-wrap .control-box .bottom{position: absolute; bottom: 0px;}
 
 .map-wrap .control-box button{
-    /* position: absolute; */
     height: 46px;
     background-color: #FFFFFF;
     border: 1px solid #999999;
@@ -633,8 +832,6 @@
     padding: 5px;
     margin-left: 10px;
     width: 46px;
-    /* width: 72px;
-    height: 72px; */
 }
 .map-wrap .control-box .btn-zoom .icon{
     display: block;
@@ -677,8 +874,6 @@
     box-sizing: border-box;
 }
 .map-wrap .pin.purple{
-    /* width: 38px;
-    height: 42px; */
     width: 159px;
     height: 96px;
     background-image: url(/images/contents/ico_pin-p.svg);
@@ -686,14 +881,9 @@
     left: 515px;
 }
 .map-wrap .pin.purple.active{
-    /* width: 159px;
-    height: 96px; */
     background-image: url(/images/contents/ico_pin-p02.svg);
-    /* transform: translate(-50%, -50%); */
 }
 .map-wrap .pin.gray{
-    /* width: 22px;
-    height: 28px; */
     width: 161px;
     height: 71px;
     background-image: url(/images/contents/ico_pin-g.svg);
@@ -701,17 +891,122 @@
     left: 700px;
 }
 .map-wrap .pin.gray.active{
-    /* width: 161px;
-    height: 71px; */
     background-image: url(/images/contents/ico_pin-g02.svg);
 }
 .map-wrap .pin span{
     font-size: 18px;
     color: #000;
-    /* -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #FFFFFF; */
     text-shadow: -2px 0px #FFFFFF, 0px 2px #FFFFFF, 2px 0px #FFFFFF, 0px -2px #FFFFFF;
 }
+
+/* 교육상세정보 팝업 */
+.label-list{
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid #DDDDDD;
+}
+.label-list .item{
+    position: relative;
+    border: 1px solid #DDDDDD;
+    border-radius: 50px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.label-list .item + .item{
+    margin-top: 12px;
+}
+.label-list .item .txt{
+    padding: 9px;
+    padding-left: 150px;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: left;
+    /* border-radius: 50px; */
+}
+.label-list .item .label{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    width: 142px;
+    background-color: #444444;
+    border: 0;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.label-list.last{
+    padding: 16px 0;
+    margin-top: 16px;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+}
+.label-list.last .item{
+    border-radius: 24px;
+}
+.label-list.last .item .label{
+    height: auto;
+    border-radius: 24px;
+}
+.label-list.last .item .link-wrap{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    padding-left: 150px;
+    font-size: 18px;
+}
+.label-list.last .item .link-wrap .link, .label-list.last .item .link-wrap .tel{
+    text-align: center;
+}
+.label-list.last .item .link-wrap p{
+    display: inline-block;
+    padding-left: 26px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+}
+.label-list.last .item .link-wrap .link p{
+    background-image: url('/images/contents/ico_edit.png');
+}
+.label-list.last .item .link-wrap .tel p{
+    background-image: url('/images/contents/ico_call.png');
+}
+
+.label-list.last .item .link-wrap a{
+    display: block;
+    padding: 4px 10px;
+    margin-top: 6px;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    font-size: 15px;
+}
+.label-list.last .item .link-wrap .link a{
+    border-color: #256EF4;
+    background-color: #ECF2FE;
+    color: #0B50D0;
+}
+.label-list.last .item .link-wrap .link span{
+    vertical-align: middle;
+}
+.label-list.last .item .link-wrap .link i{
+    display: inline-block;          
+    margin-left: 2px;
+    width: 16px;
+    height: 16px;
+    background: url('/images/common/ico_newin-b.png')no-repeat center;
+    vertical-align: middle;
+}
+
+
 
 @media screen and (max-width: 980px) {
     .map-wrap{
@@ -735,21 +1030,6 @@
         position: static;
         width: auto;
     }
-    /* .map-wrap .control-box .my-location{
-        padding: 5px;
-    }
-    .map-wrap .control-box .my-location .icon{
-        margin-right: 0;
-    } */
-    /* .map-wrap .control-box .btn-zoom{
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-    }
-    .map-wrap .control-box .btn-zoom .icon {
-        display: inline-block;
-    } */
-
     .map-wrap .control-box .top .switch-box{
         position: static;
     }
@@ -776,6 +1056,9 @@
         width: 100%;
         height: auto;
         box-shadow: -2px -2px 2px 0px rgba(0, 0, 0, 0.25);
+    }
+    .map-wrap .side-panel .organ-detail{
+        padding-right: 8px;
     }
     .map-wrap .side-panel .dropdown-box{
         width: 100%;
@@ -827,6 +1110,21 @@
 
     .map-wrap .pin.purple{ left: 14%; top: 22%; }
     .map-wrap .pin.gray{ left: auto; right: 5%; top: 56%; }
+
+    .map-wrap .organ-detail .dropdown{
+        height: auto;
+    }
+
+    .map-wrap .side-panel .organ-detail table .btn-srch{
+        min-width: auto;
+        width: auto;
+    }
+    .map-wrap .side-panel .organ-detail table .btn-srch span{
+        display: none;
+    }
+    .map-wrap .side-panel .organ-detail table .btn-srch .icon{
+        display: inline-block;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -834,10 +1132,14 @@
     .map-wrap .switch-box .rdo-list{
         overflow: auto;
         padding-right: 8px;
-        background-color: gray;
+        height: 350px;
     }
     .map-wrap .switch-box .rdo{
         max-width: calc(100% / 2 - 5px);
+    }
+    .map-wrap .switch-box .popup button{
+        padding: 0 25px;
+        height: 50px;
     }
 
     .map-wrap .control-box{
@@ -911,5 +1213,68 @@
     }
     .map-wrap .side-panel a.btn-more .icon{
         margin-left: 0;
+    }
+
+    .map-wrap .side-panel .organ-detail .th{
+        font-size: 14px;
+    }
+    
+    .map-wrap .organ-detail .direction-box{
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .map-wrap .organ-detail .direction{
+        width: 100%;
+        text-align: left;
+    }
+}
+@media screen and (max-width : 500px) {
+    .label-list{
+        padding-top: 0;
+        margin-top: 0;
+        border-top: 0;
+    }
+    .label-list .item{
+        border-radius: 24px;
+    }
+    .label-list .item .label{
+        right: 0;
+        bottom: auto;
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+    .label-list .item .txt{
+        padding: 10px;
+        padding-top: 50px;
+        border-radius: 18px;
+        text-align: center;
+    }
+
+    .label-list.last .item .link-wrap{
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 80px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .map-wrap .side-panel .organ-detail .tit .wrn-txt{
+        position: static;
+        margin-top: 4px;
+        transform: none;
+    }
+
+    .map-wrap .side-panel .organ-detail .dot{
+        padding: 0;
+    }
+    .map-wrap .side-panel .organ-detail .dot::before{
+        position: static;
+        display: block;
+        margin: 0 auto 4px;
+        transform: none;
+    }
+    .map-wrap .side-panel .organ-detail .td br{
+        display: block;
     }
 }
