@@ -73,20 +73,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 토글버튼
     const toggleBox = document.querySelector('.control-box .toggle-box');
-    const btnToggle = toggleBox.querySelector('input[type="checkbox"]');
-    const textEl = toggleBox.querySelector('span'); 
 
-    btnToggle.addEventListener('change', () => {
-        textEl.innerText = btnToggle.checked ? '협약기관' : '전체기관';
-    });
+    if (toggleBox) {
+        const btnToggle = toggleBox.querySelector('input[type="checkbox"]');
+        const textEl = toggleBox.querySelector('span');
+
+        btnToggle.addEventListener('change', () => {
+            textEl.innerText = btnToggle.checked ? '협약기관' : '전체기관';
+        });
+    }
+
     
     // 지역변경 팝업
     const switchPopup = document.querySelector('.control-box .switch-box');
-    const btnPopup = switchPopup.querySelector('.btn-popup');
-    const PopupBox = switchPopup.querySelector('.popup');
-    const btnClose = PopupBox.querySelector('.btn-close');
 
     if(switchPopup){
+        const btnPopup = switchPopup.querySelector('.btn-popup');
+        const PopupBox = switchPopup.querySelector('.popup');
+        const btnClose = PopupBox.querySelector('.btn-close');
+
         btnPopup.addEventListener('click', () => {
             if(PopupBox.classList.contains('active')){
                 PopupBox.classList.remove('active');
@@ -136,37 +141,38 @@ document.addEventListener('DOMContentLoaded', function() {
     //dropdown
     // const dropdownBox = document.querySelector('.dropdown-box');
 
-    if (dropdownBox) { 
-        // const dropdown = dropdownBox.querySelector('.dropdown');
-        // const dropdownInp = dropdownBox.querySelector('input');
+    // if (dropdownBox) { 
+    //     const dropdown = dropdownBox.querySelector('.dropdown');
+    //     const dropdownInp = dropdownBox.querySelector('input');
+    // }
         
     // if(dropdownBox){
-    //         dropdownInp.addEventListener('click', function(e){
-    //             e.stopPropagation();
+    //     dropdownInp.addEventListener('click', function(e){
+    //         e.stopPropagation();
 
-    //             let isActive = dropdownBox.classList.contains('active');
-    //             if(!isActive) {
-    //                 dropdownBox.classList.add('active');
-    //             }
-
-    //             document.body.addEventListener('click', function (e) {
-    //                 if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
-    //                     dropdownBox.classList.remove('active');
-    //                 }
-    //             }, { once: true });
-    //         });
-
-    //         dropdownInp.addEventListener('focus', function(e){
-    //             e.stopPropagation();
+    //         let isActive = dropdownBox.classList.contains('active');
+    //         if(!isActive) {
     //             dropdownBox.classList.add('active');
-    //         });
+    //         }
 
-        //     dropdownBox.addEventListener('focusout', function(e){
-        //         if (!dropdownBox.contains(e.relatedTarget)) {
-        //             dropdownBox.classList.remove('active');
-        //         }
-        //     });
-    }
+    //         document.body.addEventListener('click', function (e) {
+    //             if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
+    //                 dropdownBox.classList.remove('active');
+    //             }
+    //         }, { once: true });
+    //     });
+
+    //     dropdownInp.addEventListener('focus', function(e){
+    //         e.stopPropagation();
+    //         dropdownBox.classList.add('active');
+    //     });
+
+    //     dropdownBox.addEventListener('focusout', function(e){
+    //         if (!dropdownBox.contains(e.relatedTarget)) {
+    //             dropdownBox.classList.remove('active');
+    //         }
+    //     });
+    // }
 
 
 
