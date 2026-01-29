@@ -56,10 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const screenWidth = window.innerWidth;
 
         const spanText = document.querySelector(".map-wrap .control-box .my-location span");
-        if (screenWidth <= 980) {
-            spanText.innerText = "내 위치";
-        } else {
-            spanText.innerText = "내 위치 보기";
+        if (spanText) {
+            if (screenWidth <= 980) {
+                spanText.innerText = "내 위치";
+            } else {
+                spanText.innerText = "내 위치 보기";
+            }
         }
     }
 
@@ -100,64 +102,91 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 사이드패널
     const sidePanel = document.querySelector('.map-wrap .side-panel');
-    const toggleButton =  sidePanel.querySelector('.btn-toggle');
+    if (sidePanel) {
+        const toggleButton =  sidePanel.querySelector('.btn-toggle');
 
-    toggleButton.addEventListener('click', function() {
-        if(body.classList.contains('pc')) {
+        if(toggleButton) {
+            toggleButton.addEventListener('click', function() {
+                if(body.classList.contains('pc')) {
 
-            if (sidePanel.classList.contains('close')) {
-                sidePanel.classList.remove('close');
-                toggleButton.setAttribute('title', '접기');
-            } else {
-                sidePanel.classList.add('close');
-                toggleButton.setAttribute('title', '열기');
-            }
+                    if (sidePanel.classList.contains('close')) {
+                        sidePanel.classList.remove('close');
+                        toggleButton.setAttribute('title', '접기');
+                    } else {
+                        sidePanel.classList.add('close');
+                        toggleButton.setAttribute('title', '열기');
+                    }
 
-        } else{
+                } else{
 
-            if (sidePanel.classList.contains('close')) {
-                sidePanel.classList.remove('close');
-                toggleButton.setAttribute('title', '접기');
+                    if (sidePanel.classList.contains('close')) {
+                        sidePanel.classList.remove('close');
+                        toggleButton.setAttribute('title', '접기');
 
-            } else {
-                sidePanel.classList.add('close');
-                toggleButton.setAttribute('title', '열기');
-            }
+                    } else {
+                        sidePanel.classList.add('close');
+                        toggleButton.setAttribute('title', '열기');
+                    }
 
+                }
+            });
         }
-    });
+    }
 
     //dropdown
     // const dropdownBox = document.querySelector('.dropdown-box');
-    // const dropdown = dropdownBox.querySelector('.dropdown');
-    // const dropdownInp = dropdownBox.querySelector('input');
 
+    if (dropdownBox) { 
+        // const dropdown = dropdownBox.querySelector('.dropdown');
+        // const dropdownInp = dropdownBox.querySelector('input');
+        
     // if(dropdownBox){
-    //     dropdownInp.addEventListener('click', function(e){
-    //         e.stopPropagation();
+    //         dropdownInp.addEventListener('click', function(e){
+    //             e.stopPropagation();
 
-    //         let isActive = dropdownBox.classList.contains('active');
-    //         if(!isActive) {
-    //             dropdownBox.classList.add('active');
-    //         }
-
-    //         document.body.addEventListener('click', function (e) {
-    //             if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
-    //                 dropdownBox.classList.remove('active');
+    //             let isActive = dropdownBox.classList.contains('active');
+    //             if(!isActive) {
+    //                 dropdownBox.classList.add('active');
     //             }
-    //         }, { once: true });
-    //     });
 
-    //     dropdownInp.addEventListener('focus', function(e){
-    //         e.stopPropagation();
-    //         dropdownBox.classList.add('active');
-    //     });
+    //             document.body.addEventListener('click', function (e) {
+    //                 if (!dropdown.contains(e.target) && !dropdownInp.contains(e.target)) {
+    //                     dropdownBox.classList.remove('active');
+    //                 }
+    //             }, { once: true });
+    //         });
 
-    //     dropdownBox.addEventListener('focusout', function(e){
-    //         if (!dropdownBox.contains(e.relatedTarget)) {
-    //             dropdownBox.classList.remove('active');
-    //         }
-    //     });
-    // }
+    //         dropdownInp.addEventListener('focus', function(e){
+    //             e.stopPropagation();
+    //             dropdownBox.classList.add('active');
+    //         });
+
+        //     dropdownBox.addEventListener('focusout', function(e){
+        //         if (!dropdownBox.contains(e.relatedTarget)) {
+        //             dropdownBox.classList.remove('active');
+        //         }
+        //     });
+    }
+
+
+
+
+    /* faq 자주찾는 질문 */
+    const faqQuestions = document.querySelectorAll('.faq .question');
+    if(faqQuestions) {
+        faqQuestions.forEach(item => {
+            item.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+
+                if ( isOpen ) {
+                    item.classList.remove('active');
+                    item.querySelector('.title').setAttribute('title', '답변열기');
+                } else {
+                    item.classList.add('active');
+                    item.querySelector('.title').setAttribute('title', '답변닫기');
+                }
+            });
+        });
+    }    // }
 
 });

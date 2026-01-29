@@ -1,275 +1,91 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="format-detection" content="telephone=no, address=no, email=no">
-        <link rel="shortcut icon" href="/images/common/favicon.ico">
-        <link rel="stylesheet" href="/resources/asp/user/css/reset.css">
-        <link rel="stylesheet" href="/resources/asp/user/css/common.css">
-        <link rel="stylesheet" href="/resources/asp/user/css/style.css">
-        <link rel="stylesheet" href="/resources/asp/user/css/jquery-ui.css">
-        <script src="/resources/asp/user/js/jquery-1.12.4.min.js"></script>
-        <script src="/resources/asp/user/js/jquery-ui.min.js"></script>
-        <script src="/resources/asp/user/js/slick.js"></script>
-        <script src="/resources/asp/user/js/ui.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KOHI 요양보호사보수교육 기관 찾기</title>
+    <link rel="shortcut icon" href="/images/common/favicon.ico">
 
+    <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/common.css">
+    <link type="text/css" rel="stylesheet" href="/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="/css/map.css">
 
-        <link rel="stylesheet" type="text/css" href="/resources/libs/fancybox-2.1.5/css/jquery.fancybox.css">
-        <script src="/resources/libs/fancybox-2.1.5/js/jquery.fancybox.js"></script>
-        <script src="/resources/openworks4/js/openworks.modal.js"></script>
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
 
-        
-        
-        <script src="https://edu.kohi.or.kr/resources/libs/form-3.51.0/jquery.form.js"></script>
-        <script src="/resources/netfunnelApi/js/netfunnel.js"></script>
-        <script src="/resources/openworks4/js/openworks.form.js"></script>
-        <script src="/resources/openworks4/js/openworks.message.js"></script>
-
-        <script src="/component/js/ND_globalConfig.do" ></script>
-        <script src="/component/js/ND_massageConfig.do" ></script>
-
-        
-    <script src="/resources/libs/js-cookie-1.5.1/js.cookie.js"></script>
-<script src="/component/popup/ND_popupConfig.do"></script>
-    <script src="/resources/openworks4/js/openworks.form.js"></script>
-    <script src="/resources/openworks4/js/validate/openworks.validate.js"></script>
-    
-        <script src="/resources/libs/form-3.51.0/jquery.form.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="/resources/openworks/spi/jquery/validate/jquery.validate.css"> -->
-    <script src="/resources/libs/validation-1.13.1/jquery.validate.js"></script>
-<script src="/resources/libs/validation-1.13.1/additional-methods.js"></script>
-
-<!--                     <script src="/resources/openworks/spi/jquery/validate/jquery.validate.settings.js"></script> -->
-<!--                     <script src="/resources/openworks/spi/jquery/validate/jquery.validate.messages.js"></script> -->
-    
-        
-
-
-
-<script  >
-    //<![CDATA[
-    var btnIndex = 0;
-
-    $(document).ready(function() {
-        /* 도로명주소팝업 호출 */
-        $(".adresPopBtn").click(function() {
-            var thisObj = $(this).get(0);
-            $(".adresPopBtn").each(function(idx){
-                var eachObj = $(this).get(0);
-                if(eachObj === thisObj){
-                    btnIndex = idx;
-                }
-            });
-            opAdresPopup();
-        });
-    });
-    
-    function opAdresPopup(){
-        // 주소검색을 수행할 팝업 페이지를 호출합니다.
-        // 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-        window.open("/component/adres/PD_selectAdres.do","selectAdresPop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-    }
-    function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn){
-        $(".zip:eq("+btnIndex+")").val(zipNo);
-        $(".adres:eq("+btnIndex+")").val(roadAddrPart1);
-        $(".adres2:eq("+btnIndex+")").val(addrDetail+" "+roadAddrPart2);
-        $(".adresPopBtn:eq("+btnIndex+")").focus();
-    }
-    //]]>
-</script>
-
-        <script src="/resources/templateSample/js/bootstrap.min.js"></script>
-        <script src="/resources/asp/user/js/aspCommon.js"></script>
-        <title>자주하는질문 | KOHI 요양보호사보수교육 기관 찾기</title>
-        <link rel="stylesheet" type="text/css" href="/sos/asp/common/ND_logoNmainImg.do?q_type=01">
-        
-
-<script  >
-    var CTX_PATH="";
-</script>
-
-<script  >
-    $(document).ready(function() {
-
-        var domnCode = '55';
-        var menuCode = 'ADB';
-
-        var allData = {'domnCode':domnCode,'userMenuCode':menuCode};
-
-        if(domnCode != '' && domnCode != 'null' && domnCode != null && !(domnCode === undefined)){
-            if(menuCode != '' && menuCode != 'null' && menuCode != null && !(menuCode === undefined)){
-                try{
-                    $.ajax({
-                        url : "/component/evl/menu/ND_insertEvlMenu.do",
-                        type : "POST",
-                        dataType : "json",
-                        data: allData,
-                        success: function(response, statusTxt, xhr){
-                            console.log(response.message);
-                            return;
-                        },
-                        error: function(response,status,error) {
-                            console.log(response.responseText);
-                            return;
-                        }
-                    });
-                }catch(e){
-                    return;
-                }
-            }
-        }
-    });
-</script>
-
-
-
-
-
-
-        <script  >
-            //<![CDATA[
-
-                $(document).ready(function (){
-                    $("#loginAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pm/pma/ND_pma0010f.do");// 로그인
-                    $("#mberAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pm/pmc/ND_pmc0010l.do");// 회원가입
-                    /* $("#mypageAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pg/pga/BD_pga0010f.do");// 회원정보관리 */
-                });
-
-                function subPageMove(obj){
-                     var f = document.frm;
-                     f.action = obj;
-                     f.submit();
-                }
-
-                var gfn_moveLoginPage = function() {
-                    location.href = "https://"+$("#portalUrl").val()+"/pt/pm/pma/ND_pma0010f.do";
-                }
-                var opMyPagePopUp = function() {
-
-                    $().opmodal({
-                        width  : 1400,
-                        height : 800,
-                        href   : "/sos/asp/ac/ace/PD_ace0010f.do?q_AspMyPagePopUp=Y"
-                    });
-                }
-
-            //]]>
-        </script>
-
-        <!--............. test용 css 적용 .............-->
-        <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
-        <link type="text/css" rel="stylesheet" href="/css/jquery-ui.theme.min.css">
-        <link type="text/css" rel="stylesheet" href="/css/common.css">
-        <link type="text/css" rel="stylesheet" href="/css/layout.css">
-        <link type="text/css" rel="stylesheet" href="/css/map.css">
-        <link type="text/css" rel="stylesheet" href="/css/borad.css">
-
-        <script src="/js/jquery-1.12.4.min.js"></script>
-        <script src="/js/swiper.min.js"></script>
-        <script src="/js/jquery-ui.min.js"></script>
-        <script src="/js/common.js"></script>
-        <script src="/js/contents.js"></script>
-        <!--............. test용 css 적용 .............-->
-
-    </head>
-    <body>
-        
-        <div id="wrap" class="wrap">
-            <!--............. header .............-->
-            <div class="header-banner">
-                <div class="header-banner__inner">
-                    <span class="header-banner__text">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+    <!-- sub -->
+    <link type="text/css" rel="stylesheet" href="/css/board.css">
+    <script src="/js/contents.js"></script>
+</head>
+<body>
+    <div class="skip-to-content">
+        <a href="#container">본문내용 바로가기</a>
+        <a href="#mainMenu">메인메뉴 바로가기</a>
+    </div>
+    <div class="kohi-wrap main">
+        <!--............. header .............-->
+        <!-- <div class="header-banner">
+            <div class="inner">
+                <span class="txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+            </div>
+        </div> -->
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo"><a href="#none">한국보건복지인재원 요양보호사 보수교육 연계 플랫폼</a></h1>
+                <div class="util-wrap">
+                    <ul class="link-wrap">
+                        <li class="item"><a href="https://www.kohi.or.kr" target="_blank" title="새 창 열기">대표홈페이지</a></li>
+                        <li class="item"><a href="https://edu.kohi.or.kr/index.do" class="point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
+                        <li class="item"><a href="https://in.kohi.or.kr/index.do" target="_blank" title="새 창 열기">법정의무교육</a></li>
+                        <li class="item"><a href="https://csp.kohi.or.kr/index.do" target="_blank" title="새 창 열기">보e다</a></li>
+                    </ul>
+                    <div class="util">
+                        <nav class="gnb">
+                            <ul class="depth1">
+                                <li class="item">
+                                    <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관 찾기</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/pt/pl/plc/BD_plc0010c.do">공지사항</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
+                                </li>
+                            
+                                <li class="item green">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="login-area">
+                            <!-- 로그인 O -->
+                            <div class="user active">
+                                <a href="#none" class="btn-login" title="로그아웃">환영합니다 <span class="name">홍길동</span> 님</a>
+                            </div>
+                            <!-- 로그인 X -->
+                            <div class="login">
+                                <a href="#none">로그인</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <header class="header">
-                <div class="header__info">
-                    <div class="header__inner">
-                        <h1 class="header__logo-box"><a href="#none" class="header__logo">한국보건복지인재원 보건복지배움인 KOREA HUMAN RESOURCE DEVELOPMENT INSTITUTE FOR HEALTH & WELFARE</a></h1>
-                        <ul class="header__blank-list">
-                            <li class="header__blank-item"><a href="https://www.kohi.or.kr" class="header__blank" target="_blank" title="새 창 열기">대표홈페이지</a></li>
-                            <li class="header__blank-item"><a href="https://edu.kohi.or.kr/index.do" class="header__blank header__blank--point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
-                            <li class="header__blank-item"><a href="https://in.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">법정의무교육</a></li>
-                            <li class="header__blank-item"><a href="https://csp.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">보e다</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 251030 gnb 수정 (yz) -->
-                <nav class="header__gnb">
-                    <div class="inner">
-                        <ul class="gnb__1depth">
-                            <li class="gnb__1depth--item">
-                                <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관 찾기</a>
-                            </li>
-                        
-                            <li class="gnb__1depth--item">
-                                <a href="/pt/pl/plc/BD_plc0010c.do">공지<br>사항</a>
-                            </li>
-                        
-                            <li class="gnb__1depth--item">
-                                <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
-                            </li>
-                        
-                            <li class="gnb__1depth--item green">
-                                <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원 바로가기</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- // 251030 gnb 수정 (yz) -->
-            </header>
-            <!--............. // header .............-->
-            <div class="container">
-                <!--............. content .............-->
+            <!-- // 251030 gnb 수정 (yz) -->
+        </header>
+        <!--............. // header .............-->
+        <!--............. sub container .............-->
+        <div id="container" class="sub">
+            
+            <div class="inner">
                 <div id="content" class="content">
                     <div class="inner">
-                        <!-- customize -->
-                        <link rel="stylesheet" type="text/css" href="/resources/openworks4/css/openworks4-custom.css">
-                            <!--Google  tag(gtag.js)-->
-                        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5JE4XGZ766"></script>
-                        <script>
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-
-                            gtag('config' , 'G-5JE4XGZ766');
-                        </script>
-
-
-                        <script  >var CTX_PATH="";</script>
-                        <!-- jquery core -->
-                        <script src="/resources/libs/jquery/jquery-1.11.2.min.js"></script>
-                        <script src="/resources/libs/jquery-ui-1.11.3.custom/jquery-ui.min.js"></script>
-                        <script src="/resources/study/js/study-init.js?ver=1.4"></script>
-
-                        <!-- 설정 동기화 -->
-                        <script src="/component/js/ND_globalConfig.do"></script>
-                        <script src="/component/js/ND_massageConfig.do"></script>
-
-                        <!-- Openworks 공통 메소드 -->
-                        <script src="/resources/openworks4/js/openworks.global.js"></script>
-                        <script src="/resources/openworks4/js/openworks.message.js"></script>
-                        <script src="/resources/openworks4/js/openworks.initialize.js"></script>
-                            <script src="/resources/openworks4/js/openworks.ui.js"></script>
-                            <script src="/resources/openworks4/js/openworks.form.js"></script>
-                            
-
-
-                        <script src="/resources/asp/user/js/slick.js"></script>
-                        <script src="/resources/user/bbs/js/bbs.js"></script>
-                        <script src="/resources/asp/user/js/aspCommon.js"></script>
-
-                            <script  >
-                                $('document').ready(function(){
-                                    var domnCode = $("#q_estnColumn1").val();
-                                    if(domnCode == '39'){
-                                        document.title = document.title + ' > 자주하는질문';
-                                        $("html").stop().animate({scrollTop: 730}, 500);
-                                    }
-                                });
-                            </script>
-
                         <form name="dataForm" id="dataForm" method="get" action="BD_selectBbsList.do" class="form-inline">
                             
                             <input type="hidden" id="q_tmplType" name="q_tmplType" value="f">
@@ -281,51 +97,37 @@
                             <h2 class="tit">자주하는질문</h2>
 
                             <!-- 필수의무교육 게시판 탭 -->
-                            <div class="table_top">
-                                <div class="page_num">	
+                            <div class="table-top">
+                                <div class="page-num">	
                                     <input type="hidden" name="q_currPage" id="q_currPage">
-                                    <p class="total">총 <span class="color_red">20</span>건</p> 
+                                    <p class="total">총 <span class="color-red">20</span>건</p> 
                                     <p class="now"> (<span class="color_red">1</span>/2 Page)</p>
                                 </div>
-                                <div class="search_wrap v4">
-                                    <p>상담내용</p>
-                                    <span class="select_wrap">
+                                <div class="search-wrap v4">
+                                    <span class="select-wrap">
                                         <select name="q_clCode" id="q_clCode" title="분류선택">
                                             <option value="">분류전체</option>
-                                            
-                                                <option value="1">운영</option>
-                                            
-                                                <option value="2">교육</option>
-                                            
-                                                <option value="3">시스템</option>
-                                            
-                                                <option value="4">콘텐츠</option>
-                                            
-                                                <option value="5">플랫폼</option>
-                                            
-                                                <option value="6">모바일</option>
-                                            
-                                                <option value="7">기타</option>
-                                            
+                                            <option value="1">운영</option>
+                                            <option value="2">교육</option>
+                                            <option value="3">시스템</option>
+                                            <option value="4">콘텐츠</option>
+                                            <option value="5">플랫폼</option>
+                                            <option value="6">모바일</option>
+                                            <option value="7">기타</option>
                                         </select>
                                     </span>
-                                    <span class="select_wrap">
+                                    <span class="select-wrap">
                                         <select name="q_searchKeyTy" id="q_searchKeyTy" title="검색 조건 선택">
-                                                
                                             <option value="sj___1002">제목</option>
-                                        
-                                            
                                             <option value="lngtCn___1002">내용</option>
-                                            
                                         </select>
                                     </span>
-                                    <span class="input_wrap">
+                                    <span class="input-wrap">
                                         <input type="text" name="q_searchVal" id="q_searchVal" value="" class="form-control" placeholder="검색어를 입력하세요." title="검색어 입력">
                                     </span>
-                                    <button type="submit" class="btn_search">검색<i class="icon"></i></button>
+                                    <button type="submit" class="btn-search">검색<i class="icon icon-search"></i></button>
                                 </div>
                             </div>
-                            
                             <ul class="faq">
                                 <li>
                                     <div class="question" id="faq_20250502091234256">
@@ -333,7 +135,6 @@
                                         <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>마이페이지 나의학습현황에서 수강 신청한 교육과정이 보이지 않아요</a>
                                     </div>
                                     <div class="answer">
-                        
                                         본 "사회복무 교육지원플랫폼"에서 이러닝 교육을 수강신청했는지 확인 부탁드립니다.
                                         <br>
                                         <br>"KOHI 보건복지배움인(edu.kohi.or.kr)"에서 수강신청한 교육과정 수강내역은 본 홈페이지에서 확인이 제한됩니다.
@@ -495,41 +296,75 @@
                                 </li>
                             </ul>
 
-                            <script>
-                                $(".question .title").attr("title","답변열기");
-                                $(document).on("click", ".question .title", function(){
-                                    if($(this).parents(".question").hasClass("active")){
-                                        $(this).parents(".question").removeClass("active");
-                                        $(this).parents(".question").next(".answer").hide();
-                                        $(this).attr("title","답변열기");
-                                    } else {
-                                        $(this).parents(".question").addClass("active")
-                                        $(this).parents(".question").next(".answer").show();
-                                        // $(this).attr("title","답변닫기");
-                                        $(this).removeAttr("title");
-                                    }
-                                })
                             
-                            </script>
-                            
-                            <div class="paging">
-                                <div class="paging">
-                                    <a href="#n" class="active" title="현재페이지">1</a>
-                                    <a href="#n">2</a>
-                                    <a href="#n">3</a>
-                                </div>
-                            </div>
                         </form>
                     </div>
                 </div>
                 <!--............. //content .............-->
             </div>
-            <!--............. footer .............-->
-            <footer class="footer">
-                <p class="copyright">COPYRIGHT © 2025 KOHI ALL RIGHTS RESERVED</p>
-            </footer>
-            <!--............. //footer .............-->
         </div>
-    </body>
+        <!--............. // sub container .............-->
+        <!--............. footer .............-->
+        <footer class="footer">
+            <!-- <div class="footer__info"> -->
+                <div class="inner">
+                    <img src="../images/common/footer-logo.svg" alt="한국보건복지인재원" class="footer-logo">
+                    <div class="footer-desc">
+                        <div class="left">
+                            <div class="address-box">
+                                <p class="address">(28159) 충청북도 청주시 흥덕구 오송읍 오송생명2로 187, 한국보건복지인재원</p>
+                                <ul class="tel">
+                                    <li><em>대표전화</em><a href="tel:043-710-9000">043-710-9000</a></li>
+                                    <li>(유료, 평일 09시 ~ 18시)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <ul class="privacy-box">
+                                <li class="privacy"><a href="/portal/POD/POA0010C.jsp">개인정보처리방침</a></li>
+                                <li class="policy"><a href="/portal/POD/POB0010C.jsp">저작권정책</a></li>
+                                <li class="email"><a href="/portal/POD/POC0010C.jsp">이메일 무단수집 거부</a></li>
+                            </ul>
+                            <p class="copyright">COPYRIGHT © 2026 KOHI ALL RIGHTS RESERVED</p>
+                            <!-- <ul class="footer__certification">
+                                <li class="footer__certification--item item01">e-러닝 전문기관 인증 GEI 인증마크</li>
+                                <li class="footer__certification--item item02"><a href="#none" title="새 창 열림" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2023-EP-N009','seal','width=527,height=720,location=no,status=no,scrollbars=no')">eprivacy 인증서</a></li>
+                                <li class="footer__certification--item item03"><a href="https://www.wa.or.kr/board/list.asp?search=total&amp;SearchString=%BA%B8%B0%C7%BA%B9%C1%F6%B9%E8%BF%F2%C0%CE&amp;BoardID=0006" title="새 창 열림" target="_blank">과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2025.01.31 ~ 2026.01.31</a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </footer>
+        <!--............. // footer .............-->
+        <!--............. mobile menu .............-->
+        <div class="mobile-quickmenu">
+            <div class="item">
+                <a href="#none">
+                    <i class="icon map"></i>
+                    <span class="text">교육기관 찾기</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon notice"></i>
+                    <span class="text">공지사항</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon qna"></i>
+                    <span class="text">자주하는 질문</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon mypage"></i>
+                    <span class="text">기관회원</span>
+                </a>
+            </div>
+        </div>
+        <!--............. // mobile menu .............-->
+    </div>
+</body>
 </html>
-

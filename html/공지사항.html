@@ -1,619 +1,334 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="format-detection" content="telephone=no, address=no, email=no">
-        <link rel="shortcut icon" href="/images/common/favicon.ico">
-        <link rel="stylesheet" href="/resources/asp/user/css/reset.css">
-        <link rel="stylesheet" href="/resources/asp/user/css/common.css">
-        <link rel="stylesheet" href="/resources/asp/user/css/style.css">
-        <link rel="stylesheet" href="/resources/asp/user/css/jquery-ui.css">
-        <script src="/resources/asp/user/js/jquery-1.12.4.min.js"></script>
-        <script src="/resources/asp/user/js/jquery-ui.min.js"></script>
-        <script src="/resources/asp/user/js/slick.js"></script>
-        <script src="/resources/asp/user/js/ui.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KOHI 요양보호사보수교육 기관 찾기</title>
+    <link rel="shortcut icon" href="/images/common/favicon.ico">
 
+    <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/common.css">
+    <link type="text/css" rel="stylesheet" href="/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="/css/map.css">
 
-        <link rel="stylesheet" type="text/css" href="/resources/libs/fancybox-2.1.5/css/jquery.fancybox.css">
-        <script src="/resources/libs/fancybox-2.1.5/js/jquery.fancybox.js"></script>
-        <script src="/resources/openworks4/js/openworks.modal.js"></script>
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
 
-        
-        
-        <script src="https://edu.kohi.or.kr/resources/libs/form-3.51.0/jquery.form.js"></script>
-        <script src="/resources/netfunnelApi/js/netfunnel.js"></script>
-        <script src="/resources/openworks4/js/openworks.form.js"></script>
-        <script src="/resources/openworks4/js/openworks.message.js"></script>
-
-        <script src="/component/js/ND_globalConfig.do" ></script>
-        <script src="/component/js/ND_massageConfig.do" ></script>
-
-        
-    <script src="/resources/libs/js-cookie-1.5.1/js.cookie.js"></script>
-<script src="/component/popup/ND_popupConfig.do"></script>
-    <script src="/resources/openworks4/js/openworks.form.js"></script>
-    <script src="/resources/openworks4/js/validate/openworks.validate.js"></script>
-    
-        <script src="/resources/libs/form-3.51.0/jquery.form.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="/resources/openworks/spi/jquery/validate/jquery.validate.css"> -->
-    <script src="/resources/libs/validation-1.13.1/jquery.validate.js"></script>
-<script src="/resources/libs/validation-1.13.1/additional-methods.js"></script>
-
-<!--                     <script src="/resources/openworks/spi/jquery/validate/jquery.validate.settings.js"></script> -->
-<!--                     <script src="/resources/openworks/spi/jquery/validate/jquery.validate.messages.js"></script> -->
-    
-        
-
-
-
-<script >
-    //<![CDATA[
-    var btnIndex = 0;
-
-    $(document).ready(function() {
-        /* 도로명주소팝업 호출 */
-        $(".adresPopBtn").click(function() {
-            var thisObj = $(this).get(0);
-            $(".adresPopBtn").each(function(idx){
-                var eachObj = $(this).get(0);
-                if(eachObj === thisObj){
-                    btnIndex = idx;
-                }
-            });
-            opAdresPopup();
-        });
-    });
-    
-    function opAdresPopup(){
-        // 주소검색을 수행할 팝업 페이지를 호출합니다.
-        // 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-        window.open("/component/adres/PD_selectAdres.do","selectAdresPop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-    }
-    function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn){
-        $(".zip:eq("+btnIndex+")").val(zipNo);
-        $(".adres:eq("+btnIndex+")").val(roadAddrPart1);
-        $(".adres2:eq("+btnIndex+")").val(addrDetail+" "+roadAddrPart2);
-        $(".adresPopBtn:eq("+btnIndex+")").focus();
-    }
-    //]]>
-</script>
-
-        <script src="/resources/templateSample/js/bootstrap.min.js"></script>
-        <script src="/resources/asp/user/js/aspCommon.js"></script>
-        <title>공지사항 | KOHI 요양보호사보수교육 기관 찾기</title>
-        <link rel="stylesheet" type="text/css" href="/sos/asp/common/ND_logoNmainImg.do?q_type=01" />
-        
-
-<script >
-    var CTX_PATH="";
-</script>
-
-<script >
-    $(document).ready(function() {
-
-        var domnCode = '55';
-        var menuCode = 'ADB';
-
-        var allData = {'domnCode':domnCode,'userMenuCode':menuCode};
-
-        if(domnCode != '' && domnCode != 'null' && domnCode != null && !(domnCode === undefined)){
-            if(menuCode != '' && menuCode != 'null' && menuCode != null && !(menuCode === undefined)){
-                try{
-                    $.ajax({
-                        url : "/component/evl/menu/ND_insertEvlMenu.do",
-                        type : "POST",
-                        dataType : "json",
-                        data: allData,
-                        success: function(response, statusTxt, xhr){
-                            console.log(response.message);
-                            return;
-                        },
-                        error: function(response,status,error) {
-                            console.log(response.responseText);
-                            return;
-                        }
-                    });
-                }catch(e){
-                    return;
-                }
-            }
-        }
-    });
-</script>
-
-
-
-
-
-
-        <script >
-            //<![CDATA[
-
-                $(document).ready(function (){
-                    $("#loginAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pm/pma/ND_pma0010f.do");// 로그인
-                    $("#mberAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pm/pmc/ND_pmc0010l.do");// 회원가입
-                    /* $("#mypageAnchor").attr("href", "https" + "://"+$("#portalUrl").val()+"/pt/pg/pga/BD_pga0010f.do");// 회원정보관리 */
-                });
-
-                function subPageMove(obj){
-                     var f = document.frm;
-                     f.action = obj;
-                     f.submit();
-                }
-
-                var gfn_moveLoginPage = function() {
-                    location.href = "https://"+$("#portalUrl").val()+"/pt/pm/pma/ND_pma0010f.do";
-                }
-                var opMyPagePopUp = function() {
-
-                    $().opmodal({
-                        width  : 1400,
-                        height : 800,
-                        href   : "/sos/asp/ac/ace/PD_ace0010f.do?q_AspMyPagePopUp=Y"
-                    });
-                }
-
-            //]]>
-        </script>
-
-        <!--............. test용 css 적용 .............-->
-        <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
-        <link type="text/css" rel="stylesheet" href="/css/jquery-ui.theme.min.css">
-        <link type="text/css" rel="stylesheet" href="/css/common.css">
-        <link type="text/css" rel="stylesheet" href="/css/layout.css">
-        <link type="text/css" rel="stylesheet" href="/css/map.css">
-        <link type="text/css" rel="stylesheet" href="/css/borad.css">
-
-        <script src="/js/jquery-1.12.4.min.js"></script>
-        <script src="/js/swiper.min.js"></script>
-        <script src="/js/jquery-ui.min.js"></script>
-        <script src="/js/common.js"></script>
-        <script src="/js/contents.js"></script>
-        <!--............. test용 css 적용 .............-->
-
-    </head>
-    <body>
-        
-        <div id="wrap" class="wrap">
-            <!--............. header .............-->
-            <div class="header-banner">
-                <div class="header-banner__inner">
-                    <span class="header-banner__text">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+    <!-- sub -->
+    <link type="text/css" rel="stylesheet" href="/css/board.css">
+    <script src="/js/contents.js"></script>
+</head>
+<body>
+    <div class="skip-to-content">
+        <a href="#container">본문내용 바로가기</a>
+        <a href="#mainMenu">메인메뉴 바로가기</a>
+    </div>
+    <div class="kohi-wrap main">
+        <!--............. header .............-->
+        <!-- <div class="header-banner">
+            <div class="inner">
+                <span class="txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+            </div>
+        </div> -->
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo"><a href="#none">한국보건복지인재원 요양보호사 보수교육 연계 플랫폼</a></h1>
+                <div class="util-wrap">
+                    <ul class="link-wrap">
+                        <li class="item"><a href="https://www.kohi.or.kr" target="_blank" title="새 창 열기">대표홈페이지</a></li>
+                        <li class="item"><a href="https://edu.kohi.or.kr/index.do" class="point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
+                        <li class="item"><a href="https://in.kohi.or.kr/index.do" target="_blank" title="새 창 열기">법정의무교육</a></li>
+                        <li class="item"><a href="https://csp.kohi.or.kr/index.do" target="_blank" title="새 창 열기">보e다</a></li>
+                    </ul>
+                    <div class="util">
+                        <nav class="gnb">
+                            <ul class="depth1">
+                                <li class="item">
+                                    <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관 찾기</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/pt/pl/plc/BD_plc0010c.do">공지사항</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
+                                </li>
+                            
+                                <li class="item green">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="login-area">
+                            <!-- 로그인 O -->
+                            <div class="user active">
+                                <a href="#none" class="btn-login" title="로그아웃">환영합니다 <span class="name">홍길동</span> 님</a>
+                            </div>
+                            <!-- 로그인 X -->
+                            <div class="login">
+                                <a href="#none">로그인</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <header class="header">
-                <div class="header__info">
-                    <div class="header__inner">
-                        <h1 class="header__logo-box"><a href="#none" class="header__logo">한국보건복지인재원 보건복지배움인 KOREA HUMAN RESOURCE DEVELOPMENT INSTITUTE FOR HEALTH & WELFARE</a></h1>
-                        <ul class="header__blank-list">
-                            <li class="header__blank-item"><a href="https://www.kohi.or.kr" class="header__blank" target="_blank" title="새 창 열기">대표홈페이지</a></li>
-                            <li class="header__blank-item"><a href="https://edu.kohi.or.kr/index.do" class="header__blank header__blank--point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
-                            <li class="header__blank-item"><a href="https://in.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">법정의무교육</a></li>
-                            <li class="header__blank-item"><a href="https://csp.kohi.or.kr/index.do" class="header__blank" target="_blank" title="새 창 열기">보e다</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- 251030 gnb 수정 (yz) -->
-                <nav class="header__gnb">
-                    <div class="inner">
-                        <ul class="gnb__1depth">
-                            <li class="gnb__1depth--item">
-                                <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관 찾기</a>
-                            </li>
-                        
-                            <li class="gnb__1depth--item">
-                                <a href="/pt/pl/plc/BD_plc0010c.do">공지<br>사항</a>
-                            </li>
-                        
-                            <li class="gnb__1depth--item">
-                                <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
-                            </li>
-                        
-                            <li class="gnb__1depth--item green">
-                                <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원 바로가기</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- // 251030 gnb 수정 (yz) -->
-            </header>
-            <!--............. // header .............-->
-            <div class="container">
-                <!--............. content .............-->
-                <div id="content" class="content">
-                    <div class="inner">
-                    <script src="/resources/openworks4/js/openworks.ui.js"></script>
-                    <script src="/resources/openworks4/js/openworks.form.js"></script>
-                    <script src="/resources/asp/user/js/slick.js"></script>
-                    <script src="/resources/user/bbs/js/bbs.js"></script>
-                    <script >
-                        $('document').ready(function(){
-                            var domnCode = $("#q_estnColumn1").val();
-                            if(domnCode == '39'){
-                                document.title = document.title + ' > 공지사항';
-                                $("html").stop().animate({scrollTop: 730}, 500);
-                            }
-                        });
-                    </script>
-                    <form name="dataForm" id="dataForm" method="get" action="BD_selectBbsList.do" class="form-inline">
-                        <input type="hidden" id="q_tmplType" name="q_tmplType" value="f"/>
-                        <input type="hidden" id="q_tmplatTy" name="q_tmplatTy" value="L"/>
-                        <input type="hidden" id="q_bbsCode" name="q_bbsCode" value="1043"/>
-                        <input type="hidden" id="q_estnColumn1" name="q_estnColumn1" value="55" />
-                        <input type="hidden" name="q_bbscttSn" id="q_bbscttSn" value="" />
+            <!-- // 251030 gnb 수정 (yz) -->
+        </header>
+        <!--............. // header .............-->
+        <!--............. sub container .............-->
+        <div id="container" class="sub">
+            <div class="inner">
                 
-                        <h2 class="tit"><span>공지사항</span></h2>
-
-                        <!-- 필수의무교육 게시판 탭 -->
-                        <div class="table_top">
-                            <div class="page_num">	
-                                <input type="hidden" name="q_currPage" id="q_currPage">
-                                <p class="total">총 <span class="color_red">20</span>건</p> 
-                                <p class="now"> (<span class="color_red">1</span>/2 Page)</p>
-                            </div>
-                            <div class="search_wrap v2">
-                                <span class="select_wrap">
-                                    <select name="q_searchKeyTy" id="q_searchKeyTy" title="검색 조건 선택">
-                                        <option value="sj___1002"  selected="selected">검색 선택</option>
-                                        <option value="lngtCn___1002" >내용</option>
-                                    </select>
-                                </span>
-                                <span class="input_wrap">
-                                    <input type="text" name="q_searchVal" id="q_searchVal" value="" class="form-control" placeholder="검색어를 입력하세요." title="검색어 입력" />
-                                </span>
-                                <button type="submit" class="btn_search">검색 <i class="icon"></i></button>
-                            </div>
+                <form>
+                    <h2 class="tit"><span>공지사항</span></h2>
+                    <div class="table-top">
+                        <div class="page-num">	
+                            <p class="total">총 <span class="color-red">20</span>건</p> 
+                            <p class="now"> (<span class="color-red">1</span>/2 Page)</p>
                         </div>
-                        
-                        <div class="table">
-                            <table class="normal_table qna">
-                                <caption>공지사항 목록으로 번호, 제목, 작성자, 첨부파일, 작성일, 조회수 정보 제공</caption>
-                                <colgroup>
-                                    <col style="width:100px">
-                                    <col style="width:auto">
-                                    <col style="width:150px">
-                                    <col style="width:250px">
-                                    <col style="width:150px">
-                                    <col style="width:70px">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">번호</th>
-                                        <th scope="col">제목</th>
-                                        <th scope="col">작성자</th>
-                                        <th scope="col">작성일</th>
-                                        <th scope="col">조회수</th>
-                                        <th scope="col">첨부파일</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    <tr>
-                                        <td class="m_hidden">공지</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20251023194457529" onclick="opView('20251023194457529');return false;">2025년 보건복지분야 사회복무요원 SNS 영상 공모전 수상작 발표</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2025-10-23
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            78
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">20</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20251023194457529" onclick="opView('20251023194457529');return false;">2025년 보건복지분야 사회복무요원 SNS 영상 공모전 수상작 발표</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2025-10-23
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            78
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">19</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20250728185508444" onclick="opView('20250728185508444');return false;">(연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 개최 연장 안내(8.11....</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2025-07-28
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            16807
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=145094&amp;q_fileId=4cb43095-7594-4fea-958f-32eb454e1a44" title="붙임2. (기간연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 연장 포스터.pdf Download" >
-                                                <img src="/images/common/ico_file.png" alt="(연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 개최 연장 안내(8.11.~9. 28.)_첨부파일_붙임2. (기간연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 연장 포스터.pdf" class="icon_file">
-                                            </a>
-                                        
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=145094&amp;q_fileId=f6b35fcf-bb7c-42e3-b6eb-aacba5856173" title="붙임1. (기간연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 연장 공고문.hwp Download" >
-                                                <img src="/images/common/ico_file.png" alt="(연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 개최 연장 안내(8.11.~9. 28.)_첨부파일_붙임1. (기간연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 연장 공고문.hwp" class="icon_file">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">18</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20250602151358503" onclick="opView('20250602151358503');return false;">2025년 제4기 사회복무신규강사양성과정 교육생 모집 연장 안내(~6. 10.)</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2025-06-02
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            591
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                            
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=141468&amp;q_fileId=f14026b1-f59e-4822-8ce1-239aaa3f026f" title="붙임1. 2025년 사회복무신규강사양성과정 모집 공고문(정정_3차).hwp Download" >
-                                                <img src="/images/common/ico_file.png" alt="2025년 제4기 사회복무신규강사양성과정 교육생 모집 연장 안내(~6. 10.)_첨부파일_붙임1. 2025년 사회복무신규강사양성과정 모집 공고문(정정_3차).hwp" class="icon_file">
-                                            </a>
-                                        
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=141468&amp;q_fileId=16709b5b-a895-42c8-8638-547f72398599" title="붙임2. 2025년 사회복무신규강사양성과정 교육안내문(정정).pdf Download" >
-                                                <img src="/images/common/ico_file.png" alt="2025년 제4기 사회복무신규강사양성과정 교육생 모집 연장 안내(~6. 10.)_첨부파일_붙임2. 2025년 사회복무신규강사양성과정 교육안내문(정정).pdf" class="icon_file">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">17</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20250227172220374" onclick="opView('20250227172220374');return false;">(정정) 2025년 사회복무신규강사양성과정 교육생 모집 안내</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2025-02-27
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            1700
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                                        
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=135043&amp;q_fileId=09e1e2d5-5fbc-40d1-abe2-c4d8809564f9" title="(정정)붙임1. 2025년 사회복무신규강사양성과정 모집 공고문.hwp Download" >
-                                                <img src="/images/common/ico_file.png" alt="(정정) 2025년 사회복무신규강사양성과정 교육생 모집 안내_첨부파일_(정정)붙임1. 2025년 사회복무신규강사양성과정 모집 공고문.hwp" class="icon_file">
-                                            </a>
-                                        
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=135043&amp;q_fileId=c4ae878f-6093-4313-abf0-f4bc9881a06d" title="(정정) 붙임3. 2025년 사회복무신규강사양성과정 홍보 포스터.pdf Download" >
-                                                <img src="/images/common/ico_file.png" alt="(정정) 2025년 사회복무신규강사양성과정 교육생 모집 안내_첨부파일_(정정) 붙임3. 2025년 사회복무신규강사양성과정 홍보 포스터.pdf" class="icon_file">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">16</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20250113165031397" onclick="opView('20250113165031397');return false;">2025년 보건복지분야 사회복무 직무소양 이러닝 교육안내(~12.12.)</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2025-01-13
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            3621
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                            
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=131962&amp;q_fileId=4b0666cb-f526-4fac-8c49-d48a320e1e2e" title="붙임1. 2025년 보건복지분야 사회복무 직무소양 이러닝 교육 포스터.jpg Download" >
-                                                <img src="/images/common/ico_file.png" alt="2025년 보건복지분야 사회복무 직무소양 이러닝 교육안내(~12.12.)_첨부파일_붙임1. 2025년 보건복지분야 사회복무 직무소양 이러닝 교육 포스터.jpg" class="icon_file">
-                                            </a>
-                                        
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=131962&amp;q_fileId=64e3caf6-f876-4f1b-a27f-b18911569342" title="붙임2. 사회복무 직무교육 지원플랫폼 이러닝 사용자 가이드.pdf Download" >
-                                                <img src="/images/common/ico_file.png" alt="2025년 보건복지분야 사회복무 직무소양 이러닝 교육안내(~12.12.)_첨부파일_붙임2. 사회복무 직무교육 지원플랫폼 이러닝 사용자 가이드.pdf" class="icon_file">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">15</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20241127090853135" onclick="opView('20241127090853135');return false;">2024년 사회복무 이러닝 직무소양교육 운영 안내(~'24. 12. 13.)</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2024-11-27
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            1266
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">14</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20241125102919238" onclick="opView('20241125102919238');return false;">KOHI 시스템 긴급점검에 따른 수강기간연장 안내</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            장영수
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2024-11-25
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            613
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">13</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20241018100414747" onclick="opView('20241018100414747');return false;">2024년 보건복지분야 사회복무요원 SNS 영상 공모전 수상결과 발표</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2024-10-18
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            1290
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                            
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=123231&amp;q_fileId=dd046be2-26da-408b-8d05-b0b83aa3875c" title="붙임. 2024년 보건복지분야 사회복무요원 SNS 영상 공모전 심사 결과.hwp Download" >
-                                                <img src="/images/common/ico_file.png" alt="2024년 보건복지분야 사회복무요원 SNS 영상 공모전 수상결과 발표_첨부파일_붙임. 2024년 보건복지분야 사회복무요원 SNS 영상 공모전 심사 결과.hwp" class="icon_file">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">12</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20241002132720255" onclick="opView('20241002132720255');return false;">사회복무 이러닝 직무소양교육 수강 후기 작성 이벤트 안내(~11.3.)</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2024-10-02
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            852
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                            
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=122675&amp;q_fileId=04cb16b8-d6c8-4783-a1f3-c55e2f9aeff1" title="붙임1. 2024년 사회복무 이러닝 직무소양교육 수강 홍보이벤트 포스터.jpg Download" >
-                                                <img src="/images/common/ico_file.png" alt="사회복무 이러닝 직무소양교육 수강 후기 작성 이벤트 안내(~11.3.)_첨부파일_붙임1. 2024년 사회복무 이러닝 직무소양교육 수강 홍보이벤트 포스터.jpg" class="icon_file">
-                                            </a>
-                                        
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=122675&amp;q_fileId=2baff52a-fb8d-4242-8534-94c4156bd173" title="붙임2. 2024년 사회복무 이러닝 직무소양교육 수강 홍보이벤트 QnA.jpg Download" >
-                                                <img src="/images/common/ico_file.png" alt="사회복무 이러닝 직무소양교육 수강 후기 작성 이벤트 안내(~11.3.)_첨부파일_붙임2. 2024년 사회복무 이러닝 직무소양교육 수강 홍보이벤트 QnA.jpg" class="icon_file">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td class="m_hidden">11</td>
-                                        <td class="txt-left">
-                                            <span class="m_tit">제목 :</span>
-                                            <span class="bbsSjMargin" style="padding-left:0px;">&nbsp;</span><a href="BD_selectBbs.do?q_bbsCode=1043&amp;q_bbscttSn=20240913092953308" onclick="opView('20240913092953308');return false;"> 2024년 제3기 사회복무신규강사양성과정 모집 안내</a>
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성자 :</span>
-                                            임성우
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">작성일 :</span>
-                                            2024-09-13
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">조회수 :</span>
-                                            2131
-                                        </td>
-                                        <td>
-                                            <span class="m_tit">첨부파일 :</span>
-                            
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=122144&amp;q_fileId=88c88ece-8910-4c8b-bee7-2e4c86450952" title="붙임1. 2024년 제3기 사회복무신규강사양성과정 모집 공고문.hwp Download" >
-                                                <img src="/images/common/ico_file.png" alt=" 2024년 제3기 사회복무신규강사양성과정 모집 안내_첨부파일_붙임1. 2024년 제3기 사회복무신규강사양성과정 모집 공고문.hwp" class="icon_file">
-                                            </a>
-                                        
-                                            <a href="/commons/file/ND_fileDownload.do?q_fileSn=122144&amp;q_fileId=ed765735-f3d2-48f9-8122-1c32a6109f1e" title="제3기 사회복무 신규강사 양성과정 포스터.png Download" >
-                                                <img src="/images/common/ico_file.png" alt=" 2024년 제3기 사회복무신규강사양성과정 모집 안내_첨부파일_제3기 사회복무 신규강사 양성과정 포스터.png" class="icon_file">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="search-wrap v2">
+                            <span class="select-wrap">
+                                <select name="q-searchKeyTy" id="q-searchKeyTy" title="검색 조건 선택">
+                                    <option value="sj---1002"  selected="selected">검색 선택</option>
+                                    <option value="lngtCn---1002" >내용</option>
+                                </select>
+                            </span>
+                            <span class="input-wrap">
+                                <input type="text" name="q-searchVal" id="q-searchVal" value="" class="form-control" placeholder="검색어를 입력하세요." title="검색어 입력" />
+                            </span>
+                            <button type="submit" class="btn-search">검색 <i class="icon icon-search"></i></button>
                         </div>
-                        
-                        <div class="paging">
-                            <div class="paging">
-                                <a href="#n" class="active" title="현재페이지">1</a>
-                                <a href="#n" onclick="opMovePage(2); return false;" title="2 페이지">2</a>
+                    </div>
+                    
+                    <div class="table">
+                        <table class="normal-table qna">
+                            <caption>공지사항 목록으로 번호, 제목, 작성자, 첨부파일, 작성일, 조회수, 첨부파일 정보 제공</caption>
+                            <colgroup>
+                                <col style="width:100px">
+                                <col style="width:auto">
+                                <col style="width:10%">
+                                <col style="width:15%">
+                                <col style="width:10%">
+                                <col style="width:100px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">작성일</th>
+                                    <th scope="col">조회수</th>
+                                    <th scope="col">첨부파일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6"><p class="empty">게시글이 존재하지 않습니다.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-num"><span class="icon-notice">공지</span></td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2025년 보건복지분야 사회복무요원 SNS 영상 공모전 수상작 발표</a>
+                                    </td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-10-23</td>
+                                    <td class="td-view">78</td>
+                                    <td class="td-file"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">20</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2025년 보건복지분야 사회복무요원 SNS 영상 공모전 수상작 발표</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-10-23</td>
+                                    <td class="td-view">78</td>
+                                    <td class="td-file"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">19</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">(연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 개최 연장 안내 (연장) 2025년 보건복지분야 사회복무요원 SNS 영상 공모전 개최 연장 안내 </a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-07-28</td>
+                                    <td class="td-view">16807</td>
+                                    <td class="td-file"><span class="icon-file"><i class="blind">첨부파일 있음</i></span></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">18</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2025년 제4기 사회복무신규강사양성과정 교육생 모집 연장 안내(~6. 10.)</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-06-02</td>
+                                    <td class="td-view">591</td>
+                                    <td class="td-file"><span class="icon-file"><i class="blind">첨부파일 있음</i></span></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">17</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">(정정) 2025년 사회복무신규강사양성과정 교육생 모집 안내</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-02-27</td>
+                                    <td class="td-view">1700</td>
+                                    <td class="td-file"><span class="icon-file"><i class="blind">첨부파일 있음</i></span></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">16</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2025년 보건복지분야 사회복무 직무소양 이러닝 교육안내(~12.12.)</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-01-13</td>
+                                    <td class="td-view">3621</td>
+                                    <td class="td-file"><span class="icon-file"><i class="blind">첨부파일 있음</i></span></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">15</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2024년 사회복무 이러닝 직무소양교육 운영 안내(~'24. 12. 13.)</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2024-11-27</td>
+                                    <td class="td-view">1266</td>
+                                    <td class="td-file"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">14</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">KOHI 시스템 긴급점검에 따른 수강기간연장 안내</a></td>
+                                    <td class="td-writer">장영수</td>
+                                    <td class="td-date">2024-11-25</td>
+                                    <td class="td-view">613</td>
+                                    <td class="td-file"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">13</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2024년 보건복지분야 사회복무요원 SNS 영상 공모전 수상결과 발표</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2024-10-18</td>
+                                    <td class="td-view">1290</td>
+                                    <td class="td-file"><span class="icon-file"><i class="blind">첨부파일 있음</i></span></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">12</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">사회복무 이러닝 직무소양교육 수강 후기 작성 이벤트 안내(~11.3.)</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2024-10-02</td>
+                                    <td class="td-view">852</td>
+                                    <td class="td-file"><span class="icon-file"><i class="blind">첨부파일 있음</i></span></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">11</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none"> 2024년 제3기 사회복무신규강사양성과정 모집 안내</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2024-09-13</td>
+                                    <td class="td-view">2131</td>
+                                    <td class="td-file">
+                                        <span class="icon-file"><i class="blind">첨부파일 있음</i></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- paging - pc -->
+                    <div class="paging pc">
+                        <!-- <a href="#n" class="btn_first" onclick="opMovePage(1); return false;" title="처음페이지로 가기"><span class="blind">처음페이지로 이동</span></a> -->
+                        <a href="#n" class="btn_prev">이전</a>
+                        <a href="#n" class="active" title="현재페이지">11</a>
+                        <a href="#n" title="12 페이지">12</a>
+                        <a href="#n" title="13 페이지">13</a>
+                        <a href="#n" title="14 페이지">14</a>
+                        <a href="#n" title="15 페이지">15</a>
+                        <a href="#n" title="16 페이지">16</a>
+                        <a href="#n" title="17 페이지">17</a>
+                        <a href="#n" title="18 페이지">18</a>
+                        <a href="#n" title="19 페이지">19</a>
+                        <span class="dot"></span>
+                        <a href="#n" title="20 페이지">87</a>
+                        <a href="#n" class="btn_next" title="다음페이지그룹 가기">다음</a>
+                        <!-- <a href="#n" class="btn_last" onclick="opMovePage(289); return false;" title="마지막페이지로 가기">다음</a> -->
+                    </div>
+                    <!-- // paging - pc -->
+                    <!-- paging - mobile -->
+                    <div class="paging mobile">
+                        <a href="#n" class="btn_prev">이전</a>
+                        <a href="#n" class="active" title="현재페이지">11</a>
+                        <a href="#n" title="12 페이지">12</a>
+                        <a href="#n" title="13 페이지">13</a>
+                        <span class="dot"></span>
+                        <a href="#n" title="20 페이지">87</a>
+                        <a href="#n" class="btn_next" title="다음페이지그룹 가기">다음</a>
+                    </div>
+                    <!-- // paging - mobile -->
+                </form>
+            </div>
+        </div>
+        <!--............. // sub container .............-->
+        <!--............. footer .............-->
+        <footer class="footer">
+            <!-- <div class="footer__info"> -->
+                <div class="inner">
+                    <img src="../images/common/footer-logo.svg" alt="한국보건복지인재원" class="footer-logo">
+                    <div class="footer-desc">
+                        <div class="left">
+                            <div class="address-box">
+                                <p class="address">(28159) 충청북도 청주시 흥덕구 오송읍 오송생명2로 187, 한국보건복지인재원</p>
+                                <ul class="tel">
+                                    <li><em>대표전화</em><a href="tel:043-710-9000">043-710-9000</a></li>
+                                    <li>(유료, 평일 09시 ~ 18시)</li>
+                                </ul>
                             </div>
                         </div>
-                    </form>
+                        <div class="right">
+                            <ul class="privacy-box">
+                                <li class="privacy"><a href="/portal/POD/POA0010C.jsp">개인정보처리방침</a></li>
+                                <li class="policy"><a href="/portal/POD/POB0010C.jsp">저작권정책</a></li>
+                                <li class="email"><a href="/portal/POD/POC0010C.jsp">이메일 무단수집 거부</a></li>
+                            </ul>
+                            <p class="copyright">COPYRIGHT © 2026 KOHI ALL RIGHTS RESERVED</p>
+                            <!-- <ul class="footer__certification">
+                                <li class="footer__certification--item item01">e-러닝 전문기관 인증 GEI 인증마크</li>
+                                <li class="footer__certification--item item02"><a href="#none" title="새 창 열림" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2023-EP-N009','seal','width=527,height=720,location=no,status=no,scrollbars=no')">eprivacy 인증서</a></li>
+                                <li class="footer__certification--item item03"><a href="https://www.wa.or.kr/board/list.asp?search=total&amp;SearchString=%BA%B8%B0%C7%BA%B9%C1%F6%B9%E8%BF%F2%C0%CE&amp;BoardID=0006" title="새 창 열림" target="_blank">과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2025.01.31 ~ 2026.01.31</a></li>
+                            </ul> -->
+                        </div>
                     </div>
                 </div>
-                <!--............. //content .............-->
+            <!-- </div> -->
+        </footer>
+        <!--............. // footer .............-->
+        <!--............. mobile menu .............-->
+        <div class="mobile-quickmenu">
+            <div class="item">
+                <a href="#none">
+                    <i class="icon map"></i>
+                    <span class="text">교육기관 찾기</span>
+                </a>
             </div>
-            <!--............. footer .............-->
-            <footer class="footer">
-                <p class="copyright">COPYRIGHT © 2025 KOHI ALL RIGHTS RESERVED</p>
-            </footer>
-            <!--............. //footer .............-->
+            <div class="item">
+                <a href="#none">
+                    <i class="icon notice"></i>
+                    <span class="text">공지사항</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon qna"></i>
+                    <span class="text">자주하는 질문</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon mypage"></i>
+                    <span class="text">기관회원</span>
+                </a>
+            </div>
         </div>
-    </body>
+        <!--............. // mobile menu .............-->
+    </div>
+</body>
 </html>
-
