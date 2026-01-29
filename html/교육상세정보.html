@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>기관조회 | KOHI 요양보호사보수교육 기관 찾기</title>
+    <link rel="shortcut icon" href="/images/common/favicon.ico">
+
+    <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/common.css">
+    <link type="text/css" rel="stylesheet" href="/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="/css/map.css">
+
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/contents.js"></script>
+</head>
+<body>
+    <div class="skip-to-content">
+        <a href="#container">본문내용 바로가기</a>
+        <a href="#mainMenu">메인메뉴 바로가기</a>
+    </div>
+    <div class="kohi-wrap">
+        <!--............. header .............-->
+        <!-- <div class="header-banner">
+            <div class="inner">
+                <span class="txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+            </div>
+        </div> -->
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo"><a href="#none">한국보건복지인재원 요양보호사 보수교육 연계 플랫폼</a></h1>
+                <div class="util-wrap">
+                    <ul class="link-wrap">
+                        <li class="item"><a href="https://www.kohi.or.kr" target="_blank" title="새 창 열기">대표홈페이지</a></li>
+                        <li class="item"><a href="https://edu.kohi.or.kr/index.do" class="point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
+                        <li class="item"><a href="https://in.kohi.or.kr/index.do" target="_blank" title="새 창 열기">법정의무교육</a></li>
+                        <li class="item"><a href="https://csp.kohi.or.kr/index.do" target="_blank" title="새 창 열기">보e다</a></li>
+                    </ul>
+                    <div class="util">
+                        <nav class="gnb">
+                            <ul class="depth1">
+                                <li class="item">
+                                    <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관 찾기</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/pt/pl/plc/BD_plc0010c.do">공지사항</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
+                                </li>
+                            
+                                <li class="item green">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="login-area">
+                            <!-- 로그인 O -->
+                            <div class="user active">
+                                <a href="#none" class="btn-login" title="로그아웃">환영합니다 <span class="name">홍길동</span> 님</a>
+                            </div>
+                            <!-- 로그인 X -->
+                            <div class="login">
+                                <a href="#none">로그인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 251030 gnb 수정 (yz) -->
+        </header>
+        <!--............. // header .............-->
+        <!--............. main container .............-->
+        <div id="container">
+            <div class="map-wrap">
+                <div class="map">
+                    <img src="/images/contents/img_map.png" alt="지도 목업 이미지">
+                </div>
+                <div class="control-box">
+                    <div class="top">
+                        <div class="switch-box">
+                            <button type="button" class="square btn-popup">
+                                <span>지역변경</span>
+                            </button>
+                            <div class="popup active">
+                                <!-- 표출 : active 클래스 O -->
+                                <div class="tit selected-region">
+                                    <span>충청북도</span>
+                                    <span>청주시 흥덕구</span>
+                                    <span>오송읍</span>
+                                </div>
+                                <ul class="rdo-list">
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo01">
+                                        <label for="rdo01">서울특별시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo02">
+                                        <label for="rdo02">부산광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo03">
+                                        <label for="rdo03">대구광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo04">
+                                        <label for="rdo04">인천광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo05">
+                                        <label for="rdo05">광주광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo06">
+                                        <label for="rdo06">대전광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo07">
+                                        <label for="rdo07">울산광역시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo08">
+                                        <label for="rdo08">세종특별자치시</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo09">
+                                        <label for="rdo09">경기도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo10">
+                                        <label for="rdo10">충청북도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo11">
+                                        <label for="rdo11">충청남도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo12">
+                                        <label for="rdo12">전라남도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo13">
+                                        <label for="rdo13">경상북도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo14">
+                                        <label for="rdo14">경상남도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo15">
+                                        <label for="rdo15">제주특별자치도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo16">
+                                        <label for="rdo16">강원특별자치도</label>
+                                    </li>
+                                    <li class="rdo">
+                                        <input type="radio" name="rdo" id="rdo17">
+                                        <label for="rdo17">전북특별자치도</label>
+                                    </li>
+                                </ul>
+                                <div class="btn-box">
+                                    <button type="button" class="square btn-close">닫기</button>
+                                    <button type="button" class="square btn-apply">적용하기</button>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="toggle-box">
+                            <input type="checkbox" id="switchToggle">
+                            <label for="switchToggle" class="toggle">
+                                <i class="switch"></i>
+                                <span>전체기관</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <button type="button" class="square my-location">
+                            <span>내 위치 보기</span>
+                        </button>
+                        <button type="button" class="btn-zoom in" title="확대"></button>
+                        <button type="button" class="btn-zoom out" title="축소"></button>
+                    </div>
+                </div>
+                <div class="side-panel">
+                    
+                    <div class="panel-wrap">
+                        <div class="panel-header">
+                            <p class="tit">피움 요양보호사 교육원 <span class="tag">인재원</span></p>
+                            <p>충청북도 청주시 상당구 상당로 16 2층</p>
+                        </div>
+                        <div class="organ-detail">
+                            <div class="contents">
+                                <p class="tit">요양보호사 보수 교육 계획</p>
+                                <table>
+                                    <caption class="blind">피움 요양보호사 교육원의 보수 교육 계획을 나타내고 있다.</caption>
+                                    <colgroup>
+                                        <col style="width: 19%;">
+                                        <col style="width: 19%;">
+                                        <col style="width: 19%;">
+                                        <col style="width: 21%;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="tb-header">
+                                            <th scope="col" class="th">모집기간</th>
+                                            <th scope="col" class="th">교육일자</th>
+                                            <th scope="col" class="th">교육시간</th>
+                                            <th scope="col" class="th">모집상태</th>
+                                            <th scope="col" class="th">상세정보</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tb-body">
+                                        <tr class="tr">
+                                            <td class="td">YYYY-MM-DD</td>
+                                            <td class="td">YYYY-MM-DD</td>
+                                            <td class="td">HH:MM</td>
+                                            <td class="td">
+                                                <span class="dot green">모집중</span>
+                                            </td>
+                                            <td class="td last">
+                                                <a href="#none" class="btn-srch"><span>상세정보 조회</span><i class="icon"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="tr">
+                                            <td class="td">YYYY-MM-DD</td>
+                                            <td class="td">YYYY-MM-DD</td>
+                                            <td class="td">HH:MM</td>
+                                            <td class="td"><span class="dot">모집<br>예정</span></td>
+                                            <td class="td last"><a href="#none" class="btn-srch"><span>상세정보 조회</span><i class="icon"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="contents">
+                                <div>
+                                    <div class="tit">
+                                        <p>경로정보</p>
+                                        <p class="wrn-txt">※ 도로 상황에 따라 도착 시간이 상이할 수 있습니다.</p>
+                                    </div>
+                                    <div class="inp-box">
+                                        <div class="item">
+                                            <div class="dropdown-box">
+                                                <input type="text" id="departure" placeholder="출발지를 입력 후 주소찾기 버튼을 눌러주세요." class="inp">
+                                                <div class="dropdown">
+                                                    <ul>
+                                                        <li class="select-item">
+                                                            <button type="button">
+                                                                <p class="tit">피움 요양보호사 교육원</p>
+                                                                <p class="addr">충청북도 청주시 상당구 상당로 16 2층</p>
+                                                            </button>
+                                                        </li>
+                                                        <li class="select-item">
+                                                            <button type="button">
+                                                                <p class="tit">청주요양보호사교육원</p>
+                                                                <p class="addr">충청북도 청주시 상당구 상당로 150 2층</p>
+                                                            </button>
+                                                        </li>
+                                                        <li class="select-item">
+                                                            <button type="button">
+                                                                <p class="tit">참사랑요양보호사교육원</p>
+                                                                <p class="addr">충청북도 청주시 상당구 상당로 150 2층</p>
+                                                            </button>
+                                                        </li>
+                                                        <li class="select-item">
+                                                            <button type="button">
+                                                                <p class="tit">민들레요양보호사교육원</p>
+                                                                <p class="addr">충청북도 청주시 상당구 상당로 150 2층</p>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn-srch">주소찾기</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-direction"><span>길찾기</span><i class="icon"></i></button>
+                                </div>
+                                <div class="direction-box">
+                                    <div class="direction">
+                                        <p class="time">약 1시간 00분</p>
+                                        <p class="distance">(324.9km)</p>
+                                    </div>
+                                    <a href="#none" target="_blank" title="새 창 열기" class="btn">카카오맵에서 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#none" class="btn-back"><i class="icon"></i><span>교육기관 목록</span></a>
+                    </div>
+                    <button type="button" title="접기" class="btn-toggle">
+                        <i class="icon"></i>
+                    </button>
+                </div>
+                
+                <div class="pin-wrapper">
+                    <!-- 선택 : active -->
+                    <button class="pin purple active"></button>
+                    <button class="pin gray active"></button>
+                </div>
+
+            </div>
+            <!-- </div> -->
+        </div>
+        <!--............. // main container .............-->
+        <!--............. footer .............-->
+        <footer class="footer">
+            <!-- <div class="footer__info"> -->
+                <div class="inner">
+                    <img src="../images/common/footer-logo.svg" alt="한국보건복지인재원" class="footer-logo">
+                    <div class="footer-desc">
+                        <div class="left">
+                            <div class="address-box">
+                                <p class="address">(28159) 충청북도 청주시 흥덕구 오송읍 오송생명2로 187, 한국보건복지인재원</p>
+                                <ul class="tel">
+                                    <li><em>대표전화</em><a href="tel:043-710-9000">043-710-9000</a></li>
+                                    <li>(유료, 평일 09시 ~ 18시)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <ul class="privacy-box">
+                                <li class="privacy"><a href="/portal/POD/POA0010C.jsp">개인정보처리방침</a></li>
+                                <li class="policy"><a href="/portal/POD/POB0010C.jsp">저작권정책</a></li>
+                                <li class="email"><a href="/portal/POD/POC0010C.jsp">이메일 무단수집 거부</a></li>
+                            </ul>
+                            <p class="copyright">COPYRIGHT © 2026 KOHI ALL RIGHTS RESERVED</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </footer>
+        <!--............. // footer .............-->
+        <!--............. mobile menu .............-->
+        <div class="mobile-quickmenu">
+            <div class="item">
+                <a href="#none">
+                    <i class="icon map"></i>
+                    <span class="text">교육기관 찾기</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon notice"></i>
+                    <span class="text">공지사항</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon qna"></i>
+                    <span class="text">자주하는 질문</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon mypage"></i>
+                    <span class="text">기관회원</span>
+                </a>
+            </div>
+        </div>
+        <!--............. // mobile menu .............-->
+
+        <!-- [메인 레이어 팝업존] 
+            - 이미지 사이즈 :  470px × 590px
+            - div.modal-wrap에 open 클래스 추가 유무에 따라 팝업 노출 선택 가능
+            - button에  data-popup속성 값과 modal-wrap id 값이 동일하게 설정되어있어야 해당 팝업이 열립니다.
+            예시) <div class="modal-wrap popup-zone" id="modalPopup">
+                  <button type="button" class="modal-btn" data-popup="modalPopup">
+        -->
+        <div id="modalPopup" class="modal-wrap open">
+            <div class="f_wrapper">
+                <div class="modal-head">
+                    <h2 class="tit"><span>테스트기관</span><span class="tag gray">일반</span><span class="tag">인재원</span></h2>
+                    <p>충청북도 청주시 흥덕구 오송읍 오송생명2로 187-0</p>
+                </div>
+                <div class="modal-cont-wrap">
+                    <!-- cont -->
+                    <div class="modal-cont">
+                        <ul class="label-list">
+                            <li class="item">
+                                <p class="label">교육명</p>
+                                <p class="txt">요양보호사 보수교육(한국보건복지인재원)</p>
+                            </li>
+                            <li class="item">
+                                <p class="label">(다)교과목</p>
+                                <p class="txt">힘뇌 체조</p>
+                            </li>
+                            <li class="item">
+                                <p class="label">(라)교과목</p>
+                                <p class="txt">치매노인과 의사소통 기술</p>
+                            </li>
+                            <li class="item">
+                                <p class="label">정원</p>
+                                <p class="txt">2명</p>
+                            </li>
+                            <li class="item">
+                                <p class="label">모집기간</p>
+                                <p class="txt">2026-01-01 ~ 2026-01-31</p>
+                            </li>
+                            <li class="item">
+                                <p class="label">교육일자</p>
+                                <p class="txt">2026년 2월 19일</p>
+                            </li>
+                            <li class="item">
+                                <p class="label">교육시간</p>
+                                <p class="txt">15:00 ~ 19:00</p>
+                            </li>
+                        </ul>
+                        <div class="label-list last">
+                            <div class="item">
+                                <p class="label">수강신청<br>방법</p>
+                                <div class="link-wrap">
+                                    <div class="link">
+                                        <p>홈페이지 신청</p>
+                                        <a href="#none"><span>신청 바로가기</span><i class="icon"></i></a>
+                                    </div>
+                                    <div class="tel">
+                                        <p>전화로 신청</p>
+                                        <a href="#none">043-222-222</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn line">닫기</button>
+                            <button type="button" class="btn solid">수강신청</button>
+                        </div>
+                    </div>
+                    <!-- //cont -->
+                </div>
+                <button type="button" class="modal-close">닫기</button>
+            </div>
+        </div>
+        <!-- // [메인 레이어 팝업존] -->
+    </div>
+</body>
+</html>
