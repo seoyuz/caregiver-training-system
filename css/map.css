@@ -587,11 +587,9 @@
     left: 20px;
     top: 20px;
     bottom: 20px;
-    z-index: 2;
+    /* z-index: 2; */
     font-size: 0;
 }
-
-.map-wrap .control-box .top{}
 
 /* 지역변경 라디오버튼 */
 .map-wrap .control-box .top .switch-box{
@@ -1018,8 +1016,6 @@
 
     .map-wrap .control-box{
         position: absolute;
-        left: 20px;
-        right: 20px;
         top: 20px;
         display: flex;
         gap: 10px;
@@ -1033,10 +1029,10 @@
     .map-wrap .control-box .top .switch-box{
         position: static;
     }
-    .map-wrap .control-box .top{
+    /* .map-wrap .control-box .top{
         position: relative;
         width: 100%;
-    }
+    } */
     .map-wrap .switch-box .popup{
         top: 58px;
         width: 100%;

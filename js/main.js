@@ -80,19 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
             activeLink.setAttribute('tabindex', '0');
         // }
     }
-
-    // 화면 크기가 변경될 때마다 레이아웃 재조정
-    window.addEventListener('resize', function() {
-        const screenWidth = window.innerWidth;
-        const spanText = document.querySelector(".map-wrap .control-box button span");
-
-        if (screenWidth <= 980) { // 화면 크기가 980px 이하일 때
-            spanText.innerText = "내 위치";
-        } else { // 화면 크기가 981px 이상일 때
-            spanText.innerText = "내 위치 보기";
-        }
-    });
-
     // 초기 로드 시에도 레이아웃 재조정
     window.dispatchEvent(new Event('resize'));
 });
