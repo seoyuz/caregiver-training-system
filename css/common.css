@@ -42,24 +42,24 @@
 
 
 
-* {
-	box-sizing: border-box;
-}
-
+* {box-sizing: border-box;}
+*:focus{outline: none;}
 *:focus-visible {
 	box-sizing: border-box;
-	outline-width: 5px;
+	outline-width: 2px;
 	outline-style: dashed;
 	outline-color: #FFA038;
 	outline-offset: -2px;
-} /* 웹접근성 */
+}
+ /* 웹접근성 */
+
 ::-moz-selection {
 	background: #d6b4ff;
 }
-
 ::selection {
 	background: #d6b4ff;
 }
+
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
@@ -393,7 +393,8 @@ input[type=button] {
 /* a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible, textarea:focus-visible {outline: none;} */
 /*인풋 박스 백그라운드*/
 .required {
-	color: #d71921;
+	padding-left: 4px;
+	/* color: #d71921; */
 	position: relative;
 	font-weight: 400;
 	vertical-align: middle;
@@ -402,11 +403,11 @@ input[type=button] {
 .required::before {
 	content: "※";
 	font-weight: 700;
-	margin-right: 0;
+	margin-right: 6px;
 	color: #D71921;
 	font-size: 14px;
 	top: -2px;
-	margin-left: 3px;
+	/* margin-left: 3px; */
 	position: relative;
 	vertical-align: middle;
 	display: inline-block;
@@ -683,6 +684,160 @@ input[type=button] {
 .checkbox.mar0 label::before, .radio.mar0 label::before {
 	margin-right: 0;
 }
+
+/* 인풋 */
+.inp-wrap.form-field{
+	display: inline-block;
+	width: 100%;
+	color: #464C53;
+	/* width: 100%; */
+}
+.inp-wrap.form-field label{
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: 700;
+}
+.inp-wrap.form-field label + p{
+	margin-bottom: 8px;
+	font-size: 13px;
+}
+.inp-wrap.form-field .inp{
+	width: 100%;
+	height: 56px;
+	padding-right: 48px;
+	background: url('/images/contents/ico_required.png')no-repeat;
+	background-position: right 10px center;
+	background-size: 24px;
+	border-color: #58616A;
+	font-size: 19px;
+	color: #1E2124;
+}
+.inp-wrap.form-field p.required{
+	display: none; 
+	margin-top: 8px;
+	font-size: 13px;
+}
+.inp-wrap.form-field p.required::before{
+	content: '';
+	top: -1px;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.inp-wrap.form-field .form-control-clear{
+	margin-top: 18px;
+	width: 20px;
+	height: 20px;
+	background-color: #CDD1D5;
+}
+.inp-wrap.form-field .form-control-clear::before, .inp-wrap.form-field .form-control-clear::after{
+	width: 12px;
+	height: 2px;
+	background: #33363D;
+}
+/* 인풋 - 포커스 상태 */
+.inp-wrap.form-field.focus .inp{
+	background: none;
+	border: 2px solid #256EF4;
+}
+.inp-wrap.form-field.focus p.required{
+	display: block;
+	color: #096AB3;
+}
+.inp-wrap.form-field.focus p.required::before{
+	background: url('/images/contents/ico_inp-focus.png');
+}
+/* 인풋 - 입력완료 상태 */
+.inp-wrap.form-field.completed .inp{
+	background: none;
+}
+.inp-wrap.form-field.completed p.required{
+	display: block;
+	color: #267337;
+}
+.inp-wrap.form-field.completed p.required::before{
+	background: url('/images/contents/ico_inp-complete.png');
+}
+/* 인풋 - 에러 상태 */
+.inp-wrap.form-field.error .inp{
+	background: none;
+	border: 2px solid #DE3412;
+}
+.inp-wrap.form-field.error p.required{
+	display: block;
+	color: #BD2C0F;
+}
+.inp-wrap.form-field.error p.required::before{
+	background: url('/images/contents/ico_inp-error.png');
+}
+/* 인풋 - 비활성화 상태 */
+.inp-wrap.form-field .inp:disabled{
+	background-color: #CDD1D5;
+	background-image: none;
+	border: 1px solid #B1B8BE;
+	color: #6D7882;
+}
+.inp-wrap.form-field.error p.required::before{
+	background: url('/images/contents/ico_inp-error.png');
+}
+/* 인풋 - 비활성화 상태 */
+.inp-wrap.form-field.view .inp:disabled{
+	color: #464C53;
+}
+.inp-wrap.form-field.view .inp:disabled::placeholder{
+	color: #464C53;
+}
+
+/* 라디오 */
+.rdo-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+}
+.rdo-list .rdo{
+    width: 100%;
+    max-width: 161px;
+    text-align: center;
+}
+.rdo-list .rdo input{
+    position: absolute;
+    appearance: none;
+}
+.rdo-list .rdo input:focus-visible{
+    outline: none;
+}
+.rdo-list .rdo input:focus-visible + label{
+    outline: 2px dashed #FFA038;
+}
+.rdo-list .rdo label{
+    display: block;
+    padding: 13px 0;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #B1B8BE;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: .3s ease;
+    cursor: pointer;
+}
+.rdo-list .rdo input:hover + label,
+.rdo-list .rdo input:checked + label{
+    background-color: #FFF9E8;
+    color: #D71921;
+    border-color: #FFB86B;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.rdo-list .rdo input:checked + label::before{
+    content: '';
+    display: inline-block;
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+    background: #FFF9E8 url('/images/contents/ico_check-r.png')no-repeat center;
+    vertical-align: middle;
+}
+
 
 /* .checkbox input:checked + label::after { content: ''; display: block; position: absolute; top: 2px; left: 9px; width: 6px; height: 14px; border: solid #0079bf; border-width: 0 2px 2px 0; transform: rotate(45deg);} */
 /* IE10+ focus */

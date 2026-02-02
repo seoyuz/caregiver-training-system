@@ -636,52 +636,9 @@
     margin: 0 4px;
 }
 
-.map-wrap .switch-box .rdo-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 26px;
-}
+.map-wrap .switch-box .rdo-list{}
 .map-wrap .switch-box .rdo{
-    width: 100%;
     max-width: 161px;
-    text-align: center;
-}
-.map-wrap .switch-box .rdo input{
-    position: absolute;
-    appearance: none;
-}
-.map-wrap .switch-box .rdo input:focus-visible{
-    outline: none;
-}
-.map-wrap .switch-box .rdo input:focus-visible + label{
-    outline: 5px dashed #FFA038;
-}
-.map-wrap .switch-box .rdo label{
-    display: block;
-    padding: 13px 0;
-    width: 100%;
-    height: 48px;
-    border: 1px solid #B1B8BE;
-    border-radius: 6px;
-    box-sizing: border-box;
-    transition: .3s ease;
-    cursor: pointer;
-}
-.map-wrap .switch-box .rdo input:hover + label,
-.map-wrap .switch-box .rdo input:checked + label{
-    background-color: #FFF9E8;
-    color: #D71921;
-    border-color: #FFB86B;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.map-wrap .switch-box .rdo input:checked + label::before{
-    content: '';
-    display: inline-block;
-    margin-right: 4px;
-    width: 20px;
-    height: 20px;
-    background: #FFF9E8 url('/images/contents/ico_check-r.png')no-repeat center;
-    vertical-align: middle;
 }
 /* 지역변경 라디오 */
 
@@ -802,7 +759,7 @@
 .map-wrap .control-box .square{
     padding: 8px 16px;
     padding-left: 50px;
-    border-radius: 5px;
+    border-radius: 8px;
     width: auto;
     background-size: 24px;
     background-position: left 16px center;

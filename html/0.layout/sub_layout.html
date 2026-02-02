@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KOHI 요양보호사보수교육 기관 찾기</title>
+    <link rel="shortcut icon" href="/images/common/favicon.ico">
+
+    <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/common.css">
+    <link type="text/css" rel="stylesheet" href="/css/layout.css">
+    <link type="text/css" rel="stylesheet" href="/css/map.css">
+
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- sub -->
+    <link type="text/css" rel="stylesheet" href="/css/board.css">
+    <script src="/js/contents.js"></script>
+</head>
+<body>
+    <div class="skip-to-content">
+        <a href="#container">본문내용 바로가기</a>
+        <a href="#mainMenu">메인메뉴 바로가기</a>
+    </div>
+    <div class="kohi-wrap main">
+        <!--............. header .............-->
+        <!-- <div class="header-banner">
+            <div class="inner">
+                <span class="txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+            </div>
+        </div> -->
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo"><a href="#none">한국보건복지인재원 요양보호사 보수교육 연계 플랫폼</a></h1>
+                <div class="util-wrap">
+                    <ul class="link-wrap">
+                        <li class="item"><a href="https://www.kohi.or.kr" target="_blank" title="새 창 열기">대표홈페이지</a></li>
+                        <li class="item"><a href="https://edu.kohi.or.kr/index.do" class="point" target="_blank" title="새 창 열기">보건복지배움인</a></li>
+                        <li class="item"><a href="https://in.kohi.or.kr/index.do" target="_blank" title="새 창 열기">법정의무교육</a></li>
+                        <li class="item"><a href="https://csp.kohi.or.kr/index.do" target="_blank" title="새 창 열기">보e다</a></li>
+                    </ul>
+                    <div class="util">
+                        <nav class="gnb">
+                            <ul class="depth1">
+                                <li class="item">
+                                    <a href="/pt/pa/paa/BD_paa0010l.do" id="mainMenu">교육기관 찾기</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/pt/pl/plc/BD_plc0010c.do">공지사항</a>
+                                </li>
+                            
+                                <li class="item">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1042">자주하는 질문</a>
+                                </li>
+                            
+                                <li class="item green">
+                                    <a href="/all/user/bbs/BD_selectBbsList.do?q_bbsCode=1025">기업회원</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="login-area">
+                            <!-- 로그인 O -->
+                            <div class="user active">
+                                <a href="#none" class="btn-login" title="로그아웃">환영합니다 <span class="name">홍길동</span> 님</a>
+                            </div>
+                            <!-- 로그인 X -->
+                            <div class="login">
+                                <a href="#none">로그인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 251030 gnb 수정 (yz) -->
+        </header>
+        <!--............. // header .............-->
+        <!--............. sub container .............-->
+        <div id="container" class="sub">
+            <div class="inner">
+                <h2 class="tit" style="margin: 70px 0;">퍼블리싱 가이드페이지</h2>
+
+                <h3 style="margin-bottom: 20px;" style="margin-bottom: 20px;">인풋</h3>
+                <div style="display: flex; gap: 20px; margin-bottom: 70px;">
+                    <div>
+                        <p>Default</p>
+                        <div class="inp-wrap form-field">
+                            <label for="input" class="required">사업자등록번호(ID)</label>
+                            <p>‘-’ 없이 숫자만 입력</p>
+                            <input type="text" id="input" placeholder="내용을 입력하세요." class="inp"> 
+                        </div>
+                    </div>
+                    <div>
+                        <p>Focused</p>
+                        <div class="inp-wrap form-field focus">
+                            <label for="input02" class="required">사업자등록번호(ID)</label>
+                            <p>‘-’ 없이 숫자만 입력</p>
+                            <input type="text" id="input02" placeholder="내용을 입력하세요." class="inp">
+                            <p class="required">메시지를 입력해주세요.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Completed</p>
+                        <div class="inp-wrap form-field completed">
+                            <label for="input03" class="required">사업자등록번호(ID)</label>
+                            <p>‘-’ 없이 숫자만 입력</p>
+                            <input type="text" id="input03" placeholder="내용을 입력하세요." class="inp">
+                            <p class="required">사용 가능한 사업자등록번호(ID) 입니다.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Error</p>
+                        <div class="inp-wrap form-field error">
+                            <label for="input04" class="required">사업자등록번호(ID)</label>
+                            <p>‘-’ 없이 숫자만 입력</p>
+                            <input type="text" id="input04" placeholder="내용을 입력하세요." class="inp">
+                            <p class="required">사업자등록번호(ID)를 확인해 주세요.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Disabled</p>
+                        <div class="inp-wrap form-field">
+                            <label for="input05" class="required">사업자등록번호(ID)</label>
+                            <input type="text" id="input05" placeholder="내용을 입력하세요." class="inp" disabled>
+                        </div>
+                    </div>
+                    <div>
+                        <p>View</p>
+                        <div class="inp-wrap form-field view">
+                            <label for="input06" class="required">사업자등록번호(ID)</label>
+                            <input type="text" id="input06" placeholder="내용을 입력하세요." class="inp" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 20px;">라디오 - 체크</h3>
+                <ul class="rdo-list" style="margin-bottom: 70px;">
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo01" checked>
+                        <label for="rdo01">서울특별시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo02">
+                        <label for="rdo02">부산광역시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo03">
+                        <label for="rdo03">대구광역시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo04">
+                        <label for="rdo04">인천광역시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo05">
+                        <label for="rdo05">광주광역시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo06">
+                        <label for="rdo06">대전광역시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo07">
+                        <label for="rdo07">울산광역시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo08">
+                        <label for="rdo08">세종특별자치시</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo09">
+                        <label for="rdo09">경기도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo10">
+                        <label for="rdo10">충청북도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo11">
+                        <label for="rdo11">충청남도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo12">
+                        <label for="rdo12">전라남도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo13">
+                        <label for="rdo13">경상북도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo14">
+                        <label for="rdo14">경상남도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo15">
+                        <label for="rdo15">제주특별자치도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo16">
+                        <label for="rdo16">강원특별자치도</label>
+                    </li>
+                    <li class="rdo">
+                        <input type="radio" name="rdo" id="rdo17">
+                        <label for="rdo17">전북특별자치도</label>
+                    </li>
+                </ul>
+
+                <h3 style="margin-bottom: 20px;">테이블</h3>
+                <form style="margin-bottom: 70px;">
+                    <div class="table-top">
+                        <div class="page-num">
+                            <p class="total">총 <span class="color-red">20</span>건</p> 
+                            <p class="now"> (<span class="color-red">1</span>/2 Page)</p>
+                        </div>
+                        <div class="search-wrap v2">
+                            <span class="select-wrap">
+                                <select name="q-searchKeyTy" id="q-searchKeyTy" title="검색 조건 선택">
+                                    <option value="sj---1002"  selected="selected">검색 선택</option>
+                                    <option value="lngtCn---1002" >내용</option>
+                                </select>
+                            </span>
+                            <span class="input-wrap">
+                                <input type="text" name="q-searchVal" id="q-searchVal" value="" class="form-control" placeholder="검색어를 입력하세요." title="검색어 입력" />
+                            </span>
+                            <button type="submit" class="btn-search">검색 <i class="icon icon-search"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="table">
+                        <table class="normal-table qna">
+                            <caption>공지사항 목록으로 번호, 제목, 작성자, 첨부파일, 작성일, 조회수, 첨부파일 정보 제공</caption>
+                            <colgroup>
+                                <col style="width:100px">
+                                <col style="width:auto">
+                                <col style="width:10%">
+                                <col style="width:15%">
+                                <col style="width:10%">
+                                <col style="width:100px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">작성일</th>
+                                    <th scope="col">조회수</th>
+                                    <th scope="col">첨부파일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6"><p class="empty">게시글이 존재하지 않습니다.</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-num"><span class="icon-notice">공지</span></td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2025년 보건복지분야 사회복무요원 SNS 영상 공모전 수상작 발표</a>
+                                    </td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-10-23</td>
+                                    <td class="td-view">78</td>
+                                    <td class="td-file"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td class="td-num">20</td>
+                                    <td class="td-subject txt-left"><a class="list-tit" href="#none">2025년 보건복지분야 사회복무요원 SNS 영상 공모전 수상작 발표</a></td>
+                                    <td class="td-writer">관리자</td>
+                                    <td class="td-date">2025-10-23</td>
+                                    <td class="td-view">78</td>
+                                    <td class="td-file"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+                <h3 style="margin-bottom: 20px;">아코디언</h3>
+                <ul class="faq" style="margin-bottom: 70px;">
+                    <li>
+                        <div class="question" id="faq_20250502091234256">
+                            <span class="cate">교육</span>
+                            <a href="#n" class="title" title="답변열기"><div class="blind">질문</div>질문 내용</a>
+                        </div>
+                        <div class="answer">
+                            답변
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 style="margin-bottom: 20px;">페이지네이션</h3>
+                <!-- paging - pc -->
+                <div class="paging pc" style="margin-bottom: 70px;">
+                    <!-- <a href="#n" class="btn_first" onclick="opMovePage(1); return false;" title="처음페이지로 가기"><span class="blind">처음페이지로 이동</span></a> -->
+                    <a href="#n" class="btn_prev">이전</a>
+                    <a href="#n" class="active" title="현재페이지">11</a>
+                    <a href="#n" title="12 페이지">12</a>
+                    <a href="#n" title="13 페이지">13</a>
+                    <a href="#n" title="14 페이지">14</a>
+                    <a href="#n" title="15 페이지">15</a>
+                    <a href="#n" title="16 페이지">16</a>
+                    <a href="#n" title="17 페이지">17</a>
+                    <a href="#n" title="18 페이지">18</a>
+                    <a href="#n" title="19 페이지">19</a>
+                    <span class="dot"></span>
+                    <a href="#n" title="20 페이지">87</a>
+                    <a href="#n" class="btn_next" title="다음페이지그룹 가기">다음</a>
+                    <!-- <a href="#n" class="btn_last" onclick="opMovePage(289); return false;" title="마지막페이지로 가기">다음</a> -->
+                </div>
+                <!-- // paging - pc -->
+                <!-- paging - mobile -->
+                <div class="paging mobile">
+                    <a href="#n" class="btn_prev">이전</a>
+                    <a href="#n" class="active" title="현재페이지">11</a>
+                    <a href="#n" title="12 페이지">12</a>
+                    <a href="#n" title="13 페이지">13</a>
+                    <span class="dot"></span>
+                    <a href="#n" title="20 페이지">87</a>
+                    <a href="#n" class="btn_next" title="다음페이지그룹 가기">다음</a>
+                </div>
+                <!-- // paging - mobile -->
+            </div>
+        </div>
+        <!--............. // sub container .............-->
+        <!--............. footer .............-->
+        <footer class="footer">
+            <!-- <div class="footer__info"> -->
+                <div class="inner">
+                    <img src="../images/common/footer-logo.svg" alt="한국보건복지인재원" class="footer-logo">
+                    <div class="footer-desc">
+                        <div class="left">
+                            <div class="address-box">
+                                <p class="address">(28159) 충청북도 청주시 흥덕구 오송읍 오송생명2로 187, 한국보건복지인재원</p>
+                                <ul class="tel">
+                                    <li><em>대표전화</em><a href="tel:043-710-9000">043-710-9000</a></li>
+                                    <li>(유료, 평일 09시 ~ 18시)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <ul class="privacy-box">
+                                <li class="privacy"><a href="/portal/POD/POA0010C.jsp">개인정보처리방침</a></li>
+                                <li class="policy"><a href="/portal/POD/POB0010C.jsp">저작권정책</a></li>
+                                <li class="email"><a href="/portal/POD/POC0010C.jsp">이메일 무단수집 거부</a></li>
+                            </ul>
+                            <p class="copyright">COPYRIGHT © 2026 KOHI ALL RIGHTS RESERVED</p>
+                            <!-- <ul class="footer__certification">
+                                <li class="footer__certification--item item01">e-러닝 전문기관 인증 GEI 인증마크</li>
+                                <li class="footer__certification--item item02"><a href="#none" title="새 창 열림" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2023-EP-N009','seal','width=527,height=720,location=no,status=no,scrollbars=no')">eprivacy 인증서</a></li>
+                                <li class="footer__certification--item item03"><a href="https://www.wa.or.kr/board/list.asp?search=total&amp;SearchString=%BA%B8%B0%C7%BA%B9%C1%F6%B9%E8%BF%F2%C0%CE&amp;BoardID=0006" title="새 창 열림" target="_blank">과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2025.01.31 ~ 2026.01.31</a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </footer>
+        <!--............. // footer .............-->
+        <!--............. mobile menu .............-->
+        <div class="mobile-quickmenu">
+            <div class="item">
+                <a href="#none">
+                    <i class="icon map"></i>
+                    <span class="text">교육기관 찾기</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon notice"></i>
+                    <span class="text">공지사항</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon qna"></i>
+                    <span class="text">자주하는 질문</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                    <i class="icon mypage"></i>
+                    <span class="text">기관회원</span>
+                </a>
+            </div>
+        </div>
+        <!--............. // mobile menu .............-->
+    </div>
+</body>
+</html>

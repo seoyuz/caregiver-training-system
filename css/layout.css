@@ -6,13 +6,13 @@ body{}
   width: 100%;
   position: relative;
 }
-#container .inner{
-  padding: 40px;
-  max-width: none;
-  width: calc(100%);
-}
 h2{
   font-size: 40px;
+  font-weight: 700;
+  word-break: keep-all;
+}
+h3{
+  font-size: 28px;
   font-weight: 700;
   word-break: keep-all;
 }
@@ -434,7 +434,7 @@ h2{
   font-size: 19px;
   font-weight: 600;
   /* width: 100%; */
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .modal-wrap .btn-box button + button{
   margin-left: 8px;

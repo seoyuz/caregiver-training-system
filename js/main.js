@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // type: "fraction",
         },
         observer: true,	// 추가
-        observeParents: true,	// 추가
+        observeParents: true,	// 추가  
         on: {
             init: function() {
                 resetTabindex();
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             1366: {
                 slidesPerView: 1,
-            },
+            }, 
         },
     });
 

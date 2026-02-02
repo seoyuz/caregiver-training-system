@@ -43,6 +43,69 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     /* // 251014 웹 접근성 품질개선 - input/textarea.inp 지우기 버튼 동적 생성 (ej) */  
 
+
+
+
+
+    const inpWrap = document.querySelector('.inp-wrap.form-field');
+    if(inpWrap) {
+        const input = inpWrap.querySelector('.inp');
+
+        const CLASS = {
+            focus: 'focus',
+            completed: 'completed',
+            error: 'error'
+        };
+
+        // 상태 초기화
+        function resetState() {
+            inpWrap.classList.remove(CLASS.focus, CLASS.completed, CLASS.error);
+        }
+
+        // 숫자만 입력
+        input.addEventListener('input', () => {
+            input.value = input.value.replace(/\D/g, '');
+        });
+
+        // focus 상태
+        input.addEventListener('focus', () => {
+            resetState();
+            inpWrap.classList.add(CLASS.focus);
+        });
+
+        // blur 시 검증
+        input.addEventListener('blur', () => {
+            resetState();
+
+            const value = input.value.trim();
+
+            if (!value) return; // 아무것도 안 썼으면 default
+
+            if (isValidBusinessNumber(value)) {
+                inpWrap.classList.add(CLASS.completed);
+            } else {
+                inpWrap.classList.add(CLASS.error);
+            }
+        });
+
+        // 사업자등록번호 검증 (10자리)
+        function isValidBusinessNumber(num) {
+            if (num.length !== 10) return false;
+
+            const checkId = [1,3,7,1,3,7,1,3,5];
+            let sum = 0;
+
+            for (let i = 0; i < 9; i++) {
+                sum += checkId[i] * Number(num[i]);
+            }
+
+            sum += Math.floor((checkId[8] * Number(num[8])) / 10);
+            const checkDigit = (10 - (sum % 10)) % 10;
+
+            return checkDigit === Number(num[9]);
+        }
+    }
+
 });
 
 
