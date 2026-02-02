@@ -7,7 +7,6 @@
 .color-red { color: #D71921;}
 /* common */
 
-#container > .inner { max-width: 1800px; margin: 0 auto; min-height: 700px;}
 .icon-notice { color: #fff; border-radius: 3px; background-color: #555; padding: 2px 5px;}
 .empty { width: 100%; color: #666; height: 80px;display: flex; flex-wrap: wrap; align-items: center; justify-content: center; position: relative;}
 .empty::before { content: '!'; display: flex; align-items: center; justify-content: center; border-radius: 100px; width: 18px; height: 18px; border: 2px solid #999; font-weight: 700; color: #999; font-size: 14px; margin-right:7px; }
@@ -150,4 +149,11 @@ table { width: 100%;}
     .table-top .select-wrap select { width: 100%;}
     .table-top .btn-search { flex-grow: 1;}
     .btn-wrap .btn-normal { height: 38px; font-size: 14px;}
+}
+
+@media screen and (max-width:500px) {
+    
+    .faq .question .title { padding-left: 82px;}
+    .faq .question .cate { width: 70px; left: 5px; font-size: 11px;}
+    .faq .question .title::after { right: 5px;}
 }
