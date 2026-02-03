@@ -855,11 +855,11 @@
 }
 
 /* 교육상세정보 팝업 */
-.label-list{
+/* .label-list{
     padding-top: 16px;
     margin-top: 16px;
     border-top: 1px solid #DDDDDD;
-}
+} */
 .label-list .item{
     position: relative;
     border: 1px solid #DDDDDD;

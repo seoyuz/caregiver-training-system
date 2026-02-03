@@ -116,47 +116,47 @@
                         
                         
                         <!-- 회원 정보입력 -->
-                        <div class="register-frame__wrap">
+                        <div class="register-frame-wrap">
                             <!-- 기본정보 -->
                             <h3>기본정보 <span class="color-red">(필수)</span></h3>
                             <div class="register-frame">
-                                <div class="register-frame__item">
+                                <div class="register-frame-item">
                                     <div class="input-group">
-                                        <label class="input-title" for="registerId"><span class="required"><i class="blind">필수입력</i></span> 기관명</label>
+                                        <label class="input-title" for="registerOrgName"><span class="required"><i class="blind">필수입력</i></span> 기관명</label>
                                         <div class="input">
-                                            <input type="text" id="registerId" class="inp" placeholder="내용을 입력하세요.">
-                                            <button type="button" class="btn line">중복확인</button>
+                                            <input type="text" id="registerOrgName" class="inp" placeholder="내용을 입력하세요.">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="register-frame__item">
+                                <div class="register-frame-item">
                                     <div class="input-group">
-                                        <label class="input-title" for="registerMeneber"><span class="required"><i class="blind">필수입력</i></span> 기관장(대표자)명</label>
+                                        <label class="input-title" for="registerCeoName"><span class="required"><i class="blind">필수입력</i></span> 기관장(대표자)명</label>
                                         <div class="input">
-                                            <input type="text" id="registerMeneber" class="inp" placeholder="내용을 입력하세요.">
+                                            <input type="text" id="registerCeoName" class="inp" placeholder="내용을 입력하세요.">
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div class="register-frame__item register-frame__item--block2">
+                                <div class="register-frame-item block2">
                                     <div class="input-group">
-                                        <label class="input-title" for="registerEtNum"><span class="required"><i class="blind">필수입력</i></span> 사업자등록번호(ID)</label>
+                                        <label class="input-title" for="registerBusinessId"><span class="required"><i class="blind">필수입력</i></span> 사업자등록번호(ID)</label>
                                         <p class="info-txt">‘-’ 없이 숫자만 입력</p>
                                         <div class="input">
-                                            <input type="text" id="registerEtNum" class="inp" placeholder="내용을 입력하세요.">
+                                            <input type="tel" id="registerBusinessId" class="inp" placeholder="내용을 입력하세요.">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="register-frame__item">
+                                <div class="register-frame-item">
                                     <div class="input-group">
                                         <label class="input-title" for="registerPw"><span class="required"><i class="blind">필수입력</i></span> 비밀번호</label>
                                         <p class="info-txt">영문, 숫자 및 특수문자를 포함한 9~12자리</p>
                                         <div class="input">
                                             <input type="password" id="registerPw" class="inp" placeholder="내용을 입력하세요.">
                                         </div>
+                                        
                                     </div>
                                 </div>
-                                <div class="register-frame__item">
+                                <div class="register-frame-item">
                                     <div class="input-group">
                                         <label class="input-title" for="registerPw2"><span class="required"><i class="blind">필수입력</i></span> 비밀번호 확인</label>
                                         <p class="info-txt">영문, 숫자 및 특수문자를 포함한 9~12자리</p>
@@ -165,145 +165,38 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="register-frame__item">
+                                <div class="register-frame-item block2">
                                     <div class="input-group">
-                                        <label class="input-title" for="registerLocal"><span class="required"><i class="blind">필수입력</i></span> 내 / 외국인</label>
+                                        <label class="input-title" for="registerAddress"><span class="required"><i class="blind">필수입력</i></span> 기관 주소</label>
                                         <div class="input">
-                                            <!-- radio -->
-                                            <ul class="radio__wrap--horiz check">
-                                                <li class="input--rdo">
-                                                    <input type="radio" name="registerNational" id="registerLocal">
-                                                    <label for="registerLocal"><span>내국인</span></label>
-                                                </li>
-                                                <li class="input--rdo">
-                                                    <input type="radio" name="registerNational" id="registerForeigner">
-                                                    <label for="registerForeigner"><span>외국인</span></label>
-                                                </li>
-                                            </ul>
-                                            <!-- // radio -->
+                                            <input type="text" id="registerAddress" class="inp" placeholder="검색어(도로명, 지번, 건물명)를 입력해주세요.">
+                                            <button type="button" class="btn solid">검색</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="register-frame__item">
+                                <div class="register-frame-item">
                                     <div class="input-group">
-                                        <label class="input-title" for="registerCitizen"><span class="required"><i class="blind">필수입력</i></span> 국적</label>
+                                        <label class="input-title" for="registerOfficeTel"><span class="required"><i class="blind">필수입력</i></span> 사무실 전화번호</label>
+                                        <p class="info-txt">‘-’ 없이 숫자만 입력</p>
                                         <div class="input">
-                                            <!-- select -->
-                                            <select class="inp" id="registerCitizen">
-                                                <option value="">대한민국</option>
-                                                <option value="">대한민국</option>
-                                            </select>
-                                            <!-- // select -->
+                                            <input type="tel" id="registerOfficeTel" class="inp" placeholder="내용을 입력하세요.">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="register-frame__item">
+                                <div class="register-frame-item">
                                     <div class="input-group">
-                                        <label class="input-title" for="registerBirth"><span class="required"><i class="blind">필수입력</i></span> 생년월일</label>
+                                        <label class="input-title" for="registerFax"> 팩스번호(팩스번호 부재 시 사무실전화번호 입력)</label>
+                                        <p class="info-txt">‘-’ 없이 숫자만 입력</p>
                                         <div class="input">
-                                            <input type="text" id="registerBirth" class="inp" value="1990년 01월 01일" disabled>
+                                            <input type="tel" id="registerFax" class="inp" placeholder="내용을 입력하세요.">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="register-frame__item">
+                                <div class="register-frame-item block2">
                                     <div class="input-group">
-                                        <label class="input-title" for="registerMobile"><span class="required"><i class="blind">필수입력</i></span> 휴대전화</label>
+                                        <label class="input-title" for="registerHomepageUrl"><span class="required"><i class="blind">필수입력</i></span> 기관 홈페이지 주소(URL)</label>
                                         <div class="input">
-                                            <input type="tel" id="registerMobile" class="inp" placeholder="01012345678">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerEmail"><span class="required"><i class="blind">필수입력</i></span> 이메일</label>
-                                        <div class="input">
-                                            <input type="text" id="registerEmail" title="이메일 첫 번째 입력" class="inp">
-                                            <span class="mg">@</span>
-                                            <input type="text" id="registerEmail2" title="이메일 두 번째 선택" class="inp">
-                                            <select class="inp">
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerOrg"><span class="required"><i class="blind">필수입력</i></span> 기관명</label>
-                                        <div class="input">
-                                            <select class="inp width70" id="registerOrg"  title="기관명 첫 번째 선택">
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                            </select>
-                                            <input type="text" id="registerOrg2" class="inp"  title="기관명 두 번째 입력">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerDiv"><span class="required"><i class="blind">필수입력</i></span> 부서</label>
-                                        <div class="input">
-                                            <input type="text" id="registerDiv" class="inp">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerPosition">직위(직책)</label>
-                                        <div class="input">
-                                            <input type="text" id="registerPosition" class="inp">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item register-frame__item--block">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerArea"><span class="required"><i class="blind">필수입력</i></span> 지역</label>
-                                        <div class="input">
-                                            <select class="inp" id="registerArea">
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerWork1"><span class="required"><i class="blind">필수입력</i></span> 재직여부</label>
-                                        <div class="input">
-                                            <!-- radio -->
-                                            <ul class="radio__wrap--horiz check">
-                                                <li class="input--rdo">
-                                                    <input type="radio" name="registerWork" id="registerWork1">
-                                                    <label for="registerWork1"><span>예</span></label>
-                                                </li>
-                                                <li class="input--rdo">
-                                                    <input type="radio" name="registerWork" id="registerWork2">
-                                                    <label for="registerWork2"><span>아니오</span></label>
-                                                </li>
-                                            </ul>
-                                            <!-- // radio -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerAgree1"><span class="required"><i class="blind">필수입력</i></span> 컨소시엄협약여부</label>
-                                        <div class="input">
-                                            <!-- radio -->
-                                            <ul class="radio__wrap--horiz check">
-                                                <li class="input--rdo">
-                                                    <input type="radio" name="registerAgree" id="registerAgree1">
-                                                    <label for="registerAgree1"><span>예</span></label>
-                                                </li>
-                                                <li class="input--rdo">
-                                                    <input type="radio" name="registerAgree" id="registerAgree2">
-                                                    <label for="registerAgree2"><span>아니오</span></label>
-                                                </li>
-                                            </ul>
-                                            <!-- // radio -->
+                                            <input type="text" id="registerHomepageUrl" class="inp">
                                         </div>
                                     </div>
                                 </div>
@@ -311,39 +204,6 @@
                             </div>
                             <!-- // 기본정보 -->
 
-                            <!-- 부가정보 -->
-                            <h3>부가정보 <span class="fw4 small">(선택 입력사항)</span></h3>
-                            <div class="register-frame">
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerTel">전화번호</label>
-                                        <div class="input">
-                                            <select class="inp width50" id="registerTel"  title="전화번호 첫 번째 선택">
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                                <option value="">선택</option>
-                                            </select>
-                                            <input type="tel" id="registerTel2" class="inp"  title="전화번호 두 번째 입력" placeholder="“-” 구분 없이 입력">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="register-frame__item">
-                                    <div class="input-group">
-                                        <label class="input-title" for="registerAddress1">주소</label>
-                                        <div class="input">
-                                            <input type="text" id="registerAddress1" class="inp" title="주소 입력">
-                                            <button type="button" class="btn line">중복확인</button>
-                                        </div>
-                                        <div class="input">
-                                            <input type="text" id="registerAddress2" class="inp" title="기본 주소 입력">
-                                        </div>
-                                        <div class="input">
-                                            <input type="text" id="registerAddress3" class="inp" title="상세 주소 입력">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- // 부가정보 -->
                             <!-- 간편 로그인 연결 -->
                             <!-- <h3>간편 로그인 연결 <span class="fw4 small">(선택 입력사항)</span></h3>
                             <div class="simple-login-box">

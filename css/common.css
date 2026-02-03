@@ -686,6 +686,7 @@ input[type=button] {
 }
 
 /* 인풋 */
+.form-field-wrap { display: flex; flex-wrap: wrap; gap: 12px;}
 .inp-wrap.form-field{
 	display: inline-block;
 	width: 100%;
@@ -725,7 +726,7 @@ input[type=button] {
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.inp-wrap.form-field .form-control-clear{
+/* .inp-wrap.form-field .form-control-clear{
 	margin-top: 26px;
 	width: 20px;
 	height: 20px;
@@ -735,7 +736,7 @@ input[type=button] {
 	width: 12px;
 	height: 2px;
 	background: #33363D;
-}
+} */
 
 /* 인풋 - 포커스 상태 */
 .inp-wrap.form-field .inp.focus{
@@ -2300,9 +2301,9 @@ ul.img-col3 li:last-child {
 
 
 /* 251017 웹 접근성 품질개선 - input/textarea.inp 지우기 버튼 동적 생성 (ej) */
-.form-control-clear { position: relative; pointer-events: auto; cursor: pointer; display: inline-block; width: 17px; min-width: 17px; height: 17px; background: #555; text-indent: -99999px; border-radius: 100px; box-sizing: border-box; padding: 0; margin-left: -37px; float: right; margin-top: 10px; margin-right: 10px;}
+.form-control-clear { position: relative; pointer-events: auto; cursor: pointer; display: inline-block; width: 20px; min-width: 20px; height: 20px; background: #CDD1D5; text-indent: -99999px; border-radius: 100px; box-sizing: border-box; padding: 0; margin-left: -40px; float: right; margin-top: 10px; margin-right: 10px;}
 /* .form-control-clear { z-index: 1; position: absolute; top: 50%; transform: translateY(-50%); } */
-.form-control-clear::before, .form-control-clear::after { content: ''; position: absolute; left: 50%; top: 50%; width: 9px; height: 1px; background: #fff; border-radius: 2px; transform-origin: center;}
+.form-control-clear::before, .form-control-clear::after { content: ''; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; background: #33363D; border-radius: 2px; transform-origin: center;}
 .form-control-clear::before {transform: translate(-50%, -50%) rotate(45deg);}
 .form-control-clear::after {transform: translate(-50%, -50%) rotate(-45deg);}
 .form-control-clear.hidden {display: none;}

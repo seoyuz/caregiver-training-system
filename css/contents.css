@@ -1,8 +1,7 @@
 @charset "utf-8";
 
+#container { min-height: calc(100vh - 226px);}
 #container > .inner { width: 94%; max-width: 1190px; margin: 0 auto; min-height: 700px; padding: 40px 0;}
-
-
 
 /* hpoint */
 
@@ -37,15 +36,6 @@ h3, .h3 {
 .btn-box .btn + .btn{
   margin-left: 8px;
 }
-.btn-box .btn.line{
-  border: 1px solid #58616A;
-  background-color: #fff;
-}
-.btn-box .btn.solid{
-  background-color: #D71921;
-  color: #fff;
-  border: 0;
-}
 
 
 .btn {
@@ -62,18 +52,18 @@ h3, .h3 {
   border: 2px solid transparent;
 }
 .btn.line { /* 241218 (ej)*/
-  background: #fff;
-  border: 1px solid #ffa038;
+  border: 1px solid #58616A;
+  background-color: #fff;
 }
 .btn.line:hover { /* 241218 (ej)*/
-  background: #FFF9E8;
+  background: #f8f8f8;
 }
 .btn.solid { /* 241218 (ej)*/
-  background-color: #FFA038;
-  border: 1px solid #FFA038;
+  background-color: #D71921;
+  color: #fff;
 }
 .btn.solid:hover { /* 241218 (ej)*/
-  background: #C20F16;
+  background: #b8151d;
 }
 .btn.solid2 {
   background-color: #FFC585;
@@ -167,11 +157,11 @@ h3, .h3 {
 
 /* radio */
 
-.radio__wrap--vert .input--rdo {
+.radio-wrap-vert .input--rdo {
   position: relative;
   font-size: 0;
 }
-.radio__wrap--vert .input--rdo input[type=radio] {
+.radio-wrap-vert .input--rdo input[type=radio] {
   position: absolute;
   left: 8px;
   top: 50%;
@@ -182,11 +172,11 @@ h3, .h3 {
      -moz-appearance: none;
           appearance: none;
 }
-.radio__wrap--vert .input--rdo input[type=radio]:focus-visible {
+.radio-wrap-vert .input--rdo input[type=radio]:focus-visible {
   outline: 2px dashed #2e56d8;
   outline-offset: 11px;
 }
-.radio__wrap--vert .input--rdo input[type=radio].blind {
+.radio-wrap-vert .input--rdo input[type=radio].blind {
   position: absolute;
   display: block;
   width: auto;
@@ -195,10 +185,10 @@ h3, .h3 {
   overflow: visible;
   clip: unset;
 }
-.radio__wrap--vert .input--rdo input[type=radio]:checked + label .rdo__checkbox {
+.radio-wrap-vert .input--rdo input[type=radio]:checked + label .rdo__checkbox {
   border-color: #FFA038;
 }
-.radio__wrap--vert .input--rdo input[type=radio]:checked + label .rdo__checkbox::before {
+.radio-wrap-vert .input--rdo input[type=radio]:checked + label .rdo__checkbox::before {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -210,7 +200,7 @@ h3, .h3 {
   transition: 0.15s ease-in;
   content: "";
 }
-.radio__wrap--vert .input--rdo .rdo__checkbox {
+.radio-wrap-vert .input--rdo .rdo__checkbox {
   position: relative;
   display: inline-block;
   margin-right: 8px;
@@ -222,27 +212,27 @@ h3, .h3 {
   vertical-align: middle;
   transition: 0.1s ease-in;
 }
-.radio__wrap--vert .input--rdo label {
+.radio-wrap-vert .input--rdo label {
   font-size: 17px;
   vertical-align: middle;
   cursor: pointer;
 }
-.radio__wrap--vert .input--rdo + .input--rdo {
+.radio-wrap-vert .input--rdo + .input--rdo {
   margin-top: 16px;
 }
 
-.radio__wrap--horiz {
+.radio-wrap-horiz {
   display: flex;
   justify-content: space-between;
   gap: 8px;
   font-size: 0;
 }
-.radio__wrap--horiz .input--rdo {
+.radio-wrap-horiz .input--rdo {
   position: relative;
   flex-grow: 1;
   width: 100%;
 }
-.radio__wrap--horiz .input--rdo input {
+.radio-wrap-horiz .input--rdo input {
   position: absolute;
   left: 8px;
   top: 50%;
@@ -250,10 +240,10 @@ h3, .h3 {
   width: 0;
   height: 0;
 }
-.radio__wrap--horiz .input--rdo input:focus-visible + label {
+.radio-wrap-horiz .input--rdo input:focus-visible + label {
   outline: 2px dashed #2e56d8;
 }
-.radio__wrap--horiz .input--rdo label {
+.radio-wrap-horiz .input--rdo label {
   display: inline-block;
   padding: 18px;
   width: 100%;
@@ -265,11 +255,11 @@ h3, .h3 {
   cursor: pointer;
   transition: 0.1s ease-in;
 }
-.radio__wrap--horiz .input--rdo input:checked + label {
+.radio-wrap-horiz .input--rdo input:checked + label {
   background-color: #FFF9E8;
   border-color: #ffa038;
 }
-.radio__wrap--horiz.check label::before {
+.radio-wrap-horiz.check label::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -281,19 +271,19 @@ h3, .h3 {
   opacity: 0;
   margin-left: -20px;
 }
-.radio__wrap--horiz.check input:checked + label::before {
+.radio-wrap-horiz.check input:checked + label::before {
   opacity: 1;
 }
-.radio__wrap--horiz.dashed input:checked + label {
+.radio-wrap-horiz.dashed input:checked + label {
   border-style: dashed;
 }
-.radio__wrap--horiz .input--rdo input:disabled + label,
-.radio__wrap--horiz .input--rdo input:checked:disabled + label {
+.radio-wrap-horiz .input--rdo input:disabled + label,
+.radio-wrap-horiz .input--rdo input:checked:disabled + label {
   border-color: #C6C6C6;
   background-color: #D8D8D8;
   color: #717171;
 }
-.radio__wrap--horiz .input--rdo input:checked:disabled + label::before {
+.radio-wrap-horiz .input--rdo input:checked:disabled + label::before {
   opacity: 0.5;
 }
 
@@ -655,42 +645,42 @@ ol.basic > li {
 
 
 
-.register-frame__wrap {
+.register-frame-wrap {
   background-color: #F6F6F6;
   border-radius: 20px;
-  padding: 30px 24px 70px;
-  margin-top: 80px;
+  padding: 30px 24px;
+  margin-top: 35px;
   font-size: 0;
 }
-.register-frame__wrap h3:first-child {
+.register-frame-wrap h3:first-child {
   margin-top: 0;
 }
-.register-frame__wrap h3 + .register-frame {
+.register-frame-wrap h3 + .register-frame {
   margin-top: 20px;
 }
 
 .register-frame {
   margin: 0 -12px;
 }
-.register-frame__item {
+.register-frame-item {
   display: inline-block;
   vertical-align: top;
   margin: 0 12px 20px;
   width: calc(50% - 24px);
   font-size: 16px;
 }
-.register-frame__item .register-frame__item {
+.register-frame-item .register-frame-item {
   width: 100%;
   margin: 0 0 20px;
 }
-.register-frame__item--block {
+.register-frame-item.block {
   display: block;
 }
-.register-frame__item--block2 {
+.register-frame-item.block2 {
   display: block;
   width: calc(100% - 24px);
 }
-.register-frame .input--chk {
+.register-frame .input-chk {
   min-width: 110px;
 }
 .register-frame .box__input--file {
@@ -730,8 +720,8 @@ ol.basic > li {
   font-size: 16px;
   text-align: left;
 }
-.register-frame__wrap input.inp, 
-.register-frame__wrap select.inp { height: 56px;}
+.register-frame-wrap input.inp, 
+.register-frame-wrap select.inp { height: 56px;}
 .info-txt { font-size: 13px; color: #464C53; margin-top: 8px;}
 
 .col-list {
@@ -764,10 +754,11 @@ ol.basic > li {
   color: #333;
 }
 .input-group .input {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 0;
   display: flex;
   gap: 10px;
+  position: relative;
   align-items: center;
 }
 .input-group .input > * {
@@ -777,33 +768,45 @@ ol.basic > li {
   font-weight: 600;
   margin: 0 -5px;
 }
+/* .input-group .input .form-control-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 0;
+  margin-top: 0;
+} */
+.input-group .input .form-control-clear {
+  margin-top: 0;
+}
 .input-group .btn {
-  height: 48px;
+  height: 56px;
   border-radius: 10px;
-  min-width: 130px;
+  min-width: 90px;
   font-size: 16px;
   font-weight: 600;
 }
-.input-group .radio__wrap--horiz {
+.input-group .radio-wrap-horiz {
   width: 100%;
 }
-.input-group .radio__wrap--horiz .input--rdo {
+.input-group .radio-wrap-horiz .input--rdo {
   max-width: none;
   width: 100%;
 }
-.input-group .radio__wrap--horiz label {
+.input-group .radio-wrap-horiz label {
   height: 56px;
   /* padding: 13px 18px; */
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+div.input {position: relative;} 
 
 input.inp, select.inp {
   width: 100%;
   border: 1px solid #58616A;
   height: 40px;
-  padding: 0 16px;
+  padding: 0 36px 0 16px;
   border-radius: 8px;
 }
 input.inp.width30, select.inp.width30 {
@@ -893,12 +896,12 @@ input.inp:read-only + .form-control-clear {
   width: 100%;
   height: 255px;
 }
-.complete-box__title {
+.complete-box-title {
   font-size: 1em;
   font-weight: 700;
   margin-top: 20px;
 }
-.complete-box__text {
+.complete-box-text {
   font-size: 0.7em;
   font-weight: 500;
   margin-top: 10px;
@@ -935,19 +938,21 @@ input.inp:read-only + .form-control-clear {
   margin-top: 40px;
 }
 .login-box .btn-box .btn{
-  max-width: 130px;
+  max-width: none;
+  width: auto;
 }
 .login-link{
   margin-top: 40px;
   text-align: center;
   font-size: 0;
 }
-.login-link a{
+.login-link .login-link-btn{
   font-size: 20px;
   font-weight: 600;
   text-decoration: underline;
+  background-color: transparent;
 }
-.login-link a + a{
+.login-link .login-link-btn + .login-link-btn{
   margin-left: 40px;
 }
 

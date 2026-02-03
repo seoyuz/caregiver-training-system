@@ -86,44 +86,31 @@
             <div class="inner">
                 <div id="content" class="content">
                     <form>
-                        <h2 class="tit">보수교육 기관 가입신청</h2>
-                        <!-- step -->
-                        <ul class="step-list">
-                            <li class="step-list-item">
-                                <span class="step-number">STEP 1</span>
-                                <div class="step-text">
-                                    <span class="title">약관동의</span>
-                                    <span class="text">회원약관 동의</span>
-                                </div>
-                            </li>
-                            <li class="step-list-item">
-                                <span class="step-number">STEP 2</span>
-                                <div class="step-text">
-                                    <span class="title">기관정보 입력</span>
-                                    <span class="text">기관/담당자 정보 등록</span>
-                                </div>
-                            </li>
-                            <li class="step-list-item active">
-                                <span class="step-number">STEP 3</span>
-                                <div class="step-text">
-                                    <span class="title">가입완료</span>
-                                    <span class="text">환영합니다.</span>
-                                </div>
-                                <span class="blind">현재 페이지</span>
-                            </li>
-                        </ul>
-                        <!-- // step -->
-                         
-                        <!-- 가입완료 -->
-                        <div class="complete-box">
-                            <i class="icon finish"></i>
-                            <p class="complete-box-title">회원가입이 완료되었습니다.</p>
-                            <p class="complete-box-text">플랫폼 담당자의 <span class="color-red fw6">승인 완료 후</span> 기관 서비스 이용이 가능합니다.</p>
-                        </div>
-                        <!-- // 가입완료 -->
-
-                        <div class="btn-box">
-                            <a href="#none" class="btn solid">메인 페이지로 이동</a>
+                        <h2 class="tit center">보수교육 기관 사용자 로그인</h2>
+                        <!-- login -->
+                        <div class="box-solid login-box">
+                            <p>본 서비스는 요양보호사 보수교육 운영을 위한 기관 전용 서비스로, 한국보건복지인재원과 협약된 교육기관 사용자만 이용할 수 있습니다.</p>
+                            <ul class="login">
+                                <li class="item">
+                                    <label for="id">아이디</label>
+                                    <input type="text" class="inp" id="id" placeholder="아이디를 입력하세요.">
+                                </li>
+                                <li class="item">
+                                    <label for="password">비밀번호</label>
+                                    <input type="password" class="inp" id="password" placeholder="비밀번호를 입력하세요.">
+                                </li>
+                            </ul>
+                            <div class="agree-chk left">
+                                <input type="checkbox" id="saveId">
+                                <label for="saveId">ID 저장</label>
+                            </div>
+                            <div class="btn-box">
+                                <button class="btn solid square">로그인</button>
+                            </div>
+                            <div class="login-link">
+                                <button type="button" class="login-link-btn modal-btn" data-popup="resetPwPopup">회원가입</button>
+                                <button type="reset" class="login-link-btn">비밀번호 초기화</button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -192,6 +179,53 @@
             </div>
         </div>
         <!--............. // mobile menu .............-->
+        
+        <!-- [메인 레이어 팝업존] 
+            - 이미지 사이즈 :  470px × 590px
+            - div.modal-wrap에 open 클래스 추가 유무에 따라 팝업 노출 선택 가능
+            - button에  data-popup속성 값과 modal-wrap id 값이 동일하게 설정되어있어야 해당 팝업이 열립니다.
+            예시) <div class="modal-wrap popup-zone" id="modalPopup">
+                  <button type="button" class="modal-btn" data-popup="modalPopup">
+        -->
+        <div id="resetPwPopup" class="modal-wrap open">
+            <div class="f_wrapper">
+                <div class="modal-head">
+                    <h2 class="tit"><span>비밀번호 초기화</span></h2>
+                </div>
+                <div class="modal-cont-wrap">
+                    <!-- cont -->
+                    <div class="modal-cont">
+                        <div class="form-field-wrap">
+                            <div class="inp-wrap form-field">
+                                <div class="input-group">
+                                    <label class="input-title" for="popBusinessId">사업자등록번호(ID)</label>
+                                    <p class="info-txt">‘-’ 없이 숫자만 입력</p>
+                                    <div class="input">
+                                        <input type="tel" id="popBusinessId" class="inp" placeholder="내용을 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inp-wrap form-field">
+                                <div class="input-group">
+                                    <label class="input-title" for="popBusinessId">사무실 전화번호</label>
+                                    <p class="info-txt">‘-’ 없이 숫자만 입력</p>
+                                    <div class="input">
+                                        <input type="tel" id="popBusinessId" class="inp" placeholder="내용을 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn line modal-close">닫기</button>
+                            <button type="button" class="btn solid">수강신청</button>
+                        </div>
+                    </div>
+                    <!-- //cont -->
+                </div>
+                <button type="button" class="modal-close">닫기</button>
+            </div>
+        </div>
+        <!-- // [메인 레이어 팝업존] -->
     </div>
 </body>
 </html>

@@ -377,7 +377,7 @@ h3{
   border: 1px solid #FFB86B;
   border-radius: 10px;
 }
-.modal-wrap .modal-head {}
+.modal-wrap .modal-head { padding-bottom: 16px; margin-bottom: 16px;border-bottom: 1px solid #DDDDDD;}
 .modal-wrap .modal-head h2 {
   margin: 0;
   font-size: 28px;
@@ -450,7 +450,7 @@ h3{
   background-color: #D71921;
   color: #fff;
 }
-.modal-wrap .modal-close {
+.modal-wrap .f_wrapper > .modal-close {
   position: absolute;
   right: 24px;
   top: 24px;
