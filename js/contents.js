@@ -112,27 +112,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if(toggleButton) {
             toggleButton.addEventListener('click', function() {
-                if(body.classList.contains('pc')) {
 
-                    if (sidePanel.classList.contains('close')) {
-                        sidePanel.classList.remove('close');
-                        toggleButton.setAttribute('title', '접기');
-                    } else {
-                        sidePanel.classList.add('close');
-                        toggleButton.setAttribute('title', '열기');
-                    }
-
-                } else{
-
-                    if (sidePanel.classList.contains('close')) {
-                        sidePanel.classList.remove('close');
-                        toggleButton.setAttribute('title', '접기');
-
-                    } else {
-                        sidePanel.classList.add('close');
-                        toggleButton.setAttribute('title', '열기');
-                    }
-
+                if (sidePanel.classList.contains('close')) {
+                    sidePanel.classList.remove('close');
+                    toggleButton.setAttribute('title', '접기');
+                } else {
+                    sidePanel.classList.add('close');
+                    toggleButton.setAttribute('title', '열기');
                 }
             });
         }
