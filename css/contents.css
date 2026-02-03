@@ -801,7 +801,7 @@ ol.basic > li {
 
 input.inp, select.inp {
   width: 100%;
-  border: 1px solid #C6C6C6;
+  border: 1px solid #58616A;
   height: 40px;
   padding: 0 16px;
   border-radius: 8px;
@@ -904,6 +904,14 @@ input.inp:read-only + .form-control-clear {
   margin-top: 10px;
 }
 
+.login-box{
+  margin: 35px auto 0;
+  max-width: 584px;
+}
+.login-box p{
+  line-height: 150%;
+  word-break: keep-all;
+}
 .login{
   margin-top: 40px;
 }
@@ -922,6 +930,12 @@ input.inp:read-only + .form-control-clear {
 }
 .login .item .form-control-clear{
   margin-top: 20px;
+}
+.login-box .btn-box{
+  margin-top: 40px;
+}
+.login-box .btn-box .btn{
+  max-width: 130px;
 }
 .login-link{
   margin-top: 40px;
