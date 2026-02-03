@@ -951,12 +951,20 @@ input.inp:read-only + .form-control-clear {
   font-weight: 600;
   text-decoration: underline;
   background-color: transparent;
+  vertical-align: middle;
 }
 .login-link .login-link-btn + .login-link-btn{
   margin-left: 40px;
 }
 
 
+
+.capcha-wrap { margin-top: 12px;}
+.capcha-info { background-color: #F5F5F5; text-align: center; padding: 12px; border-radius: 10px; font-size: 18px;}
+.capcha-num-box { gap: 12px; background-color: #333; color: #fff; display: flex; flex-wrap: wrap; margin-top: 12px; justify-content: center; align-items: center; padding: 22px; border-radius: 10px;}
+.capcha-num-box .number { font-weight: 600; font-size: 60px;}
+.capcha-num-box .copy-btn { display: inline-block; background-color: #fff; border: 1px solid #aaa; border-radius:8px; width: 77px; height: 69px; color: #464C53;font-size: 18px; font-weight: 700;}
+.capcha-num-box .copy-btn::before {content: ''; display: block; width: 100%; height: 24px; background: url("../images/contents/ico_copy.svg") no-repeat center;}
 
 @media screen and (max-width:768px){
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>로그인 | KOHI 요양보호사보수교육 기관 찾기</title>
+    <title>KOHI 요양보호사보수교육 기관 찾기</title>
     <link rel="shortcut icon" href="/images/common/favicon.ico">
 
     <link type="text/css" rel="stylesheet" href="/css/swiper.min.css">
@@ -108,10 +108,12 @@
                                 <button class="btn solid square">로그인</button>
                             </div>
                             <div class="login-link">
-                                <a href="#none">회원가입</a>
-                                <a href="#none">비밀번호 초기화</a>
+                                <a href="#none" class="login-link-btn" >회원가입</a>
+                                <button type="button" class="login-link-btn modal-btn" data-popup="resetPwPopup">비밀번호 찾기</button>
                             </div>
                         </div>
+                        <!-- // login -->
+
                     </form>
                 </div>
                 <!--............. //content .............-->
@@ -179,6 +181,90 @@
             </div>
         </div>
         <!--............. // mobile menu .............-->
+        
+        <!-- [메인 레이어 팝업존] 
+            - 이미지 사이즈 :  470px × 590px
+            - div.modal-wrap에 open 클래스 추가 유무에 따라 팝업 노출 선택 가능
+            - button에  data-popup속성 값과 modal-wrap id 값이 동일하게 설정되어있어야 해당 팝업이 열립니다.
+            예시) <div class="modal-wrap popup-zone" id="modalPopup">
+                  <button type="button" class="modal-btn" data-popup="modalPopup">
+        -->
+        <!-- 회원 -->
+        <div id="resetPwPopup" class="modal-wrap">
+            <div class="f_wrapper">
+                <div class="modal-head">
+                    <h2 class="tit"><span>비밀번호 초기화</span></h2>
+                </div>
+                <div class="modal-cont-wrap">
+                    <!-- cont -->
+                    <div class="modal-cont">
+                        <!-- 첫 진입 시 화면 -->
+                        <div class="form-field-wrap">
+                            <div class="inp-wrap form-field">
+                                <div class="input-group">
+                                    <label class="input-title" for="popBusinessId">사업자등록번호(ID)</label>
+                                    <p class="info-txt">‘-’ 없이 숫자만 입력</p>
+                                    <div class="input">
+                                        <input type="tel" id="popBusinessId" class="inp" placeholder="내용을 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inp-wrap form-field">
+                                <div class="input-group">
+                                    <label class="input-title" for="popBusinessId">사무실 전화번호</label>
+                                    <p class="info-txt">‘-’ 없이 숫자만 입력</p>
+                                    <div class="input">
+                                        <input type="tel" id="popBusinessId" class="inp" placeholder="내용을 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn line modal-close">닫기</button>
+                            <button type="button" class="btn solid">비밀번호 초기화</button>
+                        </div>
+                        <!-- // 첫 진입 시 화면 -->
+                        <!-- 비밀번호 초기화 버튼 클릭 시 -->
+                        <div class="form-field-wrap">
+                            <div class="inp-wrap form-field">
+                                <div class="input-group">
+                                    <label class="input-title" for="popBusinessId">사업자등록번호(ID)</label>
+                                    <p class="info-txt">‘-’ 없이 숫자만 입력</p>
+                                    <div class="input">
+                                        <input type="tel" id="popBusinessId" class="inp" placeholder="내용을 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inp-wrap form-field">
+                                <div class="input-group">
+                                    <label class="input-title" for="popBusinessId">사무실 전화번호</label>
+                                    <p class="info-txt">‘-’ 없이 숫자만 입력</p>
+                                    <div class="input">
+                                        <input type="tel" id="popBusinessId" class="inp" placeholder="내용을 입력하세요.">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="capcha-wrap">
+                            <div class="capcha-info">
+                                <p class="capcha-txt"><span class=" fw6">아래 화면에 보이는 문자로 비밀번호가 초기화 되었습니다.</span><br>(기관 전화번호 마지막 4자리 + 화면에 보이는 알파벳 4자리)</p>
+                            </div>
+                            <div class="capcha-num-box">
+                                <span class="number">0905TVNC</span>
+                                <button type="button" class="copy-btn">복사</button>
+                            </div>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn line modal-close">닫기</button>
+                        </div>
+                        <!-- // 비밀번호 초기화 버튼 클릭 시 -->
+                    </div>
+                    <!-- //cont -->
+                </div>
+                <button type="button" class="modal-close">닫기</button>
+            </div>
+        </div>
+        <!-- // [메인 레이어 팝업존] -->
     </div>
 </body>
 </html>

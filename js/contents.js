@@ -195,4 +195,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }    // }
 
+
+    /* capcha 복사하기 기능 */
+    const copyButton = document.querySelector('.capcha-num-box .copy-btn');
+    const capchaNumberEl = document.querySelector('.capcha-num-box .number');
+
+    if (copyButton && capchaNumberEl) {
+    copyButton.addEventListener('click', function () {
+        const capchaNumber = capchaNumberEl.innerText;
+
+        const tempInput = document.createElement('input');
+        tempInput.value = capchaNumber;
+        document.body.appendChild(tempInput);
+
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        alert('비밀번호가 복사되었습니다');
+    });
+    }
+
 });
