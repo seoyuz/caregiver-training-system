@@ -32,7 +32,6 @@ h3, .h3 {
   width: 100%;
   vertical-align: middle;
   font-weight: 600;
-  /* width: 100%; */
   border-radius: 10px;
 }
 .btn-box .btn + .btn{
@@ -45,6 +44,7 @@ h3, .h3 {
 .btn-box .btn.solid{
   background-color: #D71921;
   color: #fff;
+  border: 0;
 }
 
 
@@ -73,7 +73,7 @@ h3, .h3 {
   border: 1px solid #FFA038;
 }
 .btn.solid:hover { /* 241218 (ej)*/
-  background: #FF8500;
+  background: #C20F16;
 }
 .btn.solid2 {
   background-color: #FFC585;
@@ -375,13 +375,12 @@ ol.basic > li {
 
 
 .box-solid {
-  padding: 22px 30px;
-  background: #faf9f3;
-  border: 1px solid #ddd;
-  font-size: 20px;
-  font-weight: 700;
-  color: #1d1d1d;
-  border-radius: 12px;
+  padding: 40px;
+  background: #F6F6F6;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  border-radius: 20px;
   margin-top: 35px;
 }
 .box-solid .basic {
@@ -428,6 +427,9 @@ ol.basic > li {
   font-size: 0;
   text-align: right;
   margin-top: 20px;
+}
+.agree-chk.left{
+  text-align: left;
 }
 .agree-chk label {
   margin-left: 8px;
@@ -900,6 +902,39 @@ input.inp:read-only + .form-control-clear {
   font-size: 0.7em;
   font-weight: 500;
   margin-top: 10px;
+}
+
+.login{
+  margin-top: 40px;
+}
+.login .item{
+
+}
+.login .item + .item{
+  margin-top: 20px;
+}
+.login .item label{
+  font-weight: 700;
+}
+.login .item .inp{
+  margin-top: 8px;
+  font-size: 15px;
+}
+.login .item .form-control-clear{
+  margin-top: 20px;
+}
+.login-link{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0;
+}
+.login-link a{
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.login-link a + a{
+  margin-left: 40px;
 }
 
 

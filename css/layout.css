@@ -11,6 +11,9 @@ h2{
   font-weight: 700;
   word-break: keep-all;
 }
+h2.center{
+  text-align: center;
+}
 h3{
   font-size: 28px;
   font-weight: 700;
@@ -181,16 +184,16 @@ h3{
   min-width: 157px;
 }
 
-.user, .login{
+.login-area .user, .login-area .login{
   display: none;
 }
-.user.active{
+.login-area .user.active{
   display: block;
 }
-.login.active{
+.login-area .login.active{
   display: block;
 }
-.user a{
+.login-area .user a{
   display: inline-block;
   padding-right: 26px;
   background: url("../images/common/ico_logout.png") no-repeat right center;
@@ -199,11 +202,11 @@ h3{
   color: #1E2124;
   vertical-align: middle;
 }
-.user .name, .login a{
+.login-area .user .name, .login-area .login a{
   font-size: 17px;
   font-weight: 700;
 }
-.login a{
+.login-area .login a{
   padding-right: 26px;
   background: url("../images/common/ico_login.png") no-repeat right center;
 }
