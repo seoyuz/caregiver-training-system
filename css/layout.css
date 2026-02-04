@@ -535,16 +535,16 @@ h3{
     text-align: center;
   }
   .mobile-quickmenu .icon.map {
-    background-image: url("../../images/common/ico_map.png");
+    background-image: url("../images/common/ico_map.png");
   }
   .mobile-quickmenu .icon.notice {
-    background-image: url("../../images/common/ico_notice.png");
+    background-image: url("../images/common/ico_notice.png");
   }
   .mobile-quickmenu .icon.qna {
-    background-image: url("../../images/common/ico_chat.png");
+    background-image: url("../images/common/ico_chat.png");
   }
   .mobile-quickmenu .icon.mypage {
-    background-image: url("../../images/common/ico_user.png");
+    background-image: url("../images/common/ico_user.png");
   }
   .mobile-quickmenu span {
     display: block;

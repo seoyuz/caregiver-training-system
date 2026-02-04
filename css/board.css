@@ -17,6 +17,8 @@ table { width: 100%;}
 .table-top .page-num .total {font-weight: 600; font-size: 20px; display: inline-block; vertical-align: middle; }
 .table-top .page-num .now { display: inline-block; vertical-align: middle; }
 .table-top .search-wrap {display: flex; gap: 10px; vertical-align: middle;  margin-left: auto;}
+.table-top .search-wrap select { font-size: 15px;}
+.table-top .search-wrap .inp { font-size: 15px;}
 .normal-table { border: 1px solid #333; border-left: 0; border-right: 0;}
 .normal-table thead th { height: 60px; background-color: #EEE; text-align: center; vertical-align: middle;font-weight: 700; font-size: 20px; padding: 5px 10px; border-left: 1px solid #fff;}
 .normal-table thead th:first-child { border-left: 0;}
