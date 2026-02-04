@@ -966,9 +966,43 @@ input.inp:read-only + .form-control-clear {
 .capcha-num-box .copy-btn { display: inline-block; background-color: #fff; border: 1px solid #aaa; border-radius:8px; width: 77px; height: 69px; color: #464C53;font-size: 18px; font-weight: 700;}
 .capcha-num-box .copy-btn::before {content: ''; display: block; width: 100%; height: 24px; background: url("../images/contents/ico_copy.svg") no-repeat center;}
 
+
+
 @media screen and (max-width:768px){
 
-    .btn-wrap .btn-normal { height: 38px; font-size: 14px;}
+  .btn-wrap .btn-normal { height: 38px; font-size: 14px;}
+
+  .step-list{gap: 10px;}
+  .step-list-item { margin: 0; width: calc(50% - 5px); }
+  .step-list-item.active{ padding: 0 20px; justify-content: center; }
+  .step-list .step-number { padding: 20px; font-size: 25px; }
+
+
+  .box-agree{
+    padding-right: 40px;
+    padding-bottom: 60px;
+  }
+  .box-agree .agree-chk{
+    top: auto;
+    bottom: 15px;
+    transform: translateY(0);
+  }
+
+  .register-frame{
+    margin: 20px 0 0 0;
+  }
+  .register-frame-item{
+    margin: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .register-frame-item.block2{
+    width: 100%;
+  }
+  .btn-box .btn{
+    padding: 10px;
+    max-width: 140px;
+  }
 }
 
 @media screen and (max-width:600px){
@@ -982,6 +1016,7 @@ input.inp:read-only + .form-control-clear {
     justify-content: center;
   }
   .step-list-item.active {
+    padding: 15px 5px;
     background-color: #F05F29;
     border: 3px solid #FFB599;
     border-radius: 100px;
@@ -996,5 +1031,20 @@ input.inp:read-only + .form-control-clear {
   }
   .step-list .step-text .text {
     display: none;
+  }
+  .capcha-num-box .number{
+    font-size: 38px;
+  } 
+}
+
+@media screen and (max-width: 400px){
+  .login-box{
+    padding: 24px;
+  }
+  .login-link .login-link-btn + .login-link-btn{
+    margin-left: 20px;
+  }
+  .capcha-num-box .number{
+    font-size: 27px;
   }
 }
