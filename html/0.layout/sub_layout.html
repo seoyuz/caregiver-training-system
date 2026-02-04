@@ -19,6 +19,7 @@
     <script src="/js/common.js"></script>
 
     <!-- sub -->
+    <link type="text/css" rel="stylesheet" href="/css/contents.css">
     <link type="text/css" rel="stylesheet" href="/css/board.css">
     <script src="/js/contents.js"></script>
 </head>
@@ -87,22 +88,34 @@
 
                 <h3 style="margin-bottom: 20px;" style="margin-bottom: 20px;">인풋</h3>
                 <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 70px;">
-                    <div>
+                    <!-- <div>
                         <p>Default</p>
                         <div class="inp-wrap form-field">
                             <label for="input" class="required">사업자등록번호(ID)</label>
-                            <p>‘-’ 없이 숫자만 입력</p>
+                            <p class="info-txt">‘-’ 없이 숫자만 입력</p>
                             <input type="tel" id="input" placeholder="내용을 입력하세요." class="inp">
-                            <p class="required">텍스트 입력</p>
+                            <p class="inp-txt">텍스트 입력</p>
                         </div>
+                    </div> -->
+                    
+                    <div class="input-group form-field">
+                        <label class="input-title" for="registerOfficeTel"><span class="required"><i class="blind">필수입력</i></span> 사무실 전화번호</label>
+                        <p class="info-txt">‘-’ 없이 숫자만 입력</p>
+                        <div class="input">
+                            <input type="tel" id="registerOfficeTel" class="inp" placeholder="내용을 입력하세요."><button type="button" class="form-control-clear hidden">지우기</button>
+                        </div>
+                        <p class="inp-txt focus">메시지를 입력해주세요.</p>
                     </div>
+
+
+
                     <div>
                         <p>Focused</p>
                         <div class="inp-wrap form-field">
                             <label for="input02" class="required">사업자등록번호(ID)</label>
                             <p>‘-’ 없이 숫자만 입력</p>
                             <input type="tel" id="input02" placeholder="내용을 입력하세요." class="inp focus">
-                            <p class="required focus">메시지를 입력해주세요.</p>
+                            <p class="inp-txt focus">메시지를 입력해주세요.</p>
                         </div>
                     </div>
                     <div>
@@ -111,7 +124,7 @@
                             <label for="input03" class="required">사업자등록번호(ID)</label>
                             <p>‘-’ 없이 숫자만 입력</p>
                             <input type="tel" id="input03" placeholder="내용을 입력하세요." class="inp">
-                            <p class="required completed">사용 가능한 사업자등록번호(ID) 입니다.</p>
+                            <p class="inp-txt completed">사용 가능한 사업자등록번호(ID) 입니다.</p>
                         </div>
                     </div>
                     <div>
@@ -120,7 +133,7 @@
                             <label for="input04" class="required">사업자등록번호(ID)</label>
                             <p>‘-’ 없이 숫자만 입력</p>
                             <input type="tel" id="input04" placeholder="내용을 입력하세요." class="inp error">
-                            <p class="required error">사업자등록번호(ID)를 확인해 주세요.</p>
+                            <p class="inp-txt error">사업자등록번호(ID)를 확인해 주세요.</p>
                         </div>
                     </div>
                     <div>

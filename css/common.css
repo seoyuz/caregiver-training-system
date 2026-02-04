@@ -687,22 +687,22 @@ input[type=button] {
 
 /* 인풋 */
 .form-field-wrap { display: flex; flex-wrap: wrap; gap: 12px;}
-.inp-wrap.form-field{
+.form-field{
 	display: inline-block;
 	width: 100%;
 	color: #464C53;
 	/* width: 100%; */
 }
-.inp-wrap.form-field label{
+.form-field label{
 	margin-bottom: 8px;
 	font-size: 14px;
 	font-weight: 700;
 }
-.inp-wrap.form-field label + p{
+.form-field label + p{
 	margin-top: 8px;
 	font-size: 13px;
 }
-.inp-wrap.form-field .inp{
+.form-field .inp{
 	width: 100%;
 	height: 56px;
 	padding-right: 38px;
@@ -713,78 +713,86 @@ input[type=button] {
 	font-size: 19px;
 	color: #1E2124;
 }
-.inp-wrap.form-field p.required{
+.inp-txt{
 	display: none;
 	margin-top: 8px;
 	font-size: 13px;
+	padding-left: 20px;
+	font-weight: 400;
+	position: relative;
 }
-.inp-wrap.form-field p.required::before{
+.inp-txt::before{
 	content: '';
+	display: inline-block;
+	vertical-align: middle;
 	top: -1px;
 	width: 16px;
 	height: 16px;
 	background-repeat: no-repeat;
+	position: absolute;
+	left: 0;
+	top: 0;
 	background-position: center;
 }
-/* .inp-wrap.form-field .form-control-clear{
+/* .form-field .form-control-clear{
 	margin-top: 26px;
 	width: 20px;
 	height: 20px;
 	background-color: #CDD1D5;
 }
-.inp-wrap.form-field .form-control-clear::before, .inp-wrap.form-field .form-control-clear::after{
+.form-field .form-control-clear::before, .form-field .form-control-clear::after{
 	width: 12px;
 	height: 2px;
 	background: #33363D;
 } */
 
 /* 인풋 - 포커스 상태 */
-.inp-wrap.form-field .inp.focus{
+.form-field .inp.focus{
 	border-color: transparent;
 	box-shadow: 0 0 0 2px inset #256EF4;
 }
-.inp-wrap.form-field p.required.focus{
+.inp-txt.focus{
 	display: block;
 	color: #096AB3;
 }
-.inp-wrap.form-field p.required.focus::before{
+.inp-txt.focus::before{
 	background: url('/images/contents/ico_inp-focus.png');
 }
 
 /* 인풋 - 입력완료 상태 */
-.inp-wrap.form-field p.required.completed{
+.inp-txt.completed{
 	display: block;
 	color: #267337;
 }
-.inp-wrap.form-field p.required.completed::before{
+.inp-txt.completed::before{
 	background: url('/images/contents/ico_inp-complete.png');
 }
 
 /* 인풋 - 에러 상태 */
-.inp-wrap.form-field .inp.error{
+.form-field .inp.error{
 	border-color: transparent;
 	box-shadow: 0 0 0 2px inset #DE3412;
 }
-.inp-wrap.form-field p.required.error{
+.inp-txt.error{
 	display: block;
 	color: #BD2C0F;
 }
-.inp-wrap.form-field p.required.error::before{
+.inp-txt.error::before{
 	background: url('/images/contents/ico_inp-error.png');
 }
 
 /* 인풋 - 비활성화 상태 */
-.inp-wrap.form-field .inp:disabled{
+.form-field .inp:disabled{
 	background-color: #CDD1D5;
 	background-image: none;
 	border: 1px solid #B1B8BE;
 	color: #6D7882;
 }
 /* 인풋 - 비활성화 상태 */
-.inp-wrap.form-field.view .inp:disabled{
+.form-field.view .inp:disabled{
 	color: #464C53;
 }
-.inp-wrap.form-field.view .inp:disabled::placeholder{
+.form-field.view .inp:disabled::placeholder{
 	color: #464C53;
 }
 

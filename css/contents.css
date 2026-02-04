@@ -911,10 +911,10 @@ input.inp:read-only + .form-control-clear {
   margin: 35px auto 0;
   max-width: 584px;
 }
-.login-box p{
+/* .login-box p{
   line-height: 150%;
   word-break: keep-all;
-}
+} */
 .login{
   margin-top: 40px;
 }
