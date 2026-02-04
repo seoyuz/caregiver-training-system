@@ -9,7 +9,15 @@ h3, .h3 {
   margin-top: 80px;
   font-size: 24px;
   font-weight: 700;
-  color: #333333;
+  color: #333;
+}
+
+
+h4, .h4 {
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
 }
 
 
@@ -85,7 +93,7 @@ h3, .h3 {
 .btn.download .icon {
   width: 24px;
   height: 24px;
-  background: url("../../images/sub/ico_download.png");
+  background: url("../images/sub/ico_download.png");
 }
 .btn.download span {
   font-size: 14px;
@@ -93,7 +101,7 @@ h3, .h3 {
   color: #767676;
 }
 .btn.download2 .icon {
-  background-image: url("../../images/sub/ico_download02.png");
+  background-image: url("../images/sub/ico_download02.png");
 }
 .btn.square {
   border-radius: 10px;
@@ -264,7 +272,7 @@ h3, .h3 {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url("../../images/sub/ico_check.png") no-repeat center;
+  background: url("../images/sub/ico_check.png") no-repeat center;
   vertical-align: middle;
   margin-top: -3px;
   margin-right: 4px;
@@ -451,7 +459,7 @@ ol.basic > li {
   content: "";
 }
 .agree-chk input[type=checkbox]:checked::before {
-  background: url("../../images/contents/ico_modal_chk.svg") center no-repeat; background-color: #D71921;
+  background: url("../images/contents/ico_modal_chk.svg") center no-repeat; background-color: #D71921;
   border-color: #D71921;
 }
 .agree-chk.text .agree-chk-text {
@@ -867,11 +875,11 @@ input.inp:read-only + .form-control-clear {
   margin-right: 10px;
 }
 .simple-login-box .btn.kakao::before {
-  background: url("../../images/sub/ico_kakao.png") no-repeat center;
+  background: url("../images/sub/ico_kakao.png") no-repeat center;
   background-size: cover;
 }
 .simple-login-box .btn.naver::before {
-  background: url("../../images/sub/ico_naver.png") no-repeat center;
+  background: url("../images/sub/ico_naver.png") no-repeat center;
   background-size: cover;
 }
 .simple-login-box .btn:hover {
@@ -892,7 +900,7 @@ input.inp:read-only + .form-control-clear {
 }
 .complete-box .icon {
   display: block;
-  background: url("../../images/contents/img_character07.png") no-repeat center;
+  background: url("../images/contents/img_character07.png") no-repeat center;
   width: 100%;
   height: 255px;
 }
@@ -970,8 +978,11 @@ input.inp:read-only + .form-control-clear {
 
 @media screen and (max-width:768px){
 
-  .btn-wrap .btn-normal { height: 38px; font-size: 14px;}
+  #container {min-height: 50vh;}
 
+  .btn-wrap .btn-normal { height: 38px; font-size: 14px;}
+  .btn-box .btn { font-size: 14px; height: 44px;}
+  .input-group .input > * {  font-size: 14px;}
   .step-list{gap: 10px;}
   .step-list-item { margin: 0; width: calc(50% - 5px); }
   .step-list-item.active{ padding: 0 20px; justify-content: center; }
@@ -979,15 +990,19 @@ input.inp:read-only + .form-control-clear {
 
 
   .box-agree{
-    padding-right: 40px;
-    padding-bottom: 60px;
+    padding: 20px;
   }
   .box-agree .agree-chk{
+    margin-top: 10px;
     top: auto;
-    bottom: 15px;
+    bottom: auto;
+    right: auto;
     transform: translateY(0);
+    position: relative;
   }
 
+  .box-agree .agree-chk label { font-size: 16px;}
+  .terms-box .agree-chk label { font-size: 16px;}
   .register-frame{
     margin: 20px 0 0 0;
   }
@@ -1003,6 +1018,9 @@ input.inp:read-only + .form-control-clear {
     padding: 10px;
     max-width: 140px;
   }
+  .capcha-info { font-size: 14px;}
+  .capcha-num-box .copy-btn { height: auto; width: auto; padding: 5px 10px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px;}
+  .capcha-num-box .copy-btn::before { width: 24px;}
 }
 
 @media screen and (max-width:600px){

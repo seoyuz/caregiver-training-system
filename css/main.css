@@ -185,7 +185,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url("/images/common/ico_map.png")no-repeat center;
+    background: url("../images/common/ico_map.png")no-repeat center;
     vertical-align: middle;
     transition: .5s ease;
 }
@@ -277,7 +277,7 @@
     background-color: #D71921;
 }
 .right .control-box button{
-    background-image: url(/images/common/ico_arrow-b.png);
+    background-image: url("../images/common/ico_arrow-b.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px 24px;
@@ -301,16 +301,16 @@
 }
 .right .control-box .autoplay .play{
     display: none;
-    background-image: url(/images/contents/ico_play.png);
+    background-image: url("../images/contents/ico_play.png");
 }
 .right .control-box .autoplay .pause{
-    background-image: url(/images/contents/ico_pause.png);
+    background-image: url("../images/contents/ico_pause.png");
 }
 .right .control-box button.btn-prev{
     transform: rotate(180deg);
 }
 .right .control-box .btn-more{
-    background-image: url(/images/contents/ico_plus.png);
+    background-image: url("../images/contents/ico_plus.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px 24px;

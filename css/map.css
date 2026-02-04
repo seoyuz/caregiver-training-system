@@ -88,7 +88,7 @@
     display: inline-block;
     padding-left: 38px;
     background-color: #E4F7ED;
-    background-image: url(/images/common/ico_shortcut.png);
+    background-image: url("../images/common/ico_shortcut.png");
     background-repeat: no-repeat;
     background-position: left 10px center;
     background-size: 23px;
@@ -114,7 +114,7 @@
     display: block;
     width: 24px;
     height: 24px;
-    background-image: url('/images/common/ico_drop.png');
+    background-image: url('../images/common/ico_drop.png');
     background-size: 24px;
     background-position: center;
     transition: .3s ease;
@@ -271,7 +271,7 @@
     width: 16px;
     height: 16px;
     vertical-align: middle;
-    background: url('/images/common/ico_arrow-b.png')no-repeat center;
+    background: url('../images/common/ico_arrow-b.png')no-repeat center;
     background-size: cover;
 }
 
@@ -315,7 +315,7 @@
     min-width: 96px;
     font-size: 15px;
     color: #131416;
-    background: url('/images/common/ico_arrow-b.png') no-repeat right 10px center;
+    background: url('../images/common/ico_arrow-b.png') no-repeat right 10px center;
     background-size: 16px;
     border: 1px solid #58616A;
     border-radius: 6px;
@@ -370,7 +370,7 @@
     margin-left: 4px;
     width: 24px;
     height: 24px;
-    background: url('/images/contents/ico_roadmap.png')no-repeat center;
+    background: url('../images/contents/ico_roadmap.png')no-repeat center;
     vertical-align: middle;
 }
 .map-wrap .organ-detail + .btn-back{
@@ -389,7 +389,7 @@
     margin-right: 4px;
     width: 24px;
     height: 24px;
-    background: url('/images/common/ico_shortcut-w.png')no-repeat center;
+    background: url('../images/common/ico_shortcut-w.png')no-repeat center;
     vertical-align: middle;
 }
 .map-wrap .organ-detail + .btn-back span{
@@ -410,7 +410,7 @@
 }
 .map-wrap .organ-detail .direction p.time{
     padding-left: 30px;
-    background: url(/images/common/ico_clock.png) no-repeat left center;
+    background: url("../images/common/ico_clock.png") no-repeat left center;
     font-size: 24px;
     font-weight: 600;
 }
@@ -422,7 +422,7 @@
     padding-right: 26px;
     height: auto;
     font-size: 14px;
-    background: url('/images/common/ico_newin-w.png')no-repeat right 8px center;
+    background: url('../images/common/ico_newin-w.png')no-repeat right 8px center;
     background-size: 14px;
     background-color: #767676;
     border-radius: 6px;
@@ -462,7 +462,7 @@
     margin-left: 4px;
     width: 20px;
     height: 20px;
-    background: url('/images/common/ico_arrow-b.png')no-repeat center;
+    background: url('../images/common/ico_arrow-b.png')no-repeat center;
     background-size: 20px;
     vertical-align: middle;
 }
@@ -573,12 +573,12 @@
 }
 .map-wrap .side-panel .btn-box .kkomap{
     margin-right: 10px;
-    background-image: url(/images/common/ico_kkomap.png);
+    background-image: url("../images/common/ico_kkomap.png");
 }
 .map-wrap .side-panel .btn-box .reset{
     padding-left: 35px;
     background-size: 20px;
-    background-image: url(/images/common/ico_reset.png);
+    background-image: url("../images/common/ico_reset.png");
 }
 
 
@@ -597,7 +597,7 @@
     display: inline-block;
 }
 .map-wrap .control-box .switch-box .btn-popup{
-    background-image: url(/images/contents/ico_change.png);
+    background-image: url("../images/contents/ico_change.png");
 }
 .map-wrap .switch-box .popup.active{
     display: block;
@@ -724,14 +724,14 @@
 }
 .map-wrap .control-box #switchToggle:checked +  .toggle span{
     padding-left: 34px;
-    background-image: url(/images/contents/ico_toggle02.png);
+    background-image: url("../images/contents/ico_toggle02.png");
     background-size: 30px 21px;
     background-position: left 3px top 5px;
 }
 
 .map-wrap .control-box .toggle span{
     padding-left: 31px;
-    background-image: url(/images/contents/ico_toggle01.png);
+    background-image: url("../images/contents/ico_toggle01.png");
     background-repeat: no-repeat;
     background-position: left 3px top 3px;
 }
@@ -781,7 +781,7 @@
 
 
 .map-wrap .control-box .my-location{
-    background-image: url(/images/contents/ico_location.png);
+    background-image: url("../images/contents/ico_location.png");
 }
 .map-wrap .control-box .btn-zoom{
     padding: 5px;
@@ -795,10 +795,10 @@
 
 .map-wrap .control-box .btn-zoom.in{
     margin-left: 20px;
-    background-image: url(/images/contents/ico_zoom-in.png);
+    background-image: url("../images/contents/ico_zoom-in.png");
 }
 .map-wrap .control-box .btn-zoom.out{
-    background-image: url(/images/contents/ico_zoom-out.png);
+    background-image: url("../images/contents/ico_zoom-out.png");
 }
 .map-wrap .pin-wrapper{}
 .map-wrap .area{
@@ -831,22 +831,22 @@
 .map-wrap .pin.purple{
     width: 159px;
     height: 96px;
-    background-image: url(/images/contents/ico_pin-p.svg);
+    background-image: url("../images/contents/ico_pin-p.svg");
     top: 301px;
     left: 515px;
 }
 .map-wrap .pin.purple.active{
-    background-image: url(/images/contents/ico_pin-p02.svg);
+    background-image: url("../images/contents/ico_pin-p02.svg");
 }
 .map-wrap .pin.gray{
     width: 161px;
     height: 71px;
-    background-image: url(/images/contents/ico_pin-g.svg);
+    background-image: url("../images/contents/ico_pin-g.svg");
     top: 306px;
     left: 700px;
 }
 .map-wrap .pin.gray.active{
-    background-image: url(/images/contents/ico_pin-g02.svg);
+    background-image: url("../images/contents/ico_pin-g02.svg");
 }
 .map-wrap .pin span{
     font-size: 18px;
@@ -930,10 +930,10 @@
     background-size: 20px;
 }
 .label-list.last .item .link-wrap .link p{
-    background-image: url('/images/contents/ico_edit.png');
+    background-image: url('../images/contents/ico_edit.png');
 }
 .label-list.last .item .link-wrap .tel p{
-    background-image: url('/images/contents/ico_call.png');
+    background-image: url('../images/contents/ico_call.png');
 }
 
 .label-list.last .item .link-wrap a{
@@ -957,7 +957,7 @@
     margin-left: 2px;
     width: 16px;
     height: 16px;
-    background: url('/images/common/ico_newin-b.png')no-repeat center;
+    background: url('../images/common/ico_newin-b.png')no-repeat center;
     vertical-align: middle;
 }
 
