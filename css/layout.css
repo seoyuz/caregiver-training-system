@@ -380,6 +380,9 @@ h3{
   border: 1px solid #FFB86B;
   border-radius: 10px;
 }
+.modal-wrap > .f_wrapper.type2{
+  max-width: 800px;
+}
 .modal-wrap .modal-head { padding-bottom: 16px; margin-bottom: 16px;border-bottom: 1px solid #DDDDDD;}
 .modal-wrap .modal-head h2 {
   margin: 0;
@@ -571,7 +574,7 @@ h3{
 @media screen and (max-width: 500px) {
   .modal-wrap .modal-cont{
     padding-right: 8px;
-    height: 600px;
+    max-height: 600px; /* 260212 주소찾기 팝업 (yz) */
     overflow-y: auto;
   }
 }

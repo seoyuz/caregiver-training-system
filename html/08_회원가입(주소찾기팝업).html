@@ -171,14 +171,22 @@
                                     <div class="input-group form-field">
                                         <label class="input-title" for="registerAddress"><span class="required"><i class="blind">필수입력</i></span> 기관 주소</label>
                                         <div class="input">
-                                            <input type="text" id="registerAddress01" class="inp" placeholder="검색어(도로명, 지번, 건물명)를 입력해주세요." title="기관 주소 1" readonly>
+                                            <input type="text" id="registerAddress" class="inp" placeholder="검색어(도로명, 지번, 건물명)를 입력해주세요.">
                                             <button type="button" class="btn solid">검색</button>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="register-frame-item">
+                                    <div class="input-group form-field">
                                         <div class="input">
-                                            <input type="text" id="registerAddress02" class="inp" title="기관 주소 2" readonly>
+                                            <input type="text" id="" class="inp" placeholder="상세주소를 입력하세요.">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="register-frame-item">
+                                    <div class="input-group form-field">
                                         <div class="input">
-                                            <input type="text" id="registerAddress03" class="inp"  title="기관 주소 - 상세주소" placeholder="상세주소를 입력해주세요.">
+                                            <input type="text" id="" class="inp" placeholder="상세주소를 입력하세요.">
                                         </div>
                                     </div>
                                 </div>
@@ -187,21 +195,7 @@
                                         <label class="input-title" for="registerOfficeTel"><span class="required"><i class="blind">필수입력</i></span> 사무실 전화번호</label>
                                         <p class="info-txt">‘-’ 없이 숫자만 입력</p>
                                         <div class="input">
-                                            <select class="inp tel" title="휴대폰번호 앞자리" id="moblphonTelno1" name="moblphonTelno1">
-                                                <option value="010" selected="selected">010</option>
-                                            
-                                                <option value="011">011</option>
-                                            
-                                                <option value="017">017</option>
-                                            
-                                                <option value="016">016</option>
-                                            
-                                                <option value="018">018</option>
-                                            
-                                                <option value="019">019</option>
-                                            </select>
-                                            <input type="tel" class="inp" title="휴대폰번호 중간자리" id="moblphonTelno2" name="moblphonTelno2" maxlength="4" value="">
-                                            <input type="tel" class="inp" title="휴대폰번호 끝자리" id="moblphonTelno3" name="moblphonTelno3" maxlength="4" value="">
+                                            <input type="tel" id="registerOfficeTel" class="inp" placeholder="내용을 입력하세요.">
                                         </div>
                                     </div>
                                 </div>
@@ -210,22 +204,8 @@
                                         <label class="input-title" for="registerFax"> 팩스번호(팩스번호 부재 시 사무실전화번호 입력)</label>
                                         <p class="info-txt">‘-’ 없이 숫자만 입력</p>
                                         <div class="input">
-                                            <select class="inp tel" title="휴대폰번호 앞자리" id="moblphonTelno1" name="moblphonTelno1">
-                                                <option value="010" selected="selected">010</option>
-                                            
-                                                <option value="011">011</option>
-                                            
-                                                <option value="017">017</option>
-                                            
-                                                <option value="016">016</option>
-                                            
-                                                <option value="018">018</option>
-                                            
-                                                <option value="019">019</option>
-                                            </select>
-                                            <input type="tel" class="inp" title="휴대폰번호 중간자리" id="moblphonTelno2" name="moblphonTelno2" maxlength="4" value="">
-                                            <input type="tel" class="inp" title="휴대폰번호 끝자리" id="moblphonTelno3" name="moblphonTelno3" maxlength="4" value="">
-                                        </div> 
+                                            <input type="tel" id="registerFax" class="inp" placeholder="내용을 입력하세요.">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="register-frame-item block2">
@@ -322,6 +302,109 @@
             </div>
         </div>
         <!--............. // mobile menu .............-->
+
+        <!-- [메인 레이어 팝업존] 
+            - 이미지 사이즈 :  470px × 590px
+            - div.modal-wrap에 open 클래스 추가 유무에 따라 팝업 노출 선택 가능
+            - button에  data-popup속성 값과 modal-wrap id 값이 동일하게 설정되어있어야 해당 팝업이 열립니다.
+            예시) <div class="modal-wrap popup-zone" id="modalPopup">
+                  <button type="button" class="modal-btn" data-popup="modalPopup">
+        -->
+        <!-- 회원 -->
+        <div id="resetPwPopup" class="modal-wrap open">
+            <div class="f_wrapper type2">
+                <div class="modal-head">
+                    <h2 class="tit"><span>주소 찾기</span></h2>
+                </div>
+                <div class="modal-cont-wrap">
+                    <!-- cont -->
+                    <div class="modal-cont">
+                        <!-- <form>
+                            <div class="register-frame-item block2">
+                                <div class="input-group form-field">
+                                    <div class="input">
+                                        <input type="text" id="registerAddress" class="inp" placeholder="검색어(도로명, 지번, 건물명)를 입력해주세요.">
+                                        <button type="button" class="btn solid">검색</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table">
+                                <table class="normal-table qna">
+                                    <caption>공지사항 목록으로 번호, 제목, 작성자, 첨부파일, 작성일, 조회수, 첨부파일 정보 제공</caption>
+                                    <colgroup>
+                                        <col style="width:auto">
+                                        <col style="width:100px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">주소</th>
+                                            <th scope="col">우편번호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2"><p class="empty">주소를 검색해주세요.</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td>충청북도 청주시 흥덕구 오송읍 오송생명2로 187, 한국보건복지인재원</td>
+                                            <td>28159</td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form> -->
+
+                        <form>
+                            <div class="table-top v2">
+                                <div class="page-num">
+                                    <p class="total">총 <span class="color-red">N</span>건</p> 
+                                    <p class="now"> (<span class="color-red">1</span>/N Page)</p>
+                                </div>
+                                <div class="search-wrap">
+                                    <span class="input-wrap">
+                                        <input type="text" name="q-searchVal" id="q-searchVal" value="" class="form-control" placeholder="검색어를 입력해 주세요. [예 : 도로명(반포대로 58), 건물명(독립기념관), 지번(삼성동 25)]" title="검색어 입력">
+                                    </span>
+                                    <button type="submit" class="btn-search">검색 <i class="icon icon-search"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="table">
+                                <table class="normal-table qna">
+                                    <caption>공지사항 목록으로 번호, 제목, 작성자, 첨부파일, 작성일, 조회수, 첨부파일 정보 제공</caption>
+                                    <colgroup>
+                                        <col style="width:auto">
+                                        <col style="width:100px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">주소</th>
+                                            <th scope="col">우편번호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2"><p class="empty">주소를 검색해주세요.</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#none">충청북도 청주시 흥덕구 오송읍 오송생명2로 187, 한국보건복지인재원</a></td>
+                                            <td>28159</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+
+                        <div class="btn-box">
+                            <button type="button" class="btn line modal-close">닫기</button>
+                        </div>
+                    </div>
+                    <!-- //cont -->
+                </div>
+                <button type="button" class="modal-close">닫기</button>
+            </div>
+        </div>
+        <!-- // [메인 레이어 팝업존] -->
     </div>
 </body>
 </html>

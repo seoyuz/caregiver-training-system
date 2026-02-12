@@ -1,28 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     /* 251014 웹 접근성 품질개선 - input/textarea.inp 지우기 버튼 동적 생성 (ej) */  
-    // input.inp, textarea.inp 옆에 지우기 버튼 동적 추가
-    document.querySelectorAll('input.inp, textarea.inp').forEach(function(inp) {
-        // 이미 버튼이 있으면 중복 추가 방지
-        if (!inp.parentNode.querySelector('.form-control-clear')) {
-            var clearBtn = document.createElement('button');
-            clearBtn.type = 'button';
-            clearBtn.className = 'form-control-clear hidden';
-            clearBtn.textContent = '지우기';
-            // input 바로 뒤에 삽입
-            inp.parentNode.insertBefore(clearBtn, inp.nextSibling);
+    document.querySelectorAll('input.inp, textarea.inp').forEach(function (inp) {
 
-            // 버튼 클릭 시 입력값 삭제 및 포커스
-            clearBtn.addEventListener('click', function() {
-                inp.value = '';
-                clearBtn.classList.add('hidden');
-                inp.focus();
-                // 필요시 input 이벤트도 발생
-                var event = new Event('input', { bubbles: true });
-                inp.dispatchEvent(event);
-            });
+        // 이미 버튼이 있으면 중복 생성 방지
+        if (inp.nextElementSibling?.classList.contains('form-control-clear')) return;
+
+        const clearBtn = document.createElement('button');
+        clearBtn.type = 'button';
+        clearBtn.className = 'form-control-clear hidden';
+        clearBtn.textContent = '지우기';
+
+        // input 뒤에 clearBtn 버튼 삽입
+        inp.insertAdjacentElement('afterend', clearBtn);
+
+        // 값 있음 -> hidden 클래스 제거
+        function toggle() {
+            clearBtn.classList.toggle('hidden', inp.value.trim() === '');
         }
+
+        // input 이벤트 감시
+        inp.addEventListener('input', toggle);
+        inp.addEventListener('focus', toggle);
+
+        clearBtn.addEventListener('click', function () {
+            inp.value = '';
+            inp.focus();
+            toggle();
+        });
+
+        toggle();
     });
+
 
     // 입력값 있을 때만 버튼 노출
     function toggleClearButton(e) {

@@ -730,6 +730,7 @@ ol.basic > li {
 }
 .register-frame-wrap input.inp, 
 .register-frame-wrap select.inp { height: 56px;}
+.register-frame-wrap select.inp.tel { min-width: 100px;}/* 260212 회원가입 정보입력 (yz) */
 .info-txt { font-size: 13px; color: #464C53; margin-top: 8px;}
 
 .col-list {

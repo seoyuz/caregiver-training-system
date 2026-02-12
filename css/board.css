@@ -19,6 +19,13 @@ table { width: 100%;}
 .table-top .search-wrap {display: flex; gap: 10px; vertical-align: middle;  margin-left: auto;}
 .table-top .search-wrap select { font-size: 15px;}
 .table-top .search-wrap .inp { font-size: 15px;}
+
+/* 260212 주소찾기 팝업 (yz) */
+.table-top.v2{margin-top: 0;}
+.table-top.v2 .search-wrap input {width: 450px; height: 46px;}
+.table-top.v2 .search-wrap .btn-search {height: 46px;}
+
+
 .normal-table { border: 1px solid #333; border-left: 0; border-right: 0;}
 .normal-table thead th { height: 60px; background-color: #EEE; text-align: center; vertical-align: middle;font-weight: 700; font-size: 20px; padding: 5px 10px; border-left: 1px solid #fff;}
 .normal-table thead th:first-child { border-left: 0;}
@@ -102,6 +109,8 @@ table { width: 100%;}
 
 
 @media screen and (max-width:768px) {
+
+    .table-top.v2 .search-wrap input {width: 100%;}
 
     .normal-table {}
     .normal-table colgroup { display: none;}
