@@ -110,12 +110,74 @@
     min-width: 40%;
     text-align: center;
     font-size: 13px;
+    min-height:300px;
+    position: relative;
+    padding-bottom: 20px;
 }
 .left .result-wrap .map .txt{
-    padding-right: 30px; 
+    padding: 0 20px; 
     text-align: right; 
     font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
+
+.left .result-wrap .map img { } /* 임시 */
+
+.map-pin { 
+    display: inline-block;
+    padding: 3px;
+    background-color: #555;
+    color: #fff;
+    font-size: 14px;
+    min-width: 31px;
+    border-radius: 10px;
+} 
+.map-pin .name { 
+    display: block;
+    line-height: 100%;
+} 
+.map-pin .num { 
+    display: inline-block;
+    line-height: 100%;
+} 
+.map-pin .unit { 
+    display: none;
+    line-height: 100%;
+}
+.map-pin.active { 
+    display: inline-block;
+    background-color: #D71921;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 5px 6px;
+} 
+.map-pin.active::before { 
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12.99px 7.5px 0px 7.5px;
+    border-color: #d71921 transparent transparent transparent;
+    display: inline-block;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+} 
+.map-pin.active .name { 
+    display: inline-block;
+    font-size: 20px;
+} 
+.map-pin.active .num { 
+    font-size: 20px;
+} 
+.map-pin.active .unit { 
+    display: inline-block;
+} 
+
 
 .left .result-wrap .list{
     display: block;
