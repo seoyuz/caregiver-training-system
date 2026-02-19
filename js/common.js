@@ -73,9 +73,9 @@ document.querySelectorAll('.form-field').forEach(inpWrap => {
     }
 
     // 숫자만 입력
-    input.addEventListener('input', () => {
-        input.value = input.value.replace(/\D/g, '');
-    });
+    // input.addEventListener('input', () => {
+    //     input.value = input.value.replace(/\D/g, '');
+    // });
 
     // focus 상태
     input.addEventListener('focus', () => {
